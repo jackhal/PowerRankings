@@ -9,6 +9,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Runner {
+	//Make sure it is correct
 	public static Logger logger = Logger.getLogger(Timer.class.getName());
 
 	static {
