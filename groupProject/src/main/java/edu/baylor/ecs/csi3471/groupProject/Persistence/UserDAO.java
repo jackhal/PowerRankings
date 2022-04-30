@@ -74,7 +74,7 @@ public class UserDAO {
      * @param username given username
      * @return the balance of the user
      */
-    public int findCurrentBal(String username) throws NullPointerException{
+    public int findCurrentBal(String username) throws NullPointerException{ //tested
         if(username == null){
             throw new NullPointerException();
         }
@@ -97,7 +97,13 @@ public class UserDAO {
      * @param username user to change value of
      * @param newBalance new balance for user
      */
-    protected void setCurrentBal(String username, int newBalance) {
+    public void setCurrentBal(String username, Integer newBalance) throws NullPointerException{ //tested
+        if(username == null){
+            throw new NullPointerException();
+        }
+        if(newBalance == null){
+            throw new NullPointerException();
+        }
     	try {
             Scanner sc = new Scanner(new File("UserFile.tsv"));
             String data[];
