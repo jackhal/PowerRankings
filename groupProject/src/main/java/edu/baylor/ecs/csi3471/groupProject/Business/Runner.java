@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 public class Runner {
 	//Make sure it is correct
 	public static Logger logger = Logger.getLogger(Timer.class.getName());
+	/*
 	static {
 		try {
 			InputStream configFile = Runner.class.getClassLoader().getResourceAsStream("logger.properties");
@@ -24,6 +25,8 @@ public class Runner {
 		}
 		logger.info("starting the app");
 	}
+
+	 */
 	
 	public static User curUser;
 	public static void main(String[] args) {
