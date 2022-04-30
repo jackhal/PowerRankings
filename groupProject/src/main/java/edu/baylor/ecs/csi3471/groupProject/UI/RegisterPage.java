@@ -33,6 +33,7 @@ public class RegisterPage {
 		final JButton submitButton = new JButton("Submit");						// when clicked the form will be checked
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent submit) {
+				Runner.logger.info("User selected submit on the register form.");
 				Register register = new Register();
 				register.beginRegistration();	
 			}
