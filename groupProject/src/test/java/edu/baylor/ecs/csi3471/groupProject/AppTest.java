@@ -1,15 +1,18 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
-import static org.junit.Assert.assertTrue;
-
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
+import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
+import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
 import org.junit.Test;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.net.MalformedURLException;
 
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -126,4 +129,57 @@ public class AppTest {
     	EditProfile e = new EditProfile("test");
     	assert(e.isDescValid("regular description"));
     }
+
+    @Test
+    public void loadCharactersSuccess()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+
+        assertEquals(c.length, 15);
+    }
+
+    @Test
+    public void addImagesToBracketSuccess()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+
+        assertNotNull(myPane);
+    }
+
+    @Test
+    public void addImagesToBracketFail()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        assertThrows(MalformedURLException.class, () -> {
+            p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
+    }
+
+    @Test
+    public void getRound2Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        p.getRound2(myPane);
+
+        assertNotNull(myPane);
+    }
+
+    @Test
+    public void getRound3Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        p.getRound3(myPane);
+
+        assertNotNull(myPane);
+    }
+
+
+
+
 }
