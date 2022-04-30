@@ -74,6 +74,7 @@ public class VotingBoothDAO extends JPanel {
                 public void actionPerformed(ActionEvent e) {
                     //FIXME GO TO NEXT ROUND FUNCTIONALITY
                     TournamentBracketPanel frame = new TournamentBracketPanel();
+                    CharacterVotesDAO charVote = new CharacterVotesDAO();
                     Runner.logger.info("End Round Button Pressed");
                     Integer a = 0;
                     if(bert.getCurrVote() > gandhi.getCurrVote()) {
@@ -111,7 +112,6 @@ public class VotingBoothDAO extends JPanel {
                             match = 4;
                         }
                         JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
-                        CharacterVotesDAO charVote = new CharacterVotesDAO();
                         UserDAO users = new UserDAO();
                         ArrayList<User> userList = null;
                         try {
@@ -182,7 +182,6 @@ public class VotingBoothDAO extends JPanel {
                         } else if (length == 11) {
                             match = 4;
                         }
-                        CharacterVotesDAO charVote = new CharacterVotesDAO();
                         UserDAO users = new UserDAO();
                         ArrayList<User> userList = null;
                         try {
@@ -296,13 +295,13 @@ public class VotingBoothDAO extends JPanel {
                     CharacterVotesDAO characterVotesDAO = new CharacterVotesDAO();
                     UserDAO userDAO = new UserDAO();
                     CharacterVotes red = new CharacterVotes();
-                    red.setUser(bill.getUsername());
+                    //red.setUser(bill.getUsername());
                     Integer match = 0;
-                    //try {
-                    //    red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
-                    //} catch (Exception ex) {
-                    //    ex.printStackTrace();
-                    //}
+                    try {
+                        red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
+                    } catch (Exception ex) {
+                        red.setUser(bill.getUsername());
+                    }
 
                 // ok dialog
 
@@ -324,6 +323,7 @@ public class VotingBoothDAO extends JPanel {
 
                         if(length < 9){
                             if(loop[0].equals(a)){
+                                System.out.println("HOOP");
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
                             }
@@ -375,15 +375,19 @@ public class VotingBoothDAO extends JPanel {
                                 exit = true;
                                 bill.setBet(totel);
                                 if(match == 1){
+                                    System.out.println("FUCK");
                                     red.setMatchABet(totel);
                                 }
                                 else if(match == 2){
+                                    System.out.println("SHIT");
                                     red.setMatchBBet(totel);
                                 }
                                 else if(match == 3){
+                                    System.out.println("CRAP");
                                     red.setMatchCBet(totel);
                                 }
                                 else if(match == 4){
+                                    System.out.println("HECK");
                                     red.setMatchDBet(totel);
                                 }
                                 //bill.setFunds(bill.getFunds() - totel);
@@ -489,6 +493,8 @@ public class VotingBoothDAO extends JPanel {
                         finalVoteButton.setEnabled(false);
                     }
                     try {
+                        System.out.println("POOPIE");
+                        System.out.println(red.getMatchAChoice());
                         characterVotesDAO.updateCharacterVotes(red);
                     } catch (IOException ex) {
                         ex.printStackTrace();

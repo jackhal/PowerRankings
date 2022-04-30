@@ -1,1 +1,34 @@
-2022-04-30 17:48:00 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isDescValid checking new description for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isNameValid checking new username for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Superman created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isDescValid checking new description for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isNameValid checking new username for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
+2022-04-30 18:10:44 SEVERE edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> One of the Characters isn't loading!
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isAgeValid checking new age for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile <init> displaying edit profile window
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.UI.EditProfile isAgeValid checking new age for validity
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Bill created
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Joe created
+2022-04-30 18:10:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
+2022-04-30 18:10:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
+2022-04-30 18:10:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Bill created
+2022-04-30 18:10:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Joe created
+2022-04-30 18:10:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
