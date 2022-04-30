@@ -13,6 +13,12 @@ import javax.swing.JLabel;
 
 
 public class DailyCheckIn extends UserDAO {
+	/**
+	 * showBalance()
+	 *
+	 * @param username
+	 * @return JLabel
+	 */
 	public JLabel showBalance(String username) {
 		Runner.logger.info("starting rendering of balance");
 		//declare label, current balance, and string for label
