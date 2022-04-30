@@ -196,12 +196,25 @@ public class AppTest {
     }
     @DisplayName("Test getUsers (pass)")
     @Test
-    public void failUpdateUser() throws IOException {
+    public void passGetUsers() throws IOException {
         UserDAO u = new UserDAO();
         ArrayList<User> users = u.getUsers();
         Assertions.assertTrue(users.size() > 0);
     }
 
+    @DisplayName("findCurBal pass")
+    @Test
+    public void passUserBal() throws IOException {
+        UserDAO u = new UserDAO();
+        Assertions.assertEquals(1000, u.findCurrentBal("ryan"));
+    }
+
+    @DisplayName("findCurBal fail")
+    @Test
+    public void failUserBal() throws NullPointerException {
+        UserDAO u = new UserDAO();
+        Assertions.assertEquals(0, u.findCurrentBal("thisuserdoesnotexist"));
+    }
 
 
 
