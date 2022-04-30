@@ -248,6 +248,19 @@ public class AppTest {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("ryan", f.findUsername("ryan"));
     }
+    @DisplayName("forgotUsername fail")
+    @Test
+    public void failForgotUser() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("User not found", f.findUsername("ryan@gmail.comasdadqsdsad"));
+    }
+    @DisplayName("forgotPassword fail")
+    @Test
+    public void failForgotPass() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
+    }
+
 
 
 
