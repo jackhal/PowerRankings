@@ -74,7 +74,10 @@ public class UserDAO {
      * @param username given username
      * @return the balance of the user
      */
-    protected int findCurrentBal(String username) {
+    public int findCurrentBal(String username) throws NullPointerException{
+        if(username == null){
+            throw new NullPointerException();
+        }
         try {
             Scanner sc = new Scanner(new File("UserFile.tsv"));
             String data[];

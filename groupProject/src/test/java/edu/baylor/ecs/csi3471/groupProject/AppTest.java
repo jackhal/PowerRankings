@@ -1,16 +1,21 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.User;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
 import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
 import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -34,9 +39,10 @@ public class AppTest {
     public void BadUrl() throws Exception{
         Character A = new Character("Bill", "JoeWorld", "Big",5,4,"badurl.com", "Joe");
         Character B = new Character("Joe", "BillWorld", "Small", 10, 10, "badurl.com", "Bill");
-        assertThrows(MalformedURLException.class, ()->{VotingBoothDAO boothGUI = new VotingBoothDAO(A,B);});
+        Assertions.assertThrows(MalformedURLException.class, ()->{VotingBoothDAO boothGUI = new VotingBoothDAO(A,B);});
     }
 
+    //FIXME NOT PASSING TEST
     @Test
     public void GoodVoting() throws Exception{
         Character A = new Character("Bill", "JoeWorld", "Big",5,4,"https://cdn.britannica.com/41/9641-004-A8DD825D/Yorkshire-boar.jpg", "Joe");
@@ -144,40 +150,57 @@ public class AppTest {
     {
         TournamentBracketPanel p = new TournamentBracketPanel();
         Character[] c = p.initTournamentCharacters();
-        JLayeredPane myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
 
         assertNotNull(myPane);
     }
 
-//    @Test
-//    public void addImagesToBracketFail()
-//    {
-//        TournamentBracketPanel p = new TournamentBracketPanel();
-//        assertThrows(MalformedURLException.class, () -> {
-//            p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
-//    }
-//
-//    @Test
-//    public void getRound2Success()
-//    {
-//        TournamentBracketPanel p = new TournamentBracketPanel();
-//        Character[] c = p.initTournamentCharacters();
-//        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-//        p.getRound2(myPane);
-//
-//        assertNotNull(myPane);
-//    }
-//
-//    @Test
-//    public void getRound3Success()
-//    {
-//        TournamentBracketPanel p = new TournamentBracketPanel();
-//        Character[] c = p.initTournamentCharacters();
-//        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-//        p.getRound3(myPane);
-//
-//        assertNotNull(myPane);
-//    }
+    //FIXME TERMINATED TEST CASES
+    @Test
+    public void addImagesToBracketFail()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        assertThrows(MalformedURLException.class, () -> {
+            p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
+    }
+
+    @Test
+    public void getRound2Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        p.getRound2(myPane);
+
+        assertNotNull(myPane);
+    }
+
+    //FIXME terminated the rest of the tests
+    @Test
+    public void getRound3Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters();
+        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        p.getRound3(myPane);
+
+        assertNotNull(myPane);
+    }
+
+    @DisplayName("Test updateUser (pass)")
+    @Test
+    public void passUpdateUser(){
+        User user = new User();
+        UserDAO userDAO = new UserDAO();
+        Assertions.assertAll(() -> userDAO.updateUser(user));
+    }
+    @DisplayName("Test getUsers (pass)")
+    @Test
+    public void failUpdateUser() throws IOException {
+        UserDAO u = new UserDAO();
+        ArrayList<User> users = u.getUsers();
+        Assertions.assertTrue(users.size() > 0);
+    }
 
 
 

@@ -73,6 +73,7 @@ public class LoginPage {
 	    // confirms the users input
 	    submitButton.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent submit) {
+			Runner.logger.info("User clicked submit and is attempting to login.");
 	        	Login login = new Login();
 	        	login.beginLoginProcess();
 	        }
@@ -80,6 +81,7 @@ public class LoginPage {
 	
 	    forgotPasswordButton.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent forgotPassword) {
+			Runner.logger.info("User selected forgot password.");
 	            ForgotPassword forgotPass = new ForgotPassword();
 	            forgotPass.createAndShowGUI2();
 	        }
@@ -87,6 +89,7 @@ public class LoginPage {
 	
 	    forgotUsernameButton.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent forgotUsername) {
+			Runner.logger.info("User selected forgot username.");
 	            ForgotUsername forgotUser = new ForgotUsername();
 	            forgotUser.createAndShowGUI();
 	        }
@@ -94,6 +97,7 @@ public class LoginPage {
 	
 	    registerButton.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent r) {
+			Runner.logger.info("User selected register.");
 	        	RegisterPage registerPage = new RegisterPage();
 	        }
 	    });
