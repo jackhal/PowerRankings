@@ -1,5 +1,6 @@
 package edu.baylor.ecs.csi3471.groupProject.UI;
 
+import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
 import javax.swing.*;
@@ -26,12 +27,14 @@ public class Register {
 		boolean created = false;
 
 		if (username.isEmpty() || username == null) {
+			Runner.logger.warning("username is empty/null");
 			fail = true;
 		} else {
 			created = usernameAnalysis();
 		}
 
 		if (password.isEmpty() || password == null) {
+			Runner.logger.warning("password is empty/null");
 			fail = true;
 		} else {
 			if (created) {
@@ -40,6 +43,7 @@ public class Register {
 		}
 
 		if (age.isEmpty() || age == null) {
+			Runner.logger.warning("age is empty/null");
 			fail = true;
 		} else {
 			if (created) {
@@ -48,6 +52,7 @@ public class Register {
 		}
 
 		if (email.isEmpty() || email == null) {
+			Runner.logger.warning("email is empty/null");
 			fail = true;
 		} else {
 			if (created) {
@@ -76,6 +81,7 @@ public class Register {
 						"Warning", JOptionPane.YES_NO_OPTION);
 				
 				if (answer == 0) {
+					Runner.logger.info("Created new User " + username);
 					User newUser = new User();
 					newUser.setUsername(username);
 					newUser.setPassword(password);

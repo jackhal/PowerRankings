@@ -2,10 +2,8 @@ package edu.baylor.ecs.csi3471.groupProject.Business;
 
 import edu.baylor.ecs.csi3471.groupProject.UI.LoginPage;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -16,7 +14,7 @@ public class Runner {
 			//InputStream configFile = Runner.class.getClassLoader().getResourceAsStream("logger.properties");
 			ClassLoader classLoader = Runner.class.getClass().getClassLoader();
 			InputStream configFile = classLoader.getResourceAsStream("logger.properties");
-
+			//InputStream configFile = Runner.class.getClass().getResourceAsStream("logger.properties");
 
 			LogManager.getLogManager().readConfiguration(configFile);
 			configFile.close();

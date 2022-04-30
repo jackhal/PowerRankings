@@ -20,12 +20,14 @@ public class Login  {
     		if(d.validatePassword(username, password)) {
     			LoginPage.loginPage.setVisible(false);
         		Runner.curUser = new User(d.userData);
+				Runner.logger.info(Runner.curUser.getUsername() + " signed in");
         		
         		HomePage h = new HomePage();
         		h.createAndShowGUI(username);
         	}
         	else {
                 fail = true;
+				Runner.logger.info("failed to sign in with User: " + username + ", password: " + password);
         	}
         	
         } catch (NullPointerException e) { }
