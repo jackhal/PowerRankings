@@ -14,12 +14,13 @@ public class Runner {
 	static {
 		try {
 			InputStream configFile = Runner.class.getClassLoader().getResourceAsStream("logger.properties");
-
 			LogManager.getLogManager().readConfiguration(configFile);
 			configFile.close();
 		} catch (IOException ex) {
 			System.out.println("WARNING: Could not open configuration file");
 		    System.out.println("WARNING: Logging not configured");
+		} catch (NullPointerException e) {
+			System.out.println("WARNING: Could not open configuration file");
 		}
 		logger.info("starting the app");
 	}
