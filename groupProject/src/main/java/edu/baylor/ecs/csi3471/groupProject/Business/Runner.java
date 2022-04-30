@@ -9,13 +9,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Runner {
-	//Make sure it is correct
-<<<<<<< HEAD
 	public static Logger logger = Logger.getLogger(Runner.class.getName());
-=======
-	public static Logger logger = Logger.getLogger(Timer.class.getName());
-	/*
->>>>>>> 56c8cfa42b7e6063804f98f4904fb14e81615701
 	static {
 		try {
 			InputStream configFile = Runner.class.getClassLoader().getResourceAsStream("logger.properties");
@@ -29,8 +23,6 @@ public class Runner {
 		}
 		logger.info("starting the app");
 	}
-
-	 */
 	
 	public static User curUser;
 	public static void main(String[] args) {
