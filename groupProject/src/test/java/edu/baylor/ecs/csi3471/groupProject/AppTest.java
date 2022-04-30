@@ -2,6 +2,8 @@ package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.ForgotDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
@@ -215,6 +217,38 @@ public class AppTest {
         UserDAO u = new UserDAO();
         Assertions.assertEquals(0, u.findCurrentBal("thisuserdoesnotexist"));
     }
+
+    @DisplayName("setBalance pass")
+    @Test
+    public void passSetBal() throws NullPointerException {
+        UserDAO u = new UserDAO();
+        u.setCurrentBal("ryan", 500);
+        Assertions.assertEquals(500, u.findCurrentBal("ryan"));
+        u.setCurrentBal("ryan", 1000);
+        Assertions.assertEquals(1000, u.findCurrentBal("ryan"));
+    }
+    @DisplayName("write user to file pass")
+    @Test
+    public void passWriteFile() throws NullPointerException {
+        String[] data = {"yesyesyes",	"yesyesyes","yesyesyes@yesyesyes.com","yesyes",	"20",	"500",	"0",	"false",	"false",	"none",	"null",	"0",	"04/01/22"};
+        User u = new User(data);
+        RegisterDAO d = new RegisterDAO();
+        Assertions.assertAll(() -> d.writeToFile(u));
+    }
+
+    @DisplayName("forgotUsername pass")
+    @Test
+    public void passForgotUser() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("ryan", f.findUsername("ryan@gmail.com"));
+    }
+    @DisplayName("forgotPassword pass")
+    @Test
+    public void passForgotPass() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("ryan", f.findUsername("ryan"));
+    }
+
 
 
 

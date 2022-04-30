@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegisterDAO {
+public class RegisterDAO { //tested
     public void writeToFile(User newUser)
     {
         try
