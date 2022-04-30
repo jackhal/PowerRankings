@@ -101,13 +101,13 @@ public class VotingBoothDAO extends JPanel {
                         System.out.println(length);
                         length--;
                         Integer match = 0;
-                        if (length == 9 || length == 13) {
+                        if (length == 8 || length == 12) {
                             match = 1;
-                        } else if (length == 10 || length == 14) {
+                        } else if (length == 9 || length == 13) {
                             match = 2;
-                        } else if (length == 11) {
+                        } else if (length == 10) {
                             match = 3;
-                        } else if (length == 12) {
+                        } else if (length == 11) {
                             match = 4;
                         }
                         JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
@@ -173,13 +173,13 @@ public class VotingBoothDAO extends JPanel {
                         System.out.println(length);
                         length--;
                         Integer match = 0;
-                        if (length == 9 || length == 13) {
+                        if (length == 8 || length == 12) {
                             match = 1;
-                        } else if (length == 10 || length == 14) {
+                        } else if (length == 9 || length == 13) {
                             match = 2;
-                        } else if (length == 11) {
+                        } else if (length == 10) {
                             match = 3;
-                        } else if (length == 12) {
+                        } else if (length == 11) {
                             match = 4;
                         }
                         CharacterVotesDAO charVote = new CharacterVotesDAO();
@@ -295,13 +295,14 @@ public class VotingBoothDAO extends JPanel {
                     Character[] loop = bracketPanel.getBracketCharacters();
                     CharacterVotesDAO characterVotesDAO = new CharacterVotesDAO();
                     UserDAO userDAO = new UserDAO();
-                    CharacterVotes red = null;
+                    CharacterVotes red = new CharacterVotes();
+                    red.setUser(bill.getUsername());
                     Integer match = 0;
-                    try {
-                        red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
+                    //try {
+                    //    red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
+                    //} catch (Exception ex) {
+                    //    ex.printStackTrace();
+                    //}
 
                 // ok dialog
 
@@ -313,17 +314,24 @@ public class VotingBoothDAO extends JPanel {
                         radioButtons[2].setEnabled(false);
                         finalVoteButton.setEnabled(false);
 
+                        int length = 0;
+                        while(loop[length] != null){
+                            length++;
+                        }
+                        System.out.println(length);
+                        length--;
 
-                        if(loop.length < 10){
-                            if(loop[1].equals(a)){
+
+                        if(length < 9){
+                            if(loop[0].equals(a)){
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
                             }
-                            else if(loop[3].equals(a)){
+                            else if(loop[2].equals(a)){
                                 red.setMatchBChoice(a.getName());
                                 match = 2;
                             }
-                            else if(loop[5].equals(a)){
+                            else if(loop[4].equals(a)){
                                 red.setMatchCChoice(a.getName());
                                 match = 3;
                             }
@@ -332,8 +340,8 @@ public class VotingBoothDAO extends JPanel {
                                 match = 4;
                             }
                         }
-                        else if(loop.length < 14){
-                            if(loop[9].equals(a)){
+                        else if(length < 12){
+                            if(loop[8].equals(a)){
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
                             }
@@ -401,16 +409,16 @@ public class VotingBoothDAO extends JPanel {
                         finalVoteButton.setEnabled(false);
                         JOptionPane.showMessageDialog(frame,
                                 "Thank you for choosing " + b.getName() + "!");
-                        if(loop.length < 10){
-                            if(loop[2].equals(b)){
+                        if(loop.length < 9){
+                            if(loop[1].equals(b)){
                                 red.setMatchAChoice(b.getName());
                                 match = 1;
                             }
-                            else if(loop[4].equals(b)){
+                            else if(loop[3].equals(b)){
                                 red.setMatchBChoice(b.getName());
                                 match = 2;
                             }
-                            else if(loop[6].equals(b)){
+                            else if(loop[5].equals(b)){
                                 red.setMatchCChoice(b.getName());
                                 match = 3;
                             }
@@ -419,8 +427,8 @@ public class VotingBoothDAO extends JPanel {
                                 match = 4;
                             }
                         }
-                        else if(loop.length < 14){
-                            if(loop[10].equals(b)){
+                        else if(loop.length < 12){
+                            if(loop[9].equals(b)){
                                 red.setMatchAChoice(b.getName());
                                 match = 1;
                             }
@@ -461,6 +469,7 @@ public class VotingBoothDAO extends JPanel {
                                 //bill.setFunds(bill.getFunds() - totel);
                                 bill.setVoted(true);
                                 bill.setCurrentVote(b.getName());
+
                                 UserDAO update = new UserDAO();
                                 try {
 									update.updateUser(Runner.curUser);
@@ -478,6 +487,11 @@ public class VotingBoothDAO extends JPanel {
                         radioButtons[0].setEnabled(false);
                         radioButtons[1].setEnabled(false);
                         finalVoteButton.setEnabled(false);
+                    }
+                    try {
+                        characterVotesDAO.updateCharacterVotes(red);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
                 }
                 //JComponent comp = (JComponent) e.getSource();
