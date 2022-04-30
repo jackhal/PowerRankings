@@ -6,10 +6,8 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
-import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 
 import static org.junit.jupiter.api.Assertions.assertAll;

@@ -5,7 +5,6 @@ import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.MalformedURLException;
 
 import javax.swing.*;
 
