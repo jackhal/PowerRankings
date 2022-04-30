@@ -18,7 +18,11 @@ public class UserDAO {
      * @throws IOException if the file is not found
      */
     //update one specific user from
-    public void updateUser(User user) throws IOException {
+
+    public void updateUser(User user) throws IOException { //Testing done
+        if(user == null){
+            return;
+        }
         Runner.logger.info("updating the user");
         List<String[]> data = new ArrayList<>();
         ArrayList<User> savedUsers = getUsers();
@@ -67,31 +71,13 @@ public class UserDAO {
     }
 
     /**
-     * @param username username of the user we need info for
-     * @return the user that matches the given username
-     * @throws Exception
-     */
-    //Find User from file
-    public User getUserByUsername(String username) throws Exception {
-        Runner.logger.info("getting user from username");
-    	Scanner sc = new Scanner(new File("UserFile.tsv"));
-    	String data[];
-    	while(sc.hasNextLine()) {
-    		data = sc.nextLine().split("\t");
-    		if(data[0].equals(username)) {
-    			User curr = new User(data);
-    			return curr;
-    		}
-    	}
-        Runner.logger.warning("username did not exist");
-    	throw new NoSuchElementException("This user does not exist");
-    }
-
-    /**
      * @param username given username
      * @return the balance of the user
      */
-    protected int findCurrentBal(String username) {
+    public int findCurrentBal(String username) throws NullPointerException{
+        if(username == null){
+            throw new NullPointerException();
+        }
         try {
             Scanner sc = new Scanner(new File("UserFile.tsv"));
             String data[];

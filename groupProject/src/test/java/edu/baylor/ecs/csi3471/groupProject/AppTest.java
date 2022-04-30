@@ -1,16 +1,21 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.User;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
 import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
 import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -34,9 +39,10 @@ public class AppTest {
     public void BadUrl() throws Exception{
         Character A = new Character("Bill", "JoeWorld", "Big",5,4,"badurl.com", "Joe");
         Character B = new Character("Joe", "BillWorld", "Small", 10, 10, "badurl.com", "Bill");
-        assertThrows(MalformedURLException.class, ()->{VotingBoothDAO boothGUI = new VotingBoothDAO(A,B);});
+        Assertions.assertThrows(MalformedURLException.class, ()->{VotingBoothDAO boothGUI = new VotingBoothDAO(A,B);});
     }
 
+    //FIXME NOT PASSING TEST
     @Test
     public void GoodVoting() throws Exception{
         Character A = new Character("Bill", "JoeWorld", "Big",5,4,"https://cdn.britannica.com/41/9641-004-A8DD825D/Yorkshire-boar.jpg", "Joe");
@@ -149,6 +155,7 @@ public class AppTest {
         assertNotNull(myPane);
     }
 
+    //FIXME TERMINATED TEST CASES
     @Test
     public void addImagesToBracketFail()
     {
@@ -168,6 +175,7 @@ public class AppTest {
         assertNotNull(myPane);
     }
 
+    //FIXME terminated the rest of the tests
     @Test
     public void getRound3Success()
     {
@@ -179,6 +187,34 @@ public class AppTest {
         assertNotNull(myPane);
     }
 
+    @DisplayName("Test updateUser (pass)")
+    @Test
+    public void passUpdateUser(){
+        User user = new User();
+        UserDAO userDAO = new UserDAO();
+        Assertions.assertAll(() -> userDAO.updateUser(user));
+    }
+    @DisplayName("Test getUsers (pass)")
+    @Test
+    public void passGetUsers() throws IOException {
+        UserDAO u = new UserDAO();
+        ArrayList<User> users = u.getUsers();
+        Assertions.assertTrue(users.size() > 0);
+    }
+
+    @DisplayName("findCurBal pass")
+    @Test
+    public void passUserBal() throws IOException {
+        UserDAO u = new UserDAO();
+        Assertions.assertEquals(1000, u.findCurrentBal("ryan"));
+    }
+
+    @DisplayName("findCurBal fail")
+    @Test
+    public void failUserBal() throws NullPointerException {
+        UserDAO u = new UserDAO();
+        Assertions.assertEquals(0, u.findCurrentBal("thisuserdoesnotexist"));
+    }
 
 
 
