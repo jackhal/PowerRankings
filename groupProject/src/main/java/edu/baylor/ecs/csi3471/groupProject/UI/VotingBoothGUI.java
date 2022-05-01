@@ -142,10 +142,11 @@ public class VotingBoothGUI {
                             JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
                             Character[] myChars = frame.getBracketCharacters();
                             int slots = 0;
-                            while (myChars[slots] != null) {
+                            /*while (myChars[slots] != null) {
                                 slots++;
                             }
-                            slots--;
+                            slots--;*/
+                            slots = myChars.length;
                             Integer match = 0;
                             if (slots == 8 || slots == 12) {
                                 match = 1;
