@@ -222,10 +222,6 @@ public class AppTest {
         RegisterDAO d = new RegisterDAO();
         Assertions.assertAll(() -> d.writeToFile(u));
     }
-<<<<<<< HEAD
-    
-    
-=======
 
     @DisplayName("forgotUsername pass")
     @Test
@@ -251,10 +247,4 @@ public class AppTest {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
     }
-
-
-
-
-
->>>>>>> aeb2c7d6cc6065c9ac1e382185c6a2e1cc96e3cb
 }
