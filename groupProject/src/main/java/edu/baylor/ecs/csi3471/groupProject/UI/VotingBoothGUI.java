@@ -26,13 +26,13 @@ public class VotingBoothGUI {
     protected void createAndShowGUI(Character[] a) throws Exception {
         JFrame frame = new JFrame("VoteDialog");
         applicationlog.info("create GUI invoked");
-        /*int length = 0;
+        int length = 0;
         while(a[length] != null){
             length++;
         }
         //System.out.println(length);
-        length--;*/
-        int length = a.length;
+        length--;
+        //int length = a.length;
 
 
         Container contentPane = frame.getContentPane();
