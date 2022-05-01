@@ -18,6 +18,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+/**
+ * RegisterFrom
+ */
 public class RegisterForm extends JPanel implements PropertyChangeListener {
 
 	Integer rowSize = 40;
@@ -50,6 +53,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	private JFormattedTextField passwordField;
  
 	/**
+	 * getUserName
 	 * @return the userName
 	 */
 	public String getUserName() {
@@ -57,6 +61,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setUserName()
 	 * @param userName the userName to set
 	 */
 	public void setUserName(String userName) {
@@ -64,6 +69,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getNickName()
 	 * @return the nickName
 	 */
 	public String getNickName() {
@@ -71,6 +77,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setNickname()
 	 * @param nickName the nickName to set
 	 */
 	public void setNickName(String nickName) {
@@ -78,6 +85,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getAge()
 	 * @return the age
 	 */
 	public String getAge() {
@@ -85,6 +93,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setAge()
 	 * @param age the age to set
 	 */
 	public void setAge(String age) {
@@ -92,6 +101,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getEmail()
 	 * @return the email
 	 */
 	public String getEmail() {
@@ -99,6 +109,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setEmail()
 	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
@@ -106,6 +117,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getPassword()
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -113,6 +125,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setPassword()
 	 * @param password the password to set
 	 */
 	public void setPassword(String password) {
@@ -120,13 +133,16 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getUserNameLabel()
 	 * @return the userNameLabel
 	 */
 	public JLabel getUserNameLabel() {
 		return userNameLabel;
 	}
 
+
 	/**
+	 * setUserNameLabel()
 	 * @param userNameLabel the userNameLabel to set
 	 */
 	public void setUserNameLabel(JLabel userNameLabel) {
@@ -134,6 +150,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getNickNameLabel()
 	 * @return the nickNameLabel
 	 */
 	public JLabel getNickNameLabel() {
@@ -141,6 +158,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setNickNameLabel()
 	 * @param nickNameLabel the nickNameLabel to set
 	 */
 	public void setNickNameLabel(JLabel nickNameLabel) {
@@ -148,6 +166,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getAgeLabel()
 	 * @return the ageLabel
 	 */
 	public JLabel getAgeLabel() {
@@ -155,6 +174,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setAgeLabel()
 	 * @param ageLabel the ageLabel to set
 	 */
 	public void setAgeLabel(JLabel ageLabel) {
@@ -162,6 +182,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getEmailLabel()
 	 * @return the emailLabel
 	 */
 	public JLabel getEmailLabel() {
@@ -169,6 +190,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setEmailLabel()
 	 * @param emailLabel the emailLabel to set
 	 */
 	public void setEmailLabel(JLabel emailLabel) {
@@ -176,6 +198,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getPasswordLabel()
 	 * @return the passwordLabel
 	 */
 	public JLabel getPasswordLabel() {
@@ -183,6 +206,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setPasswordLabel()
 	 * @param passwordLabel the passwordLabel to set
 	 */
 	public void setPasswordLabel(JLabel passwordLabel) {
@@ -190,6 +214,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getUserNameString()
 	 * @return the userNameString
 	 */
 	public static String getUserNameString() {
@@ -197,6 +222,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setUserNameString()
 	 * @param userNameString the userNameString to set
 	 */
 	public static void setUserNameString(String userNameString) {
@@ -204,6 +230,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getNickNameString()
 	 * @return the nickNameString
 	 */
 	public static String getNickNameString() {
@@ -211,6 +238,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setNickNameString()
 	 * @param nickNameString the nickNameString to set
 	 */
 	public static void setNickNameString(String nickNameString) {
@@ -218,6 +246,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getAgeString()
 	 * @return the ageString
 	 */
 	public static String getAgeString() {
@@ -225,6 +254,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setAgeString()
 	 * @param ageString the ageString to set
 	 */
 	public static void setAgeString(String ageString) {
@@ -232,6 +262,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getEmailString()
 	 * @return the emailString
 	 */
 	public static String getEmailString() {
@@ -239,6 +270,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setEmailString()
 	 * @param emailString the emailString to set
 	 */
 	public static void setEmailString(String emailString) {
@@ -246,6 +278,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getPasswrodString()
 	 * @return the passwordString
 	 */
 	public static String getPasswordString() {
@@ -253,6 +286,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setPasswordString()
 	 * @param passwordString the passwordString to set
 	 */
 	public static void setPasswordString(String passwordString) {
@@ -260,6 +294,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getUserNameField()
 	 * @return the userNameField
 	 */
 	public JFormattedTextField getUserNameField() {
@@ -267,6 +302,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setUserNameField()
 	 * @param userNameField the userNameField to set
 	 */
 	public void setUserNameField(JFormattedTextField userNameField) {
@@ -274,6 +310,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getNicknameField()
 	 * @return the nickNameField
 	 */
 	public JFormattedTextField getNickNameField() {
@@ -281,6 +318,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setNickNameField()
 	 * @param nickNameField the nickNameField to set
 	 */
 	public void setNickNameField(JFormattedTextField nickNameField) {
@@ -288,6 +326,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getAgeField()
 	 * @return the ageField
 	 */
 	public JFormattedTextField getAgeField() {
@@ -295,6 +334,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setAgeField()
 	 * @param ageField the ageField to set
 	 */
 	public void setAgeField(JFormattedTextField ageField) {
@@ -302,6 +342,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getEmailField()
 	 * @return the emailField
 	 */
 	public JFormattedTextField getEmailField() {
@@ -309,6 +350,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setEmailField()
 	 * @param emailField the emailField to set
 	 */
 	public void setEmailField(JFormattedTextField emailField) {
@@ -316,6 +358,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * getPasswordField()
 	 * @return the passwordField
 	 */
 	public JFormattedTextField getPasswordField() {
@@ -323,12 +366,17 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 	}
 
 	/**
+	 * setPasswordField()
 	 * @param passwordField the passwordField to set
 	 */
 	public void setPasswordField(JFormattedTextField passwordField) {
 		this.passwordField = passwordField;
 	}
 
+	/**
+	 * RegisterForm()
+	 * This function is thedefault constructor for the class that creates the register form.
+	 */
 	public RegisterForm() {
 		super(new BorderLayout());
 		// generates all labels
@@ -427,6 +475,11 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 		add(pane);
 	}
 
+	/**
+	 * propertyChange()
+	 * This function instantiates a property change.
+	 * @param e
+	 */
 	public void propertyChange(PropertyChangeEvent e) {
 		Object source = e.getSource();
 		if (source == userNameField) {

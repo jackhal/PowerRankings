@@ -11,10 +11,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+ * HomePage
+ */
 public class HomePage {
 	static String currUsername;
 
 	/**
+	 * createAndShowGUI
+	 * This function creates the graphic user interface for the Home Page.
 	 * @param username current user passed from login creates the homepage of the
 	 *                 app
 	 */
@@ -44,6 +49,11 @@ public class HomePage {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * addMenu
+	 * This function initiates the menu for the HomePage.
+	 * @return
+	 */
 	protected static JPanel addMenu() {
 		// variable declarations
 		JPanel menuPanel;

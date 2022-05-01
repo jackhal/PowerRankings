@@ -16,6 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 
+/**
+ * class LoginForm
+ */
 public class LoginForm extends JPanel implements PropertyChangeListener{
     private String username = "";
     private String password = "";
@@ -33,20 +36,23 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     public static JPasswordField passwordField;
  
     /**
+     * getUserName
      * @return the username
      */
     public String getUsername() {
         return username;
     }
 
-    /*
-     * @param username the username to set
+    /**
+     * setUsername
+     * @param username
      */
     public void setUsername(String username) {
         this.username = username;
     }
 
     /**
+     * getPassword()
      * @return the password
      */
     public String getPassword() {
@@ -54,6 +60,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setPassword()
      * @param password the password to set
      */
     public void setPassword(String password) {
@@ -61,6 +68,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getUsernameLabel()
      * @return the usernameLabel
      */
     public JLabel getUsernameLabel() {
@@ -68,6 +76,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setUsernameLabel()
      * @param usernameLabel the usernameLabel to set
      */
     public void setUsernameLabel(JLabel usernameLabel) {
@@ -75,6 +84,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getPasswordLabel()
      * @return the passwordLabel
      */
     public JLabel getPasswordLabel() {
@@ -82,6 +92,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setPasswordLabel()
      * @param passwordLabel the passwordLabel to set
      */
     public void setPasswordLabel(JLabel passwordLabel) {
@@ -89,6 +100,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getUsernameString()
      * @return the usernameString
      */
     public static String getUsernameString() {
@@ -96,6 +108,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setUsernameString()
      * @param usernameString the usernameString to set
      */
     public static void setUsernameString(String usernameString) {
@@ -103,6 +116,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getPasswordString()
      * @return the passwordString
      */
     public static String getPasswordString() {
@@ -110,6 +124,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setPasswordString()
      * @param passwordString the passwordString to set
      */
     public static void setPasswordString(String passwordString) {
@@ -117,6 +132,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getUsernameField()
      * @return the usernameField
      */
     public JFormattedTextField getUsernameField() {
@@ -124,6 +140,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setUsernameField()
      * @param usernameField the usernameField to set
      */
     public void setUsernameField(JFormattedTextField usernameField) {
@@ -131,6 +148,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * getPasswordField()
      * @return the passwordField
      */
     public JPasswordField getPasswordField() {
@@ -138,12 +156,17 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     }
 
     /**
+     * setPasswordField()
      * @param passwordField the passwordField to set
      */
     public void setPasswordField(JPasswordField passwordField) {
         this.passwordField = passwordField;
     }
 
+    /**
+     * LoginForm()
+     * This function is the default constructor for the LoginForm class
+     */
     public LoginForm() {
         super(new BorderLayout());
 
@@ -213,6 +236,11 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
         add(pane);
     }
 
+    /**
+     * propertyChange()
+     * This function changes the properties of the file.
+     * @param e
+     */
     public void propertyChange(PropertyChangeEvent e) {
         Object source = e.getSource();
         if (source == usernameField) {

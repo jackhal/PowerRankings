@@ -17,10 +17,17 @@ import javax.swing.JMenuItem;
 import edu.baylor.ecs.csi3471.groupProject.Business.Login;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 
+/**
+ * Class LoginPage
+ */
 public class LoginPage {
 	public final static JFrame loginPage 	= new JFrame("Fantasy Fight Club Login");	
 	public final static LoginForm loginForm = new LoginForm();
-	
+
+	/**
+	 * LoginPage
+	 * This function creates the LoginPage and is the default constructor for this class.
+	 */
 	public LoginPage() {
 		loginPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			// closes frame upon clicking 'x'
 	    loginPage.setExtendedState(JFrame.MAXIMIZED_BOTH);					// make full screen

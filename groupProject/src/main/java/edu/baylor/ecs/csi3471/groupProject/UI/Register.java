@@ -5,6 +5,9 @@ import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
 import javax.swing.*;
 
+/**
+ * Class Register
+ */
 public class Register {
 	Integer passwordMinSize = 8;
 	Integer passwordMaxSize = 20;
@@ -22,6 +25,10 @@ public class Register {
 	private String email = RegisterPage.registerForm.getEmailField().getText();
 	private String nickname = RegisterPage.registerForm.getNickNameField().getText();
 
+	/**
+	 * beginRegistration
+	 * This function begins the registration process for a user.
+	 */
 	public void beginRegistration() {
 		boolean fail = false;
 		boolean created = false;
@@ -105,6 +112,8 @@ public class Register {
 	}
 
 	/**
+	 * verifyName()
+	 * This function ensures that the username matches the nickname
 	 * @param name user input name
 	 * @return verification for if the name is valid
 	 */
@@ -119,6 +128,8 @@ public class Register {
 
 	// Checks password: ensures it meets requirements
 	/**
+	 * verifyPassword
+	 * This function ensures the password is valid.
 	 * @param password user input password
 	 * @return verification for if the password is valid
 	 */
@@ -132,6 +143,8 @@ public class Register {
 
 	// ensures: 18 >= age <= 200
 	/**
+	 * verifyAge
+	 * This function ensure the age is valid.
 	 * @param age user input age
 	 * @return verification for if the age is valid
 	 */
@@ -153,6 +166,8 @@ public class Register {
 
 	// ensures email is a letter, digit, '.', '@', or '_' and is within valid range
 	/**
+	 * verifyEmail
+	 * This function ensures the email is valid.
 	 * @param email user input password
 	 * @return verification for if the email is valid
 	 */
@@ -175,6 +190,8 @@ public class Register {
 	// checks input size and returns true if the input is within a valid range
 
 	/**
+	 * verifyInputSizeIsValid
+	 * This function ensures that the user input is a valid size.
 	 * @param minSize length is greater than this number
 	 * @param maxSize length is less than this number
 	 * @param input user input
@@ -191,6 +208,8 @@ public class Register {
 	// ensures age is at least 2 characters and at most 3 characters
 
 	/**
+	 * verifyAgeLength
+	 * This function ensures the age is of proper length.
 	 * @param age user input age
 	 * @return if the age is long enough or short enough
 	 */
@@ -204,6 +223,8 @@ public class Register {
 
 	// ensures each character in the age is a digit
 	/**
+	 * verifyAgeIsNumeric
+	 * THis function ensures the age input is of numeric value.
 	 * @param age user input age
 	 * @return verifies if the age is a number
 	 */
@@ -219,6 +240,8 @@ public class Register {
 
 	// ensures age is not less than 18
 	/**
+	 * verifyOlderThanEighteen
+	 * This function ensures that the age is higher than 18
 	 * @param age user input age
 	 * @return verifies that the age is above 18
 	 */
@@ -234,6 +257,8 @@ public class Register {
 
 	// ensures age is not greater than 200
 	/**
+	 * verifyYoungerThanTwoHundred
+	 * This function makes sure that the user age is less than 200.
 	 * @param age user input age
 	 * @return verifies the user is younger than 200
 	 */
@@ -246,6 +271,8 @@ public class Register {
 	}
 
 	/**
+	 * verifyInputIsDigitOrLetter
+	 * This function makes sure the input is a digit or letter.
 	 * @param input user input
 	 * @return makes sure the input is alphanumeric
 	 */
@@ -262,6 +289,8 @@ public class Register {
 	}
 
 	/**
+	 * usernameAnalysis
+	 * This function makes sure the username is valid.
 	 * @return ensures the username is valid
 	 */
 	// calls the name verification function: if invalid displays error message
@@ -276,6 +305,8 @@ public class Register {
 	}
 
 	/**
+	 * passwordAnalysis
+	 * This function ensures the password is valid.
 	 * @return ensures password is valid
 	 */
 	// calls the password verification function: if invalid displays error message
@@ -290,6 +321,7 @@ public class Register {
 	}
 
 	/**
+	 * ageAnalysis
 	 * @return ensures age is valid
 	 */
 	// calls the age verification function: if invalid displays error message and
@@ -304,6 +336,7 @@ public class Register {
 	}
 
 	/**
+	 * emailAnalysis
 	 * @return ensures email is valid
 	 */
 	// calls the email verification function: if invalid displays error message
