@@ -4,11 +4,9 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
@@ -25,26 +23,22 @@ public class HomePage {
 		
 		// create mainFrame
 		JFrame mainFrame = new JFrame("Power Rankings");
-		//mainFrame.setLayout(new GridLayout(6, 0));
-		mainFrame.setSize(900, 800);
-
+		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		
 		JPanel menuPanel = addMenu();
-		menuPanel.setBounds(0, 0, 900, 60);
+		menuPanel.setBounds(0, 0, 1375, 100);
 		menuPanel.setLayout(new GridLayout());
 		menuPanel.setBackground(Color.decode("#032930"));
 		mainFrame.add(menuPanel);
-
+		
 		TournamentBracketPanel f 	= new TournamentBracketPanel();
 		JLayeredPane layered 		= f.getBracket();
-		
-		//mainFrame.setLayout(new BorderLayout());
-
-		layered.setBackground(Color.decode("#051821"));
-		layered.setOpaque(true);
+	
+		layered.setBackground(Color.decode("#051821"));			
+		layered.setOpaque(true);		
 		
 		mainFrame.add(layered);
 
-		// mainFrame.setLayout(g);
 		// set mainFrame to true
 		mainFrame.setVisible(true);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
