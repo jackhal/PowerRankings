@@ -253,7 +253,14 @@ public class AppTest {
     }
     
     @Test
-    public void characterGetOwner() {
+    public void characterGetOwnerBad() {
+    	Character c = new Character();
+    	c.setOwner("Jack");
+    	assert(!c.getOwner().equals("Ben"));
+    }
+    
+    @Test
+    public void characterGetOwnerGood() {
     	Character c = new Character();
     	c.setOwner("Jack");
     	assert(c.getOwner().equals("Jack"));
