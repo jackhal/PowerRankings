@@ -2,7 +2,6 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
-import jdk.internal.icu.lang.UCharacterDirection;
 
 import java.awt.event.ActionEvent;
 import java.awt.Color;
