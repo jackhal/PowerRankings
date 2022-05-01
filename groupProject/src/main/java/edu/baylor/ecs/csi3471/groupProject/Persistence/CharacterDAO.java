@@ -11,8 +11,13 @@ import java.util.Scanner;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * Class CharacterDAO
+ */
 public class CharacterDAO extends Character {
     /**
+     * findChar
+     * This function
      * @param name name of character
      * @param world world of charcter
      * @return Character object matching name and world
@@ -43,6 +48,8 @@ public class CharacterDAO extends Character {
     }
 
     /**
+     * updateCSV
+     * this function updates the database entry associated with a character
      * @param id id of character we want to update
      */
 	//When you change values for a character, use setters to update and then use update to store changes
@@ -100,6 +107,9 @@ public class CharacterDAO extends Character {
     }
 
     /**
+     * makeList
+     * This function creates a list of characters
+     * from the database
      * @return ArrayList of al characters in the database
      */
     public ArrayList<Character> makeList(){
@@ -126,6 +136,8 @@ public class CharacterDAO extends Character {
     }
 
     /**
+     * addCharacter
+     * this function adds a character entry to the database
      * @param name name of character
      * @param world world of character
      * @param desc description of character
@@ -158,6 +170,8 @@ public class CharacterDAO extends Character {
     }
 
     /**
+     * doesCharExist
+     * This function checks if the character exists in the database.
      * @param name name of character to search for
      * @param world world of character to search for
      * @return true if character exsists
