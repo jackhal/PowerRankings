@@ -12,6 +12,9 @@ import java.util.logging.FileHandler;
 import javax.swing.JLabel;
 
 
+/**
+ * DailyCheckIn class
+ */
 public class DailyCheckIn extends UserDAO {
 	/**
 	 * showBalance()

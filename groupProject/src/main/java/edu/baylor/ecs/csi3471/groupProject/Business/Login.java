@@ -7,6 +7,9 @@ import edu.baylor.ecs.csi3471.groupProject.UI.LoginPage;
 import java.io.*;
 import javax.swing.JOptionPane;
 
+/**
+ * Class Login
+ */
 public class Login  {
 	private String username = LoginPage.loginForm.getUsernameField().getText();
 	private String password = LoginPage.loginForm.getPasswordField().getText();

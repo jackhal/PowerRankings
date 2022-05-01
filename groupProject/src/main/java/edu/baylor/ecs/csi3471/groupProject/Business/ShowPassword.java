@@ -2,9 +2,15 @@ package edu.baylor.ecs.csi3471.groupProject.Business;
 
 import edu.baylor.ecs.csi3471.groupProject.UI.LoginForm;
 
+
+/**
+ * Class ShowPassword
+ */
 public class ShowPassword{
 
 	/**
+	 * handlePassword
+	 * This function processes the password.
 	 * @param condition sets if the password is shown
 	 */
 	public void handlePassword(Integer condition) {

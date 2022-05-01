@@ -8,6 +8,9 @@ import java.io.InputStream;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * Runner Class
+ */
 public class Runner {
 	public static Logger logger = Logger.getLogger(Runner.class.getName());
 	static {
