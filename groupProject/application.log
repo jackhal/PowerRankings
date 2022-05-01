@@ -1,3 +1,4 @@
+2022-05-01 15:11:13 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
 2022-05-01 15:12:22 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
 2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.LoginPage$1 actionPerformed User clicked submit and is attempting to login.
 2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Login beginLoginProcess jack signed in
