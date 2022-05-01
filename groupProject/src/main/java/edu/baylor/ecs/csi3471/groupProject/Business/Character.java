@@ -12,18 +12,7 @@ import javax.swing.*;
 
 public class Character {
     public static Logger logger = Logger.getLogger(Timer.class.getName());
-
-//    static {
-//        try {
-//            InputStream configFile = edu.baylor.ecs.csi3471.groupProject.UI.UserTable.class.getClassLoader().getResourceAsStream("logger.properties");
-//            LogManager.getLogManager().readConfiguration(configFile);
-//            configFile.close();
-//        } catch (IOException ex) {
-//            System.out.println("WARNING: Could not open configuration file");
-//            System.out.println("WARNING: Logging not configured (console output only)");
-//        }
-//        logger.info("starting the app");
-//    }
+    
     String name = "";
     String world = "";
     String desc = "";

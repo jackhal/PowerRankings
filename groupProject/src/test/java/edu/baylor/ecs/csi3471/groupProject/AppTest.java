@@ -215,7 +215,6 @@ public class AppTest {
         UserDAO u = new UserDAO();
         Assertions.assertEquals(0, u.findCurrentBal("thisuserdoesnotexist"));
     }
-
-
-
+    
+    
 }
