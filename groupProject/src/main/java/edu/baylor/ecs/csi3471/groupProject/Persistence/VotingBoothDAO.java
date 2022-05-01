@@ -40,7 +40,7 @@ public class VotingBoothDAO extends JPanel {
      * @param b
      * @throws Exception
      */
-    public VotingBoothDAO(Character a, Character b) throws Exception {
+    public VotingBoothDAO(Character a, Character b) throws Exception { //tested
         //FIXME get the current characters for current round from the file instead
         Runner.logger.info("VotingBooth Class Called");
         Character bert = a;

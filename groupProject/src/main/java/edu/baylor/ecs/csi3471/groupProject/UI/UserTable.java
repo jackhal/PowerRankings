@@ -264,25 +264,6 @@ public class UserTable extends JPanel {
             }
         }
 
-    private final class RemoveLineActionListener implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Runner.logger.info("remove line action listener selected ");
-                int viewRow = table.getSelectedRow();
-                if (viewRow < 0) {
-                    JOptionPane.showMessageDialog(null, "No row selected");
-
-                } else {
-                    int modelRow = table.convertRowIndexToModel(viewRow);
-                    DefaultTableModel model = (DefaultTableModel) table.getModel();
-
-                    int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
-                    if (answer == 0) {
-                        model.removeRow(modelRow);
-                    }
-                }
-            }
-        }
     }
 
 

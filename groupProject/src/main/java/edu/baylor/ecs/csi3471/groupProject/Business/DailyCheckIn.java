@@ -25,7 +25,7 @@ public class DailyCheckIn extends UserDAO {
 	 * @param username
 	 * @return JLabel
 	 */
-	public JLabel showBalance(String username) {
+	public JLabel showBalance(String username) { //tested
 		Runner.logger.info("starting rendering of balance");
 		//declare label, current balance, and string for label
 		JLabel balanceLabel;

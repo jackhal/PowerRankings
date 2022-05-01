@@ -131,7 +131,12 @@ public class Table extends JPanel {
                 String w = (String) model.getValueAt(modelRow, 1);
                 Runner.logger.info("Deleted: " + n +" w");
                 CharacterDAO c = new CharacterDAO();
-                Character ret = c.findChar(n, w);
+                Character ret = null;
+                try {
+                    ret = c.findChar(n, w);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
                 ret.displayChar();
 
 /*
@@ -158,7 +163,12 @@ public class Table extends JPanel {
                     animalField.setText((String) model.getValueAt(modelRow, 0));
                     idField.setText((String) model.getValueAt(modelRow, 1));
                     CharacterDAO c = new CharacterDAO();
-                    Character cc = c.findChar(animalField.getText(), idField.getText());
+                    Character cc = null;
+                    try {
+                        cc = c.findChar(animalField.getText(), idField.getText());
+                    } catch (Exception ex) {
+                        throw new RuntimeException(ex);
+                    }
                     JTextField nameField = new JTextField(10);
                     JTextField ageField = new JTextField(10);
                     JTextField infoField = new JTextField(10);

@@ -22,7 +22,10 @@ public class CharacterDAO extends Character {
      * @param world world of charcter
      * @return Character object matching name and world
      */
-	public Character findChar(String name, String world){
+	public Character findChar(String name, String world) throws Exception { //tested
+        if(name == null || world == null){
+            throw new Exception();
+        }
         File file = new File("CharacterFile.csv");
         Runner.logger.info("Searching file for " + name);
 
@@ -53,7 +56,7 @@ public class CharacterDAO extends Character {
      * @param id id of character we want to update
      */
 	//When you change values for a character, use setters to update and then use update to store changes
-    public void updateCSV(Integer id){
+    public void updateCSV(Integer id){ //tested??
         Runner.logger.info("Updating character in database with id " + id);
         String filePath = "CharacterFile.csv";
         //Instantiating the Scanner class to read the file
@@ -112,7 +115,7 @@ public class CharacterDAO extends Character {
      * from the database
      * @return ArrayList of al characters in the database
      */
-    public ArrayList<Character> makeList(){
+    public ArrayList<Character> makeList(){ //tested
         Runner.logger.info("Making list of all characters from database");
         String filePath = "CharacterFile.csv";
         ArrayList<Character> cList = new ArrayList();
@@ -144,7 +147,7 @@ public class CharacterDAO extends Character {
      * @param URL url of character
      * @param currUser user who made character
      */
-    protected void addCharacter(String name, String world, String desc, String URL, String currUser) {
+    protected void addCharacter(String name, String world, String desc, String URL, String currUser) { //cant test, because we dont have a remove character option
         Runner.logger.info("Adding " + name + " to database");
         try {
             List<String[]> allData = new ArrayList<String[]>();
@@ -176,8 +179,8 @@ public class CharacterDAO extends Character {
      * @param world world of character to search for
      * @return true if character exsists
      */
-    protected boolean doesCharExist(String name, String world) {
-        Runner.logger.info("Cheching if " + name + " is in database");
+    public boolean doesCharExist(String name, String world) { //tested
+        Runner.logger.info("Checking if " + name + " is in database");
 		try {
 			Scanner sc = new Scanner(new File("CharacterFile.csv"));
 			String data[];
@@ -188,6 +191,7 @@ public class CharacterDAO extends Character {
 					return true;
 				}
 			}
+            Runner.logger.info(name + " is not in database");
 			return false;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

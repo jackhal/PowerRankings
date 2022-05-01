@@ -1,11 +1,9 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
-import edu.baylor.ecs.csi3471.groupProject.Persistence.ForgotDAO;
-import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
-import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
-import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
 import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
@@ -13,6 +11,7 @@ import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.function.Executable;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -232,4 +231,86 @@ public class AppTest {
     	c.setOwner("Jack");
     	assert(c.getOwner().equals("Jack"));
     }
+    @DisplayName("findChar (pass)")
+    @Test
+    public void passFindChar() throws Exception {
+        CharacterDAO ch = new CharacterDAO();
+        Character c = new Character("Speed",	"Earth",	"Stupid",	1,	0,	"https://i.ytimg.com/vi/wYZux3BMc5k/maxresdefault.jpg",	"Cyril");
+        Character d = ch.findChar("Speed", "Earth");
+        Assertions.assertEquals(c, d);
+    }
+
+    @DisplayName("VotingBooth (pass)")
+    @Test
+    public void passVoting() throws Exception {
+        CharacterDAO ch = new CharacterDAO();
+        Character a = ch.findChar("Kirby", "DreamLand");
+        Character b = ch.findChar("Spider-Ham", "New York");
+
+        Assertions.assertAll(() -> new VotingBoothDAO(a, b));
+    }
+//    @DisplayName("VotingBooth (fail)")
+//    @Test
+//    public void failVoting() throws Exception {
+//        CharacterDAO ch = new CharacterDAO();
+//        //Character a = ch.findChar("Kirby", "DreamLand");
+//        //Character b = ch.findChar("Spider-Ham", "New York");
+//
+//        //Assertions.assertAll(() -> new VotingBoothDAO(null, null));
+//        Assertions.assertThrows(Exception.class, (Executable) new VotingBoothDAO(null, null));
+//    }
+//    @DisplayName("update character csv (pass)")
+//    @Test
+//    public void passUpdateChar() throws Exception {
+//        CharacterDAO ch = new CharacterDAO();
+//        Character c = new Character("Speed",	"Earth",	"Stupid",	1,	0,	"https://i.ytimg.com/vi/wYZux3BMc5k/maxresdefault.jpg",	"Cyril");
+//        c.setName("Not speed");
+//        ch.updateCSV(1);
+//        Character d = ch.findChar("Not speed", "Earth");
+//        Assertions.assertEquals(c, d);
+//        c.setName("Speed");
+//        ch.updateCSV(1);
+//    }
+
+    @DisplayName("makeList (pass)")
+    @Test
+    public void passMakeList() throws Exception {
+        CharacterDAO ch = new CharacterDAO();
+        ArrayList<Character> list = ch.makeList();
+        Assertions.assertTrue(list.size() > 0);
+    }
+
+    @DisplayName("charExist (pass)")
+    @Test
+    public void passExists() throws Exception {
+        CharacterDAO ch = new CharacterDAO();
+        Assertions.assertTrue(ch.doesCharExist("Speed", "Earth"));
+    }
+    @DisplayName("charExist (fail)")
+    @Test
+    public void failExists() throws Exception {
+        CharacterDAO ch = new CharacterDAO();
+        Assertions.assertFalse(ch.doesCharExist("Speeddddddd", "Earth"));
+    }
+
+    @DisplayName("showBal (pass)")
+    @Test
+    public void passBal() throws Exception {
+        DailyCheckIn d = new DailyCheckIn();
+        Assertions.assertAll(() -> d.showBalance("ryan"));
+    }
+
+
+    @DisplayName("validatePassword (pass")
+    @Test
+    public void passValidatePassword() throws Exception {
+        Assertions.assertTrue(loginDAO.validatePassword("ryan", "ryan"));
+    }
+
+    @DisplayName("validatePassword (fail)")
+    @Test
+    public void failValidatePassword() throws Exception {
+        Assertions.assertFalse(loginDAO.validatePassword("ryan", "ryanDoesNotHaveThisPassword"));
+    }
+
 }
