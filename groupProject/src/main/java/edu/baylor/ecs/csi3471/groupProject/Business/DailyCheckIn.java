@@ -2,6 +2,8 @@ package edu.baylor.ecs.csi3471.groupProject.Business;
 
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -65,6 +67,8 @@ public class DailyCheckIn extends UserDAO {
 		
 		//create label from string and return it
 		balanceLabel = new JLabel(labelString);
+		balanceLabel.setForeground(Color.WHITE);
+		balanceLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
 		Runner.logger.info("balance rendered");
 		return balanceLabel;
 	}
