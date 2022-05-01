@@ -2,6 +2,7 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+//import jdk.internal.icu.lang.UCharacterDirection;
 
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -25,6 +26,8 @@ import javax.swing.*;
  */
 public class HomePage {
 	static String currUsername;
+	static TournamentBracketPanel p;
+	static JLayeredPane layered;
 
 	/**
 	 * createAndShowGUI
@@ -36,35 +39,35 @@ public class HomePage {
 		currUsername = username;
 		User bill = Runner.curUser;
 		if(bill.isAdmin()){
-			Date date = Calendar.getInstance().getTime();
-			DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-			ArrayList<String> time = new ArrayList<String>();
-			BufferedReader br = new BufferedReader(new FileReader("TimeLog.txt"));
-			String line = "";
-			br.readLine();
-			while ((line = br.readLine()) != null) {
-				time.add(line);
-			}
-			File tsvOut = new File("TimeLog.txt");
-			PrintWriter pw = new PrintWriter(tsvOut);
-			Date first = null;
-			if(time.size() != 0){
-				first = dateFormat.parse(time.get(0));
-				if(first.toInstant().truncatedTo(ChronoUnit.DAYS) != date.toInstant().truncatedTo(ChronoUnit.DAYS)){
-					JOptionPane.showMessageDialog(null, "You should end the Round Now!", "ROUND SHOULD BE OVER", 1);
-					pw.write("");
-				}
-				else {
-					for (int i = 0; i < time.size(); i++) {
-						pw.write(time.get(i));
-						pw.write("\n");
-					}
-					pw.write(dateFormat.format(date));
-				}
-			}
-			else{
-				pw.write(dateFormat.format(date));
-			}
+//			Date date = Calendar.getInstance().getTime();
+//			DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+//			ArrayList<String> time = new ArrayList<String>();
+//			BufferedReader br = new BufferedReader(new FileReader("TimeLog.txt"));
+//			String line = "";
+//			br.readLine();
+//			while ((line = br.readLine()) != null) {
+//				time.add(line);
+//			}
+//			File tsvOut = new File("TimeLog.txt");
+//			PrintWriter pw = new PrintWriter(tsvOut);
+//			Date first = null;
+//			if(time.size() != 0){
+//				first = dateFormat.parse(time.get(0));
+//				if(first.toInstant().truncatedTo(ChronoUnit.DAYS) != date.toInstant().truncatedTo(ChronoUnit.DAYS)){
+//					JOptionPane.showMessageDialog(null, "You should end the Round Now!", "ROUND SHOULD BE OVER", 1);
+//					pw.write("");
+//				}
+//				else {
+//					for (int i = 0; i < time.size(); i++) {
+//						pw.write(time.get(i));
+//						pw.write("\n");
+//					}
+//					pw.write(dateFormat.format(date));
+//				}
+//			}
+//			else{
+//				pw.write(dateFormat.format(date));
+//			}
 		}
 		
 		// create mainFrame
@@ -77,8 +80,28 @@ public class HomePage {
 		menuPanel.setBackground(Color.decode("#032930"));
 		mainFrame.add(menuPanel);
 		
-		TournamentBracketPanel f 	= new TournamentBracketPanel();
-		JLayeredPane layered 		= f.getBracket();
+		p 	= new TournamentBracketPanel();
+		layered 		= p.getBracket();
+		long lines = 0;
+		try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
+			while (reader.readLine() != null) lines++;
+		} catch (IOException ei) {
+			Runner.logger.severe("Unable to open CharacterRounds.csv");
+			ei.printStackTrace();
+		}
+		if(lines >= 13)
+		{
+			p.getRound2(layered);
+		}
+		if(lines >= 15)
+		{
+			p.getRound3(layered);
+		}
+		if(lines == 16)
+		{
+			p.getWinner(layered);
+		}
+
 	
 		layered.setBackground(Color.decode("#051821"));			
 		layered.setOpaque(true);		
@@ -99,6 +122,7 @@ public class HomePage {
 		// variable declarations
 		JPanel menuPanel;
 		final JButton editProfile, charSearch, leaderboard, currentRound, createChar, cancelBet;
+		final JButton endRound;
 
 		// variable initialization
 		menuPanel = new JPanel();
@@ -243,6 +267,48 @@ public class HomePage {
 			}
 		});
 
+
+		endRound = new JButton("End Round");
+//			endRound.setBackground(Color.BLACK);
+//			endRound.setForeground(Color.RED);
+
+		endRound.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Runner.logger.info("End round pressed");
+				long lines = 0;
+				try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
+					while (reader.readLine() != null) lines++;
+				} catch (IOException ei) {
+					Runner.logger.severe("Unable to open CharacterRounds.csv");
+					ei.printStackTrace();
+				}
+
+				if(lines == 13)
+				{
+					//ready for round 2
+					p.getRound2(layered);
+				}
+				else if(lines == 15)
+				{
+					//ready for round 3
+					p.getRound3(layered);
+				}
+				else if(lines == 16)
+				{
+					//ready for winner
+					p.getWinner(layered);
+					endRound.setEnabled(false);
+				}
+				else
+				{
+					//not ready for next round
+					JOptionPane.showMessageDialog(null, "Not all matches are over, please try again later!", "Hasty Admin", 1);
+				}
+			}
+		});
+
+
 		// add items to JPanel
 		DailyCheckIn d = new DailyCheckIn();
 		menuPanel.add(d.showBalance(currUsername));
@@ -253,6 +319,29 @@ public class HomePage {
 		menuPanel.add(currentRound);
 		menuPanel.add(createChar);
 		menuPanel.add(cancelBet);
+
+		if(Runner.curUser.isAdmin())
+		{
+			menuPanel.add(endRound);
+			long lines = 0;
+			try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
+				while (reader.readLine() != null) lines++;
+			} catch (IOException ei) {
+				Runner.logger.severe("Unable to open CharacterRounds.csv");
+				ei.printStackTrace();
+			}
+
+			if(lines == 16)
+			{
+				endRound.setEnabled(false);
+			}
+		}
+
+
+
+
+
+
 
 		/*
 		 * BufferedImage image = null; try { image = ImageIO.read(new
@@ -267,6 +356,7 @@ public class HomePage {
 		 * 
 		 * menuPanel.add(picLabel);
 		 */
+
 
 		// return the menu JPanel
 		menuPanel.setVisible(true);
