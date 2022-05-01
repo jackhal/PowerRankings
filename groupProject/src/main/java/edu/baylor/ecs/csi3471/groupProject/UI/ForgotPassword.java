@@ -8,7 +8,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * ForgotPassword class
+ */
 public class ForgotPassword extends JPanel {
+
+    /**
+     * ForgotPassword
+     * This function is the default constructor for the
+     * ForgotPassword class.
+     */
     public ForgotPassword(){
         Runner.logger.info("Forgot password has been launched");
 
@@ -51,6 +60,7 @@ public class ForgotPassword extends JPanel {
     }
 
     /**
+     * createAndShowGUI2
      * creates the window for the forgotten password prompt
      */
     public void createAndShowGUI2() {

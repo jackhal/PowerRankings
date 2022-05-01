@@ -12,8 +12,15 @@ import java.io.InputStream;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * ForgotUserName class
+ */
 public class ForgotUsername extends JPanel {
 
+    /**
+     * ForgotUsername
+     * This function is the default constructor for the ForgotUserName
+     */
     public ForgotUsername(){
 
         Runner.logger.info("Forgot password has been launched");
@@ -59,6 +66,7 @@ public class ForgotUsername extends JPanel {
 
 
     /**
+     * createAndShowGUI
      * creates prompt for the forgotten username prompt
      */
     public void createAndShowGUI() {

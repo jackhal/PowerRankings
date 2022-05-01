@@ -17,6 +17,7 @@ import javax.swing.*;
  */
 public class CreateCharacter extends CharacterDAO {
 	/**
+	 * createAndShowGUI
 	 * Function responsible for character creation screen
 	 * @param currUsername
 	 */
@@ -142,6 +143,7 @@ public class CreateCharacter extends CharacterDAO {
 
 	
 	/**
+	 * isValidCharName
 	 * This function is responsible for checking if the input character name is valid
 	 * @param name
 	 * @return
@@ -165,6 +167,7 @@ public class CreateCharacter extends CharacterDAO {
 
 	
 	/**
+	 * isValidWorld
 	 * This function is responsible for checking if the input world is valid
 	 * @param world
 	 * @return
@@ -188,6 +191,7 @@ public class CreateCharacter extends CharacterDAO {
 
 	
 	/**
+	 * isValidCharDesc
 	 * This function is responsible for checking if the input description is valid
 	 * @param desc
 	 * @return
@@ -211,6 +215,7 @@ public class CreateCharacter extends CharacterDAO {
 
 	
 	/**
+	 * isValidCharURL
 	 * This function is responsible for checking if the input URL is valid
 	 * @param URL
 	 * @return

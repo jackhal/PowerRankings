@@ -8,6 +8,9 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * Class CharacterLayout
+ */
 public class CharacterLayout extends JFrame {
     /*public static void main(String[] args) {
         new PizzaGridBagLayout();
@@ -22,6 +25,9 @@ public class CharacterLayout extends JFrame {
     JButton closeButton = new JButton("Close");
 
     /**
+     * CharacterLayout Constructor
+     * This function is the custom constructor for the CharacterLayout that creates
+     * a panel for the character passed in.
      * @param c character to display
      */
     public CharacterLayout(Character c) {
@@ -88,6 +94,8 @@ public class CharacterLayout extends JFrame {
         this.setVisible(true);
     }
     /**
+     * addItem
+     * This function adds an element to the JPanel passed in.
      * @param p panel
      * @param c component
      * @param x x-dem

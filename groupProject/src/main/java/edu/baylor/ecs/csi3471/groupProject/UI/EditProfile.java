@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
+ * EditProfile
  * This class is responsible for edit profile functionality
  * @author jackh
  *
@@ -23,6 +24,7 @@ import javax.swing.JTextField;
 public class EditProfile extends JPanel {
 
     /**
+	 * EditProfile
      * This function is responsible for profile edit screen
      * @param username
      */
@@ -138,6 +140,7 @@ public class EditProfile extends JPanel {
     }
     
     /**
+	 * isNameValid
      * This function is responsible for checking if the new name is valid
      * @param newName
      * @return
@@ -148,6 +151,7 @@ public class EditProfile extends JPanel {
     }
     
     /**
+	 * isAgeValid
      * This function is responsible for checking if the new age is valid
      * @param newAge
      * @return
@@ -158,6 +162,7 @@ public class EditProfile extends JPanel {
     }
     
     /**
+	 * isDescValid
      * This function is responsible for checking if the new description is valid
      * @param newDesc
      * @return
