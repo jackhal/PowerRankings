@@ -8,11 +8,10 @@ import java.io.InputStream;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-/**
- * Runner Class
- */
 public class Runner {
-	public static Logger logger = Logger.getLogger(Runner.class.getName());
+	//Make sure it is correct
+	public static Logger logger = Logger.getLogger(Timer.class.getName());
+
 	static {
 		try {
 			InputStream configFile = Runner.class.getClassLoader().getResourceAsStream("logger.properties");
@@ -20,13 +19,10 @@ public class Runner {
 			configFile.close();
 		} catch (IOException ex) {
 			System.out.println("WARNING: Could not open configuration file");
-		    System.out.println("WARNING: Logging not configured");
-		} catch (NullPointerException e) {
-			System.out.println("WARNING: Could not open configuration file");
+			System.out.println("WARNING: Logging not configured (console output only)");
 		}
 		logger.info("starting the app");
 	}
-	
 	public static User curUser;
 	public static void main(String[] args) {
 		LoginPage lp = new LoginPage();
