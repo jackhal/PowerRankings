@@ -5,6 +5,7 @@ import edu.baylor.ecs.csi3471.groupProject.UI.HomePage;
 import edu.baylor.ecs.csi3471.groupProject.UI.LoginPage;
 
 import java.io.*;
+import java.text.ParseException;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,9 +39,13 @@ public class Login  {
 				Runner.logger.info("failed to sign in with User: " + username + ", password: " + password);
         	}
         	
-        } catch (NullPointerException e) { }
-    	
-        if(fail) {
+        } catch (NullPointerException e) { } catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		if(fail) {
             JOptionPane.showMessageDialog(LoginPage.loginForm,"Invalid username or password","ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }

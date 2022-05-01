@@ -1,13 +1,23 @@
 package edu.baylor.ecs.csi3471.groupProject.UI;
 
+import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
-import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
+import jdk.internal.icu.lang.UCharacterDirection;
 
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.*;
 
@@ -23,8 +33,40 @@ public class HomePage {
 	 * @param username current user passed from login creates the homepage of the
 	 *                 app
 	 */
-	public static void createAndShowGUI(String username) {
+	public static void createAndShowGUI(String username) throws IOException, ParseException {
 		currUsername = username;
+		User bill = Runner.curUser;
+		if(bill.isAdmin()){
+			Date date = Calendar.getInstance().getTime();
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+			ArrayList<String> time = new ArrayList<String>();
+			BufferedReader br = new BufferedReader(new FileReader("TimeLog.txt"));
+			String line = "";
+			br.readLine();
+			while ((line = br.readLine()) != null) {
+				time.add(line);
+			}
+			File tsvOut = new File("TimeLog.txt");
+			PrintWriter pw = new PrintWriter(tsvOut);
+			Date first = null;
+			if(time.size() != 0){
+				first = dateFormat.parse(time.get(0));
+				if(first.toInstant().truncatedTo(ChronoUnit.DAYS) != date.toInstant().truncatedTo(ChronoUnit.DAYS)){
+					JOptionPane.showMessageDialog(null, "You should end the Round Now!", "ROUND SHOULD BE OVER", 1);
+					pw.write("");
+				}
+				else {
+					for (int i = 0; i < time.size(); i++) {
+						pw.write(time.get(i));
+						pw.write("\n");
+					}
+					pw.write(dateFormat.format(date));
+				}
+			}
+			else{
+				pw.write(dateFormat.format(date));
+			}
+		}
 		
 		// create mainFrame
 		JFrame mainFrame = new JFrame("Power Rankings");
