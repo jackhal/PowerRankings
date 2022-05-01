@@ -49,7 +49,7 @@ public class HomePage {
 	protected static JPanel addMenu() {
 	//variable declarations
 		JPanel menuPanel;
-		final JButton editProfile, charSearch, leaderboard, currentRound, createChar;
+		final JButton editProfile, charSearch, leaderboard, currentRound, createChar, cancelBet;
 
 		
 	//variable initialization
@@ -163,6 +163,14 @@ public class HomePage {
 			}
 		});
 		
+		cancelBet = new JButton("Cancel Bet");
+		cancelBet.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
 	//add items to JPanel
 		DailyCheckIn d = new DailyCheckIn();
 		menuPanel.add(d.showBalance(currUsername));
@@ -172,6 +180,7 @@ public class HomePage {
 		menuPanel.add(leaderboard);
 		menuPanel.add(currentRound);
 		menuPanel.add(createChar);
+		menuPanel.add(cancelBet);
 
 		/*BufferedImage image = null;
 		try {
