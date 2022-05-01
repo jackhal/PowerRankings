@@ -247,9 +247,4 @@ public class AppTest {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
     }
-
-
-
-
-
 }
