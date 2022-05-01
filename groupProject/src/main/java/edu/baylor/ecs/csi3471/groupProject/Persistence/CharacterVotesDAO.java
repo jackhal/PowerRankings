@@ -11,8 +11,17 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Class CharacterVotesDAO
+ */
 public class CharacterVotesDAO extends CharacterVotes {
 
+    /**
+     * getCharacterVotes
+     * This function returns the votes for each character based on the database entries.
+     * @return ArrayList
+     * @throws IOException
+     */
     public ArrayList<CharacterVotes> getCharacterVotes() throws IOException {
         Runner.logger.info("getting all the users from the file into list");
         ArrayList<CharacterVotes> users = new ArrayList<CharacterVotes>();
@@ -29,6 +38,13 @@ public class CharacterVotesDAO extends CharacterVotes {
 
         return users;
     }
+
+    /**
+     * UpdateCharacterVotes
+     * This function updates the database entries when the votes are updated.
+     * @param characterVotes
+     * @throws IOException
+     */
     public void updateCharacterVotes(CharacterVotes characterVotes) throws IOException {
         Runner.logger.info("updating the user");
         List<String[]> data = new ArrayList<>();
@@ -60,6 +76,14 @@ public class CharacterVotesDAO extends CharacterVotes {
         pw.close();
     }
 
+    /**
+     * getCharacterVoteByUsername
+     * This function parses the database for the votes as per
+     * character and by user.
+     * @param username
+     * @return CharacterVotes
+     * @throws Exception
+     */
     public CharacterVotes getCharacterVoteByUsername(String username) throws Exception {
         Runner.logger.info("getting user from username");
         Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
@@ -75,6 +99,13 @@ public class CharacterVotesDAO extends CharacterVotes {
         throw new NoSuchElementException("This CharacterVotes does not exist");
     }
 
+    /**
+     * findCurrentVote
+     * This function finds the number of votes for a character.
+     * @param username
+     * @param match
+     * @return String
+     */
     protected String findCurrentVote(String username, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
@@ -91,6 +122,13 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
     }
 
+    /**
+     * setCurrentVote
+     * This function finds the currentVote
+     * @param username
+     * @param charVote
+     * @param match
+     */
     protected void setCurrentVote(String username, String charVote, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
@@ -112,6 +150,14 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
     }
 
+    /**
+     * findCurrentBet
+     * This function returns the bet the user
+     * places on each character.
+     * @param username
+     * @param match
+     * @return int
+     */
     protected int findCurrentBet(String username, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));

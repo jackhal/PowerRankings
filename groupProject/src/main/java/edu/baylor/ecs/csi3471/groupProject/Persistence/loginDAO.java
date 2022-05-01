@@ -3,10 +3,16 @@ package edu.baylor.ecs.csi3471.groupProject.Persistence;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+/**
+ * Class LoginDAO
+ */
 public class loginDAO {
 	public static String[] userData;
 
 	/**
+	 * validatePassword
+	 * This function validates the password the user enters.
 	 * @param username username of user
 	 * @param password password of user
 	 * @return asserts that the username and password match for login

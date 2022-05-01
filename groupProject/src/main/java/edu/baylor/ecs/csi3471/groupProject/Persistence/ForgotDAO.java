@@ -6,8 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
+/**
+ * Class ForgotDAO
+ */
 public class ForgotDAO {
     /**
+     * findPassword
+     * This function creates a string userField
      * @param userField entered username field
      * @return the password of the user is returned
      */
@@ -31,6 +36,8 @@ public class ForgotDAO {
 	}
 
     /**
+     * findUsername
+     * this function serarches the database for the user's username
      * @param email user entered email
      * @return users username is returned
      */
