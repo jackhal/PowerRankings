@@ -269,6 +269,12 @@ public class HomePage {
 
 
 		endRound = new JButton("End Round");
+		endRound.setBackground(Color.decode("#FF0000"));
+		endRound.setOpaque(true);
+		endRound.setBorderPainted(false);
+		endRound.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		endRound.setForeground(Color.WHITE);
+		endRound.setFocusPainted(false);
 //			endRound.setBackground(Color.BLACK);
 //			endRound.setForeground(Color.RED);
 

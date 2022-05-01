@@ -1,1 +1,62 @@
-2022-05-01 15:10:28 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
+2022-05-01 15:12:22 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.LoginPage$1 actionPerformed User clicked submit and is attempting to login.
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Login beginLoginProcess jack signed in
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel getBracketCharacters returning tournament characters
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Superman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance starting rendering of balance
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance balance rendered
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel getBracket tournament bracket being generated
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Superman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel getBracket adding round one to the tournament bracket
+2022-05-01 15:12:27 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 0 is being added to the bracket
+2022-05-01 15:12:28 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 1 is being added to the bracket
+2022-05-01 15:12:28 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 2 is being added to the bracket
+2022-05-01 15:12:28 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 3 is being added to the bracket
+2022-05-01 15:12:28 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 4 is being added to the bracket
+2022-05-01 15:12:28 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 5 is being added to the bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 6 is being added to the bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 7 is being added to the bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Superman created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Thanos created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kirby created from splitting constructor
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel getRound2 adding round two to the tournament bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 8 is being added to the bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 9 is being added to the bracket
+2022-05-01 15:12:29 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 10 is being added to the bracket
+2022-05-01 15:12:30 INFO edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel addImagesToBracket image 11 is being added to the bracket
