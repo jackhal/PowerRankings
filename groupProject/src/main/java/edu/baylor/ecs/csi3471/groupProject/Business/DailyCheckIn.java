@@ -15,7 +15,8 @@ import javax.swing.JLabel;
 public class DailyCheckIn extends UserDAO {
 	/**
 	 * showBalance()
-	 *
+	 * This function shows the users remaining balance
+	 * in a JLabel element that can be added to the viewing frame.
 	 * @param username
 	 * @return JLabel
 	 */

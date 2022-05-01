@@ -11,7 +11,12 @@ public class Login  {
 	private String username = LoginPage.loginForm.getUsernameField().getText();
 	private String password = LoginPage.loginForm.getPasswordField().getText();
 	private String delim 	= "\t";
-	
+
+	/**
+	 * beginLoginProcess
+	 * This function starts the login process
+	 * in which the user starts use of the application.
+	 */
     public void beginLoginProcess() {
     	boolean fail = false;
     	try {

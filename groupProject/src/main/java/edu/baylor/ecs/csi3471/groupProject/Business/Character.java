@@ -10,6 +10,9 @@ import edu.baylor.ecs.csi3471.groupProject.UI.CharacterLayout;
 
 import javax.swing.*;
 
+/**
+ * Class Character
+ */
 public class Character {
     public static Logger logger = Logger.getLogger(Timer.class.getName());
     

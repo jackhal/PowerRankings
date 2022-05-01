@@ -2,6 +2,9 @@ package edu.baylor.ecs.csi3471.groupProject.Business;
 
 import java.util.Objects;
 
+/**
+ * Class CharacterVotes
+ */
 public class CharacterVotes {
     private String matchAChoice;
     private String User;
@@ -13,6 +16,10 @@ public class CharacterVotes {
     private Integer matchCBet;
     private Integer matchDBet;
 
+    /**
+     * CharacterVotes
+     * This function is the default constructor for the Character Votes class.
+     */
     public CharacterVotes(){
         this.User = "";
         this.matchAChoice = "";
@@ -24,6 +31,13 @@ public class CharacterVotes {
         this.matchCBet = -1;
         this.matchDBet = -1;
     }
+
+    /**
+     * Character Votes
+     * This function is the custom constructor for the CharacterVotes
+     * class that uses a String array to populate the attributes.
+     * @param a
+     */
     public CharacterVotes(String[] a){
         this.User = a[0];
         this.matchAChoice = a[1];
@@ -36,78 +50,154 @@ public class CharacterVotes {
         this.matchDBet = Integer.parseInt(a[8]);
     }
 
+    /**
+     * getMatchABet()
+     * @return
+     */
     public Integer getMatchABet() {
         return matchABet;
     }
 
+    /**
+     * getMatchBBet()
+     * @return
+     */
     public Integer getMatchBBet() {
         return matchBBet;
     }
 
+    /**
+     * getMatchCBet()
+     * @return
+     */
     public Integer getMatchCBet() {
         return matchCBet;
     }
 
+    /**
+     * getMatchDBet()
+     * @return
+     */
     public Integer getMatchDBet() {
         return matchDBet;
     }
 
+    /**
+     * getMatchAChoice()
+     * @return
+     */
     public String getMatchAChoice() {
         return matchAChoice;
     }
 
+    /**
+     * getMatchBChoice()
+     * @return
+     */
     public String getMatchBChoice() {
         return matchBChoice;
     }
 
+    /**
+     * getMatchCChoice()
+     * @return
+     */
     public String getMatchCChoice() {
         return matchCChoice;
     }
 
+    /**
+     * setMatchABet()
+     * @param matchABet
+     */
     public void setMatchABet(Integer matchABet) {
         this.matchABet = matchABet;
     }
 
+    /**
+     * setMatchAChoice()
+     * @param matchAChoice
+     */
     public void setMatchAChoice(String matchAChoice) {
         this.matchAChoice = matchAChoice;
     }
 
+    /**
+     * setMatchBBet()
+     * @param matchBBet
+     */
     public void setMatchBBet(Integer matchBBet) {
         this.matchBBet = matchBBet;
     }
 
+    /**
+     * setMatchBChoice()
+     * @param matchBChoice
+     */
     public void setMatchBChoice(String matchBChoice) {
         this.matchBChoice = matchBChoice;
     }
 
+    /**
+     * setMatchCBet()
+     * @param matchCBet
+     */
     public void setMatchCBet(Integer matchCBet) {
         this.matchCBet = matchCBet;
     }
 
+    /**
+     * setMatchCChoice()
+     * @param matchCChoice
+     */
     public void setMatchCChoice(String matchCChoice) {
         this.matchCChoice = matchCChoice;
     }
 
+    /**
+     * setMatchDBet()
+     * @param matchDBet
+     */
     public void setMatchDBet(Integer matchDBet) {
         this.matchDBet = matchDBet;
     }
 
+    /**
+     * getMatchDChoice()
+     * @return
+     */
     public String getMatchDChoice() {
         return matchDChoice;
     }
 
+    /**
+     * setMatchDChoice()
+     * @param matchDChoice
+     */
     public void setMatchDChoice(String matchDChoice) {
         this.matchDChoice = matchDChoice;
     }
 
+    /**
+     * setUser()
+     * @param user
+     */
     public void setUser(String user) {
         User = user;
     }
 
+    /**
+     * getUser()
+     * @return
+     */
     public String getUser() {
         return User;
     }
 
+    /**
+     * toString()
+     * @return
+     */
     @Override
     public String toString() {
         return "CharacterVotes{" +
