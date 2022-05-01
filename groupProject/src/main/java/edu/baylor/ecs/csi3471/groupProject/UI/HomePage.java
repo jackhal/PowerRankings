@@ -237,12 +237,11 @@ public class HomePage {
 		currentRound.setFont(new Font("sans-serif", Font.PLAIN, 10));
 		currentRound.setForeground(Color.WHITE);
 		currentRound.setFocusPainted(false);
-		TournamentBracketPanel frame = new TournamentBracketPanel();
-		Character[] myChars = frame.getBracketCharacters();
-
 		currentRound.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				TournamentBracketPanel frame = new TournamentBracketPanel();
+				Character[] myChars = frame.getBracketCharacters();
 				VotingBoothGUI windvote = new VotingBoothGUI();
 				try {
 					windvote.createAndShowGUI(myChars);

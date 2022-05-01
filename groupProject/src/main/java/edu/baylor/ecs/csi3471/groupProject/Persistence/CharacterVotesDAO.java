@@ -114,7 +114,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param match
      * @return String
      */
-    protected String findCurrentVote(String username, Integer match) {
+    public String findCurrentVote(String username, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
             String data[];
@@ -166,7 +166,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param match
      * @return int
      */
-    protected int findCurrentBet(String username, Integer match) {
+    public int findCurrentBet(String username, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
             String data[];

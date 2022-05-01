@@ -71,7 +71,7 @@ public class VotingBoothDAO extends JPanel {
         add(title, BorderLayout.NORTH);
         add(label, BorderLayout.SOUTH);
         add(choicePanel, BorderLayout.CENTER);
-
+/*
         if(Runner.curUser.isAdmin()){
             Runner.logger.info("User is Admin");
             JButton endRound = new JButton("End Match");
@@ -140,7 +140,7 @@ public class VotingBoothDAO extends JPanel {
                         while(myChars[length] != null){
                             length++;
                         }
-                        //System.out.println(length);
+                        System.out.println(length);
                         length--;
                         Integer match = 0;
                         if (length == 8 || length == 12) {
@@ -204,7 +204,7 @@ public class VotingBoothDAO extends JPanel {
                         while(myChars[length] != null){
                             length++;
                         }
-                        //System.out.println(length);
+                        System.out.println(length);
                         length--;
                         Integer match = 0;
                         if (length == 8 || length == 12) {
@@ -246,7 +246,7 @@ public class VotingBoothDAO extends JPanel {
                     while(myChars[length] != null){
                         length++;
                     }
-                    //System.out.println(length);
+                    System.out.println(length);
                     length--;
                     Integer match = 0;
                     if (length > 13) {
@@ -270,6 +270,8 @@ public class VotingBoothDAO extends JPanel {
             });
             add(endRound, BorderLayout.WEST);
         }
+        */
+
     }
 
     /**
@@ -341,11 +343,6 @@ public class VotingBoothDAO extends JPanel {
                     boolean broke = false;
                     TournamentBracketPanel bracketPanel = new TournamentBracketPanel();
                     Character[] loop = bracketPanel.getBracketCharacters();
-                    for(int i = 0; i < loop.length; i++) {
-                        if (loop[i] != null){
-                            //System.out.println(i + loop[i].getName());
-                        }
-                    }
                     CharacterVotesDAO characterVotesDAO = new CharacterVotesDAO();
                     UserDAO userDAO = new UserDAO();
                     CharacterVotes red = new CharacterVotes();
@@ -371,7 +368,6 @@ public class VotingBoothDAO extends JPanel {
                         while(loop[length] != null){
                             length++;
                         }
-                        //System.out.println(length);
                         length--;
 
 
@@ -467,7 +463,6 @@ public class VotingBoothDAO extends JPanel {
                         while(loop[length] != null){
                             length++;
                         }
-                        //System.out.println(length);
                         length--;
                         if(length < 9){
                             if(loop[1].equals(b)){
@@ -526,7 +521,7 @@ public class VotingBoothDAO extends JPanel {
                                 else if(match == 4){
                                     red.setMatchDBet(totel);
                                 }
-                                //bill.setFunds(bill.getFunds() - totel);
+                                bill.setFunds(bill.getFunds() - totel);
                                 bill.setVoted(true);
                                 bill.setCurrentVote(b.getName());
 
@@ -549,8 +544,6 @@ public class VotingBoothDAO extends JPanel {
                         finalVoteButton.setEnabled(false);
                     }
                     try {
-                       // System.out.println(red.getUser());
-                        //System.out.println(red.getMatchAChoice());
                         characterVotesDAO.updateCharacterVotes(red);
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -563,7 +556,7 @@ public class VotingBoothDAO extends JPanel {
             }
 
         });
-        //System.out.println("calling createPane");
+        Runner.logger.info("calling createPane");
         return createPane(simpleDialogDesc, radioButtons, voteButton);
     }
 
@@ -595,7 +588,7 @@ public class VotingBoothDAO extends JPanel {
         pane.add(box, BorderLayout.NORTH);
         pane.add(showButton, BorderLayout.SOUTH);
         //pane.add(new DrawMyImgs());
-        //System.out.println("returning pane");
+        Runner.logger.info("returning pane");
         return pane;
     }
 }
