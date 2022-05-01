@@ -10,7 +10,7 @@ import java.util.List;
 public class RegisterDAO {
     /**
      * writeToFile
-     *
+     * This function writes the register data to the database.
      * @param newUser
      */
     public void writeToFile(User newUser)

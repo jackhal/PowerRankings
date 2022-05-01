@@ -11,14 +11,19 @@ import java.util.Scanner;
 
 //Used to update the csv holding all of the user info without deleteing all the older data
 //just writes to the file
+
+/**
+ * UserDao Class
+ */
 public class UserDAO {
 
     /**
+     * updateUser
+     * This function updates the user profile in the database.
      * @param user the user we want to update
      * @throws IOException if the file is not found
      */
     //update one specific user from
-
     public void updateUser(User user) throws IOException { //Testing done
         if(user == null){
             return;
@@ -49,6 +54,8 @@ public class UserDAO {
     }
 
     /**
+     * getUsers
+     * This function returns a list of the users as per the database.
      * @return list of all the users from the user file
      * @throws IOException if file is not found
      */
@@ -71,6 +78,8 @@ public class UserDAO {
     }
 
     /**
+     * findCurrentBal
+     * This function returns the user's total balance in coins.
      * @param username given username
      * @return the balance of the user
      */
@@ -94,6 +103,8 @@ public class UserDAO {
     }
 
     /**
+     * setCurrentBal
+     * This function changes the user balance in the database.
      * @param username user to change value of
      * @param newBalance new balance for user
      */
@@ -125,6 +136,9 @@ public class UserDAO {
     }
 
     /**
+     * findCurrentStreak
+     * This function determines how long the user's
+     * current longest streak is as per the database.
      * @param username given username to find
      * @return
      */
@@ -145,6 +159,8 @@ public class UserDAO {
     }
 
     /**
+     * setCurrentStreak
+     * This function changes the current user streak in the database.
      * @param username username of user to change
      * @param newStreak new streak to add to profile
      */
@@ -170,6 +186,8 @@ public class UserDAO {
     }
 
     /**
+     * findLastLogin
+     * This function returns the last time the user logged in.
      * @param username username of user to find
      * @return returns when they last logged in
      */
@@ -190,6 +208,8 @@ public class UserDAO {
     }
 
     /**
+     * setLastLogin
+     * This function sets the last time the user logged in.
      * @param username username of user to find
      * @param newLastLogin new login date to set
      */

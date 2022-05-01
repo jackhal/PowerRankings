@@ -32,7 +32,15 @@ public class VotingBoothDAO extends JPanel {
     User bill = Runner.curUser;
 
 
-
+    /**
+     * VotingBoothDAO Custom Constructor
+     * This function creates a voting booth for 2 characters
+     * so that the user can vote on who they want to advance
+     * in the matchup.
+     * @param a
+     * @param b
+     * @throws Exception
+     */
     public VotingBoothDAO(Character a, Character b) throws Exception {
         //FIXME get the current characters for current round from the file instead
         Runner.logger.info("VotingBooth Class Called");
@@ -252,6 +260,7 @@ public class VotingBoothDAO extends JPanel {
     }
 
     /**
+     * createSimpleDialogBox
      * This method always takes two Characters in order to make the voting mechanism
      *
      * @param  a  One of the characters in the match
@@ -552,6 +561,7 @@ public class VotingBoothDAO extends JPanel {
     }
 
     /**
+     * createPane
      * This method always takes two Characters in order to create a VotingBoothDAO
      *
      * @param  description  the description of the pane to come
