@@ -1,5 +1,5 @@
 Username	Password	Email	Name	Age	Currency	Bet	Voted	Admin	Description	CurrentVote	CurrentStreak	LastLogin
-jack	jack	jack@gmail.com	Jack	32	50	10	true	true	User1	Jidion	2	05/01/22
+jack	jack	jack@gmail.com	Jack	32	1	0	true	true	User1	Matthew Mayer	2	05/01/22
 ryan	ryan	ryan@gmail.com	Ryan	20	960	0	true	true	Cool dude	Kirby	0	04/30/22
 test	test	test@gmail.com	testNonAdmin	5	0	0	true	false	This is a tester user so we can make sure admin privileges are separate	Spider-Ham	0	04/01/22
 testRegister	test1234	test2@gmail.com	testRegister	20	500	0	false	false	none	null	0	04/01/22

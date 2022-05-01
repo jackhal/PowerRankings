@@ -250,7 +250,7 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters();
 
         Runner.logger.info("adding round two to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 175, 230, 120, 350, 8, 12);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 525, 230, 120, 350, 8, 12);
 
 //        frame.add(myBigPane);
 //        frame.setVisible(true);
@@ -276,13 +276,35 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters();
 
         Runner.logger.info("adding round three to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 175, 420, 120, -80, 12, 14);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 525, 420, 120, -80, 12, 14);
 
 //        frame.add(myBigPane);
 //        frame.setVisible(true);
 
         return myBigPane;
     }
+
+    public JLayeredPane getWinner(JLayeredPane myBigPane)
+    {
+//        JFrame frame = new JFrame("TEMP");
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setSize(550, 550);
+//        //frame size
+//        frame.setLocationRelativeTo(null);
+
+        Character[] myChars = initTournamentCharacters();
+
+        Runner.logger.info("adding winner to the tournament bracket");
+        myBigPane = addImagesToBracket(myChars, myBigPane, 475, 100, 120, -80, 14, 15);
+        myBigPane.add(new JTextField("WINNER"), new Integer(2), 0);
+
+//        frame.add(myBigPane);
+//        frame.setVisible(true);
+
+        return myBigPane;
+    }
+
+
 }
 
 

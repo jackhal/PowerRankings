@@ -80,6 +80,7 @@ public class VotingBoothDAO extends JPanel {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     //FIXME GO TO NEXT ROUND FUNCTIONALITY
+                    endRound.setEnabled(false);
                     TournamentBracketPanel frame = new TournamentBracketPanel();
                     CharacterVotesDAO charVote = new CharacterVotesDAO();
                     Runner.logger.info("End Match Button Pressed");
@@ -258,9 +259,13 @@ public class VotingBoothDAO extends JPanel {
                         writer.print("");
                         writer.close();
                     }
-                    endRound.setEnabled(false);
                     bert.setCurrVote(0);
                     gandhi.setCurrVote(0);
+
+
+
+
+
                 }
             });
             add(endRound, BorderLayout.WEST);
@@ -521,7 +526,7 @@ public class VotingBoothDAO extends JPanel {
                                 else if(match == 4){
                                     red.setMatchDBet(totel);
                                 }
-                                bill.setFunds(bill.getFunds() - totel);
+                                //bill.setFunds(bill.getFunds() - totel);
                                 bill.setVoted(true);
                                 bill.setCurrentVote(b.getName());
 

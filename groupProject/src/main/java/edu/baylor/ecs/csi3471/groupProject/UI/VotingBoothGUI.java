@@ -30,7 +30,7 @@ public class VotingBoothGUI {
         while(a[length] != null){
             length++;
         }
-        System.out.println(length);
+        //System.out.println(length);
         length--;
 
 
