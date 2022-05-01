@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * class Table
+ */
 public class Table extends JPanel {
     private JTable table;
     //dont think i need text field
@@ -34,6 +37,10 @@ public class Table extends JPanel {
 //    }
 
 
+    /**
+     * createAndShowGUI
+     * This function creates the Graphical User Interface for the Table class.
+     */
     //Creating the frame of the table, have to actually build table using something else
     protected static void createAndShowGUI() {
         //Create and set up the window.
@@ -51,6 +58,10 @@ public class Table extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * Table constructor
+     * This function creates the table for the characters to be located.
+     */
     public Table() {
         super();
         Runner.logger.info("Character table generated");
@@ -203,6 +214,8 @@ public class Table extends JPanel {
     }
 
     /**
+     * initMenu
+     * This functionc creates the menu.
      * @param model table to add menu to
      * @return menu bar for table
      */
@@ -325,6 +338,11 @@ public class Table extends JPanel {
         return menuBar;
     }
 
+    /**
+     * openCSV
+     * This function opens the CSV file.
+     * @return
+     */
     public File openCSV() {
         File selectedFile = null;
         JFileChooser fc = new JFileChooser();
@@ -338,7 +356,10 @@ public class Table extends JPanel {
         }
         return selectedFile;
     }
+
     /**
+     * addItem
+     * This function adds an item to the JPanel passed in.
      * @param p panel
      * @param c component
      * @param x x-dem

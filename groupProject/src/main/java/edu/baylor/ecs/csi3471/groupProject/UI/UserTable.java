@@ -22,6 +22,9 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * UserTable
+ */
 public class UserTable extends JPanel {
         private JTable table;
         //dont think i need text field
@@ -29,7 +32,12 @@ public class UserTable extends JPanel {
         private TableRowSorter<DefaultTableModel> sorter;
 
 
-        //Creating the frame of the table, have to actually build table using something else
+    /**
+     * createAndShowUserGUI
+     * This function creates the graphical user interface for the
+     * usertable class.
+     */
+    //Creating the frame of the table, have to actually build table using something else
         protected static void createAndShowUserGUI() {
             //Create and set up the window.
             JFrame frame = new JFrame("TableFilterDemo");
@@ -46,7 +54,11 @@ public class UserTable extends JPanel {
             frame.setVisible(true);
         }
 
-        public UserTable() {
+    /**
+     * UserTable() Constructor
+     * This function creates usertable.
+     */
+    public UserTable() {
             super();
             Runner.logger.info("New userTable generated");
             setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -148,6 +160,7 @@ public class UserTable extends JPanel {
 
 
     /**
+     * addItem()
      * @param p panel
      * @param c component
      * @param x x-dem
@@ -251,7 +264,7 @@ public class UserTable extends JPanel {
             }
         }
 
-        private final class RemoveLineActionListener implements ActionListener {
+    private final class RemoveLineActionListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Runner.logger.info("remove line action listener selected ");

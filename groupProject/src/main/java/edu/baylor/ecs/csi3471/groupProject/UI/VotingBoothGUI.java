@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 public class VotingBoothGUI {
     private static Logger applicationlog = Logger.getLogger(Timer.class.getName());
     /**
+     * createAndShowGUI()
      * This method always takes two Characters and creates the GUI of the
      * Voting Booth parameters.
      *
