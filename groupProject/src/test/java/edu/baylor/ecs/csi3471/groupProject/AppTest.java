@@ -196,6 +196,7 @@ public class AppTest {
         UserDAO userDAO = new UserDAO();
         Assertions.assertAll(() -> userDAO.updateUser(user));
     }
+    
     @DisplayName("Test getUsers (pass)")
     @Test
     public void failUpdateUser() throws IOException {
@@ -203,7 +204,6 @@ public class AppTest {
         ArrayList<User> users = u.getUsers();
         Assertions.assertTrue(users.size() > 0);
     }
-
 
     @DisplayName("setBalance pass")
     @Test
@@ -214,6 +214,7 @@ public class AppTest {
         u.setCurrentBal("ryan", 1000);
         Assertions.assertEquals(1000, u.findCurrentBal("ryan"));
     }
+    
     @DisplayName("write user to file pass")
     @Test
     public void passWriteFile() throws NullPointerException {
@@ -229,22 +230,32 @@ public class AppTest {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("ryan", f.findUsername("ryan@gmail.com"));
     }
+    
     @DisplayName("forgotPassword pass")
     @Test
     public void passForgotPass() throws NullPointerException {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("ryan", f.findUsername("ryan"));
     }
+    
     @DisplayName("forgotUsername fail")
     @Test
     public void failForgotUser() throws NullPointerException {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("User not found", f.findUsername("ryan@gmail.comasdadqsdsad"));
     }
+    
     @DisplayName("forgotPassword fail")
     @Test
     public void failForgotPass() throws NullPointerException {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
+    }
+    
+    @Test
+    public void characterGetOwner() {
+    	Character c = new Character();
+    	c.setOwner("Jack");
+    	assert(c.getOwner().equals("Jack"));
     }
 }
