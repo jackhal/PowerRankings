@@ -14,6 +14,9 @@ import java.net.URL;
 import java.util.logging.Logger;
 
 
+/**
+ * This class supports the addition of images to JPanels
+ */
 class ImagePanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
@@ -29,6 +32,9 @@ class ImagePanel extends JPanel {
         this.img = img;
     }
 
+    /**
+     * Invalidate
+     */
     @Override
     public void invalidate() {
         super.invalidate();
@@ -41,12 +47,20 @@ class ImagePanel extends JPanel {
         }
     }
 
+    /**
+     * getPreferredSize
+     * @return Dimension
+     */
     @Override
     public Dimension getPreferredSize() {
         return img == null ? new Dimension(200, 200) : new Dimension(
                 img.getWidth(this), img.getHeight(this));
     }
 
+    /**
+     * paintComponent
+     * @param g
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -55,9 +69,19 @@ class ImagePanel extends JPanel {
 }
 
 
+/**
+ * This is the TournamentBracketPanel class that creates and updates the Tournament Bracket
+ */
 public class TournamentBracketPanel
 {
     //public static Logger logger = Logger.getLogger(Runner.class.getName());
+
+    /**
+     * initTournamentCharacters()
+     * This function gets the characters fot the tournament from the
+     * CharacterRounds.csv file and returns a list of the characters.
+     * @return Character[]
+     */
     public Character[] initTournamentCharacters()
     {
         Runner.logger.info("Initializing tournament characters");
@@ -78,13 +102,19 @@ public class TournamentBracketPanel
         }
         catch(Exception e)
         {
-            Runner.logger.severe("unable to read characters from characterRounds.cdv file");
+            Runner.logger.severe("unable to read characters from characterRounds.csv file");
             System.exit(1);
         }
         return characters;
     }
 
 
+    /**
+     * getBracketCharacters()
+     * This function returns the characters created
+     * by the reading of the CharacterRounds.csv file.
+     * @return Character[]
+     */
     public Character[] getBracketCharacters()
     {
         Runner.logger.info("returning tournament characters");
@@ -93,6 +123,21 @@ public class TournamentBracketPanel
     }
 
 
+    /**
+     * addImagesToBracket
+     * This function adds the images to the
+     * bracket as per the round (specified
+     * by the arguments).
+     * @param myChars
+     * @param myBigPane
+     * @param x
+     * @param y
+     * @param xInc
+     * @param yInc
+     * @param iBeg
+     * @param iEnd
+     * @return JLayeredPane
+     */
     public JLayeredPane addImagesToBracket(Character[] myChars, JLayeredPane myBigPane, int x, int y, int xInc, int yInc, int iBeg, int iEnd)
     {
         int xCoord = x, yCoord = y;
@@ -131,7 +176,13 @@ public class TournamentBracketPanel
     }
 
 
-
+    /**
+     * getBracket
+     * This function creates the bracket as a LayeredPane
+     * and then adds to it the characters participating
+     * in the first roun matchup.
+     * @return JLayeredPane
+     */
     public JLayeredPane getBracket()
     {
 //        JFrame frame = new JFrame("TEMP");
@@ -180,6 +231,14 @@ public class TournamentBracketPanel
     }
 
 
+    /**
+     * getRound2
+     * This function accepts a JLayeredPane
+     * and adds to it the characters taht advanced from
+     * round 1 to the next stage of the bracket.
+     * @param myBigPane
+     * @return
+     */
     public JLayeredPane getRound2(JLayeredPane myBigPane)
     {
 //        JFrame frame = new JFrame("TEMP");
@@ -199,6 +258,13 @@ public class TournamentBracketPanel
         return myBigPane;
     }
 
+    /**
+     * getRound3
+     * This funcion aceepts a JLayeredPane and
+     * adds to it the winners from round 2.
+     * @param myBigPane
+     * @return
+     */
     public JLayeredPane getRound3(JLayeredPane myBigPane)
     {
 //        JFrame frame = new JFrame("TEMP");
@@ -218,6 +284,8 @@ public class TournamentBracketPanel
         return myBigPane;
     }
 }
+
+
 
 
 
