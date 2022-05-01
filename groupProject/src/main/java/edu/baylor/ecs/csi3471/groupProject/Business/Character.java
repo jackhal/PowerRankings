@@ -29,6 +29,9 @@ public class Character {
     }
 
     /**
+     * Character Custom Constructor
+     * This is the character class custom constructor that
+     * creates a character object based on a set of parameters.
      * @param name string name of character
      * @param world fanstasy world of character
      * @param desc description of character and  abilites
@@ -50,6 +53,8 @@ public class Character {
     }
 
     /**
+     * Character Custom Constructor
+     * This class parses a line for the attributes of the Character class
      * @param line line of data from database to be split and added to character
      */
     public Character(String line){
@@ -78,6 +83,7 @@ public class Character {
     }
 
     /**
+     * getOwner()
      * @return user who made character
      */
     public String getOwner() {
@@ -85,6 +91,7 @@ public class Character {
     }
 
     /**
+     * setOwner()
      * @param owner user who made character
      */
     public void setOwner(String owner) {
@@ -92,6 +99,7 @@ public class Character {
     }
 
     /**
+     * getId()
      * @return charcater id
      */
     public Integer getId() {
@@ -99,6 +107,7 @@ public class Character {
     }
 
     /**
+     * getRatio()
      * @return ratio of wins to losses
      */
     public Double getRatio() {
@@ -106,6 +115,7 @@ public class Character {
     }
 
     /**
+     * getLoss()
      * @return number of losses
      */
     public Integer getLoss() {
@@ -113,6 +123,7 @@ public class Character {
     }
 
     /**
+     * setLoss()
      * @param loss number of losses
      */
     public void setLoss(Integer loss) {
@@ -130,6 +141,7 @@ public class Character {
     }
 
     /**
+     * getWin()
      * @return  number of wins
      */
     public Integer getWin() {
@@ -137,6 +149,7 @@ public class Character {
     }
 
     /**
+     * setWin()
      * @param win number of wins
      */
     public void setWin(Integer win) {
@@ -154,6 +167,7 @@ public class Character {
     }
 
     /**
+     * getDesc()
      * @return decription of character
      */
     public String getDesc() {
@@ -161,6 +175,7 @@ public class Character {
     }
 
     /**
+     * setDesc()
      * @param desc decription of character
      */
     public void setDesc(String desc) {
@@ -168,13 +183,15 @@ public class Character {
     }
 
     /**
-     * @return worl dof character
+     * getWorld()
+     * @return world dof character
      */
     public String getWorld() {
         return world;
     }
 
     /**
+     * setWorld()
      * @param world world of charcater
      */
     public void setWorld(String world) {
@@ -182,6 +199,7 @@ public class Character {
     }
 
     /**
+     * getName()
      * @return name of character
      */
     public String getName() {
@@ -189,6 +207,7 @@ public class Character {
     }
 
     /**
+     * setName()
      * @param name name of charcater
      */
     public void setName(String name) {
@@ -196,6 +215,7 @@ public class Character {
     }
 
     /**
+     * getPicture()
      * @return
      */
     public String getPicture() {
@@ -203,16 +223,25 @@ public class Character {
     }
 
     /**
+     * setPicture()
      * @param picture url of character image
      */
     public void setPicture(String picture) {
         this.picture = picture;
     }
 
+    /**
+     * getCurrVote()
+     * @return
+     */
     public Integer getCurrVote() {
         return currVote;
     }
 
+    /**
+     * setCurrVote()
+     * @param currVote
+     */
     public void setCurrVote(Integer currVote) {
         this.currVote = currVote;
     }
@@ -229,17 +258,25 @@ public class Character {
         return Objects.equals(name, character.name) && Objects.equals(world, character.world);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(name, world);
     }
 
+    /**
+     * displayChar()
+     */
     public void displayChar(){
         logger.info("Character displayed");
         new CharacterLayout(this);
         //This may open a dialog box to see character data
     }
 
+    /**
+     * charToCSV()
+     * @return
+     */
     public String charToCSV(){
         logger.info("Character converted to csv form to print");
         String ret = "\n";

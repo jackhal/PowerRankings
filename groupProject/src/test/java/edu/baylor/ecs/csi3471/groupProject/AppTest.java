@@ -2,6 +2,8 @@ package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.ForgotDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
@@ -196,25 +198,63 @@ public class AppTest {
     }
     @DisplayName("Test getUsers (pass)")
     @Test
-    public void passGetUsers() throws IOException {
+    public void failUpdateUser() throws IOException {
         UserDAO u = new UserDAO();
         ArrayList<User> users = u.getUsers();
         Assertions.assertTrue(users.size() > 0);
     }
 
-    @DisplayName("findCurBal pass")
+
+    @DisplayName("setBalance pass")
     @Test
-    public void passUserBal() throws IOException {
+    public void passSetBal() throws NullPointerException {
         UserDAO u = new UserDAO();
+        u.setCurrentBal("ryan", 500);
+        Assertions.assertEquals(500, u.findCurrentBal("ryan"));
+        u.setCurrentBal("ryan", 1000);
         Assertions.assertEquals(1000, u.findCurrentBal("ryan"));
     }
-
-    @DisplayName("findCurBal fail")
+    @DisplayName("write user to file pass")
     @Test
-    public void failUserBal() throws NullPointerException {
-        UserDAO u = new UserDAO();
-        Assertions.assertEquals(0, u.findCurrentBal("thisuserdoesnotexist"));
+    public void passWriteFile() throws NullPointerException {
+        String[] data = {"yesyesyes",	"yesyesyes","yesyesyes@yesyesyes.com","yesyes",	"20",	"500",	"0",	"false",	"false",	"none",	"null",	"0",	"04/01/22"};
+        User u = new User(data);
+        RegisterDAO d = new RegisterDAO();
+        Assertions.assertAll(() -> d.writeToFile(u));
     }
+<<<<<<< HEAD
     
     
+=======
+
+    @DisplayName("forgotUsername pass")
+    @Test
+    public void passForgotUser() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("ryan", f.findUsername("ryan@gmail.com"));
+    }
+    @DisplayName("forgotPassword pass")
+    @Test
+    public void passForgotPass() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("ryan", f.findUsername("ryan"));
+    }
+    @DisplayName("forgotUsername fail")
+    @Test
+    public void failForgotUser() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("User not found", f.findUsername("ryan@gmail.comasdadqsdsad"));
+    }
+    @DisplayName("forgotPassword fail")
+    @Test
+    public void failForgotPass() throws NullPointerException {
+        ForgotDAO f = new ForgotDAO();
+        Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
+    }
+
+
+
+
+
+>>>>>>> aeb2c7d6cc6065c9ac1e382185c6a2e1cc96e3cb
 }

@@ -11,7 +11,7 @@ public class ForgotDAO {
      * @param userField entered username field
      * @return the password of the user is returned
      */
-	public String findPassword(String userField){
+	public String findPassword(String userField){ //tested
         try {
             Scanner scanner = new Scanner(new FileReader("UserFile.tsv"));
             while(scanner.hasNextLine()){
@@ -34,7 +34,7 @@ public class ForgotDAO {
      * @param email user entered email
      * @return users username is returned
      */
-	public String findUsername(String email) {
+	public String findUsername(String email) { //tested
          try {
              Scanner scanner = new Scanner(new FileReader("UserFile.tsv"));
              while(scanner.hasNextLine()){
