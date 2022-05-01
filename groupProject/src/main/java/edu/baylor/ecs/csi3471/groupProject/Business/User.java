@@ -2,6 +2,9 @@ package edu.baylor.ecs.csi3471.groupProject.Business;
 
 import java.util.Objects;
 
+/**
+ * Class User
+ */
 public class User
 {
     private String username;
@@ -18,6 +21,13 @@ public class User
     private int currentStreak;
     private String lastLogin;
 
+    /**
+     * User
+     * This is the custom constructor for the User class that
+     * uses a string array to populate the attribute of the
+     * User object.
+     * @param data
+     */
     public User(String[] data){
     	try {
     		this.username = data[0];
@@ -38,6 +48,11 @@ public class User
     	}
     }
 
+    /**
+     * User()
+     * This is the default constructor for the
+     * user class.
+     */
     public User()
     {
         username = "";
@@ -56,106 +71,210 @@ public class User
     }
 
 
+    /**
+     * getUsername()
+     * @return
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * setUsername()
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * getPassword()
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * setPassword()
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * getEmail()
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * setEmail
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+    /**
+     * getName()
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * setName()
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * getAge()
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     * setAge()
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     * getFunds()
+     * @return
+     */
     public int getFunds() {
         return funds;
     }
 
+    /**
+     * setFunds()
+     * @param funds
+     */
     public void setFunds(int funds) {
         this.funds = funds;
     }
 
+    /**
+     * getBet()
+     * @return
+     */
     public int getBet() {
         return bet;
     }
 
+    /**
+     * setBet()
+     * @param bet
+     */
     public void setBet(int bet) {
         this.bet = bet;
     }
 
+    /**
+     * isVoted()
+     * @return
+     */
     public boolean isVoted() {
         return voted;
     }
 
+    /**
+     * setVoted()
+     * @param voted
+     */
     public void setVoted(boolean voted) {
         this.voted = voted;
     }
 
+    /**
+     * isAdmin()
+     * @return
+     */
     public boolean isAdmin() {
         return admin;
     }
 
+    /**
+     * setAdmin()
+     * @param admin
+     */
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }
 
+    /**
+     * getDescription()
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * setDescription()
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * getCurrentVote()
+     * @return
+     */
     public String getCurrentVote() {
         return currentVote;
     }
 
+    /**
+     * setCurrentVote()
+     * @param currentVote
+     */
     public void setCurrentVote(String currentVote) {
         this.currentVote = currentVote;
     }
-    
+
+    /**
+     * setCurrentStreak()
+     * @param currentStreak
+     */
     public void setCurrentStreak(int currentStreak) {
     	this.currentStreak = currentStreak;
     }
-    
+
+    /**
+     * getCurrentStreak()
+     * @return
+     */
     public int getCurrentStreak() {
     	return this.currentStreak;
     }
-    
+
+    /**
+     * setLastLogin()
+     * @param lastLogin
+     */
     public void setLastLogin(String lastLogin) {
     	this.lastLogin = lastLogin;
     }
-    
+
+    /**
+     * getLastLogin()
+     * @return
+     */
     public String getLastLogin() {
     	return this.lastLogin;
     }
