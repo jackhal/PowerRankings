@@ -9,9 +9,7 @@ import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -242,8 +240,27 @@ public class VotingBoothDAO extends JPanel {
                             }
                         }
                     }
+                    int length = 0;
+                    Character[] myChars = frame.getBracketCharacters();
+                    while(myChars[length] != null){
+                        length++;
+                    }
+                    System.out.println(length);
+                    length--;
+                    Integer match = 0;
+                    if (length > 13) {
+                        PrintWriter writer = null;
+                        try {
+                            writer = new PrintWriter("CharacterVotes.tsv");
+                        } catch (FileNotFoundException ex) {
+                            ex.printStackTrace();
+                        }
+                        writer.print("");
+                        writer.close();
+                    }
                     bert.setCurrVote(0);
                     gandhi.setCurrVote(0);
+
                 }
             });
             add(endRound, BorderLayout.WEST);
@@ -527,7 +544,6 @@ public class VotingBoothDAO extends JPanel {
                         finalVoteButton.setEnabled(false);
                     }
                     try {
-                        System.out.println("POOPIE");
                         System.out.println(red.getUser());
                         System.out.println(red.getMatchAChoice());
                         characterVotesDAO.updateCharacterVotes(red);
