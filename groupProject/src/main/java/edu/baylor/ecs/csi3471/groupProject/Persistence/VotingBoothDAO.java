@@ -9,6 +9,7 @@ import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -128,6 +129,11 @@ public class VotingBoothDAO extends JPanel {
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
+                        try {
+                            fileWriter.close();
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
 
                         JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
                         Character[] myChars = frame.getBracketCharacters();
@@ -171,17 +177,6 @@ public class VotingBoothDAO extends JPanel {
                                 ex.printStackTrace();
                             }
                         }
-
-                        if (bill.isVoted()) {
-                            if (bill.getBet() != 0) {
-                                if (bill.getCurrentVote() == bert.getName()) {
-                                    Runner.logger.info("User wins the bet");
-                                    bill.setFunds(bill.getFunds() + (bill.getBet() * 2));
-                                    JOptionPane.showMessageDialog(null, "Congrats! You won " + bill.getBet() + "!\n Your current funds are: " + bill.getFunds());
-
-                                }
-                            }
-                        }
                     }
                     else{
                         a = gandhi.getWin();
@@ -196,6 +191,11 @@ public class VotingBoothDAO extends JPanel {
                         }
                         try {
                             fileWriter.write(gandhi.charToCSV());
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                        try {
+                            fileWriter.close();
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
@@ -239,15 +239,6 @@ public class VotingBoothDAO extends JPanel {
                                 }
                             } catch (Exception ex) {
                                 ex.printStackTrace();
-                            }
-                        }
-                        if(bill.isVoted()){
-                            if(bill.getBet() != 0) {
-                                if (bill.getCurrentVote() == bert.getName()) {
-                                    Runner.logger.info("User wins the vote");
-                                    bill.setFunds(bill.getFunds() + (bill.getBet() * 2));
-                                    JOptionPane.showMessageDialog(null, "Congrats! You won " + bill.getBet() + "!\n Your current funds are: " + bill.getFunds());
-                                }
                             }
                         }
                     }
@@ -364,7 +355,6 @@ public class VotingBoothDAO extends JPanel {
 
                         if(length < 9){
                             if(loop[0].equals(a)){
-                                System.out.println("HOOP");
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
                             }
@@ -416,22 +406,18 @@ public class VotingBoothDAO extends JPanel {
                                 exit = true;
                                 bill.setBet(totel);
                                 if(match == 1){
-                                    System.out.println("FUCK");
                                     red.setMatchABet(totel);
                                 }
                                 else if(match == 2){
-                                    System.out.println("SHIT");
                                     red.setMatchBBet(totel);
                                 }
                                 else if(match == 3){
-                                    System.out.println("CRAP");
                                     red.setMatchCBet(totel);
                                 }
                                 else if(match == 4){
-                                    System.out.println("HECK");
                                     red.setMatchDBet(totel);
                                 }
-                                //bill.setFunds(bill.getFunds() - totel);
+                                bill.setFunds(bill.getFunds() - totel);
                                 bill.setVoted(true);
                                 bill.setCurrentVote(a.getName());
                                 UserDAO update = new UserDAO();
@@ -442,7 +428,7 @@ public class VotingBoothDAO extends JPanel {
                                     Runner.logger.severe("Can't Update User!");
 									e1.printStackTrace();
 								}
-                                JOptionPane.showMessageDialog(null, "Total Wager on " + a.getName() + " is:  " + totel + "\n You have " + (bill.getFunds() - totel) + " coins.");
+                                JOptionPane.showMessageDialog(null, "Total Wager on " + a.getName() + " is:  " + totel + "\n You have " + bill.getFunds() + " coins.");
                             }
                         }
 
@@ -531,7 +517,7 @@ public class VotingBoothDAO extends JPanel {
 									e1.printStackTrace();
 								}
                                 //FIXME TRACK NUMBER OF VOTES PER CHARACTER
-                                JOptionPane.showMessageDialog(null, "Total Wager on " + b.getName() + " is:  " + totel + "\n You have " + (bill.getFunds() - totel) + " coins.");
+                                JOptionPane.showMessageDialog(null, "Total Wager on " + b.getName() + " is:  " + totel + "\n You have " + bill.getFunds() + " coins.");
                             }
                         }
                     } else {

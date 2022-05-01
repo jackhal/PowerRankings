@@ -49,17 +49,25 @@ public class CharacterVotesDAO extends CharacterVotes {
         Runner.logger.info("updating the user");
         List<String[]> data = new ArrayList<>();
         ArrayList<CharacterVotes> savedUsers = getCharacterVotes();
+        boolean pig = false;
         if(savedUsers.size() == 0){
             CharacterVotes u = characterVotes;
             data.add(new String[]{u.getUser(), u.getMatchAChoice(), u.getMatchBChoice(), u.getMatchCChoice(),
                     u.getMatchDChoice(), String.valueOf(u.getMatchABet()), String.valueOf(u.getMatchBBet()),
                     String.valueOf(u.getMatchCBet()), String.valueOf(u.getMatchDBet())});
+            pig = true;
         }
-
         for (CharacterVotes u : savedUsers) {
             if (u.getUser().equals(characterVotes.getUser())) {
                 u = characterVotes;
+                pig = true;
             }
+            data.add(new String[]{u.getUser(), u.getMatchAChoice(), u.getMatchBChoice(), u.getMatchCChoice(),
+                    u.getMatchDChoice(), String.valueOf(u.getMatchABet()), String.valueOf(u.getMatchBBet()),
+                    String.valueOf(u.getMatchCBet()), String.valueOf(u.getMatchDBet())});
+       }
+        if(!pig){
+            CharacterVotes u = characterVotes;
             data.add(new String[]{u.getUser(), u.getMatchAChoice(), u.getMatchBChoice(), u.getMatchCChoice(),
                     u.getMatchDChoice(), String.valueOf(u.getMatchABet()), String.valueOf(u.getMatchBBet()),
                     String.valueOf(u.getMatchCBet()), String.valueOf(u.getMatchDBet())});

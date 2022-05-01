@@ -1,6 +1,8 @@
 package edu.baylor.ecs.csi3471.groupProject.UI;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
+import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 
 import javax.swing.*;
@@ -39,7 +41,7 @@ public class VotingBoothGUI {
             contentPane.add(new VotingBoothDAO(a[4], a[5]));
             contentPane.add(new VotingBoothDAO(a[6], a[7]));
         }
-        else if(length < 12){
+        else if(length <= 12){
             contentPane.setLayout(new GridLayout(2, 2));
             contentPane.add(new VotingBoothDAO(a[8], a[9]));
             contentPane.add(new VotingBoothDAO(a[10], a[11]));
