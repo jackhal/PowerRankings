@@ -385,6 +385,17 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 		ageLabel = new JLabel(ageString);
 		emailLabel = new JLabel(emailString);
 		passwordLabel = new JLabel(passwordString);
+		
+		userNameLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		userNameLabel.setForeground(Color.WHITE);
+		nickNameLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		nickNameLabel.setForeground(Color.WHITE);
+		ageLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		ageLabel.setForeground(Color.WHITE);
+		emailLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		emailLabel.setForeground(Color.WHITE);
+		passwordLabel.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		passwordLabel.setForeground(Color.WHITE);
 
 		userNameField = new JFormattedTextField();
 		userNameField.setValue(new String(userName));
@@ -420,20 +431,7 @@ public class RegisterForm extends JPanel implements PropertyChangeListener {
 		
 		JPanel pane = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-		
-		JMenuBar menuBar = new JMenuBar();
-		
-		//Build the first menu.
-		JMenu menu = new JMenu("Help");
-		menu.setMnemonic(KeyEvent.VK_A);
-		menu.getAccessibleContext().setAccessibleDescription(
-		        "The only menu in this program that has menu items");
-		menuBar.add(menu);
-
-		//a group of JMenuItems
-		JMenuItem menuItem = new JMenuItem("A text-only menu item",
-		                         KeyEvent.VK_T);
-		menu.add(menuItem);
+		pane.setBackground(Color.decode("#1A4645"));
 		
 		c.ipady = 12;								// vertically sizes label and text fields
 		c.insets = new Insets(40,0,0,0);  			// creates vertical gap between rows 
