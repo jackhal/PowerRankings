@@ -209,13 +209,13 @@ public class TournamentBracketPanel
 
         JLayeredPane myBigPane = new JLayeredPane();
         //imgPanel.setBounds(0, 0, 550, 550);
-        imgPanel.setBounds(350, 100, 550, 650);
+        imgPanel.setBounds(225, 100, 550, 650);
 
         myBigPane.add(imgPanel, JLayeredPane.DEFAULT_LAYER);
 
 
         Runner.logger.info("adding round one to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 350, 125, 450, 175, 0, 8);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 225, 125, 450, 175, 0, 8);
 
 
 //        logger.info("adding round two to the tournament bracket");
@@ -250,7 +250,7 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters();
 
         Runner.logger.info("adding round two to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 525, 230, 120, 350, 8, 12);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 410, 230, 120, 350, 8, 12);
 
 //        frame.add(myBigPane);
 //        frame.setVisible(true);
