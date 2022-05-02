@@ -93,6 +93,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @throws Exception
      */
     public void removeCharacterVote(String username, String characterName) throws Exception {
+        Runner.logger.info("removing " + characterName + " from " + username);
     	CharacterVotes votes = this.getCharacterVoteByUsername(username);
     	
     	if (votes.getMatchAChoice().equals(characterName)) {
