@@ -48,7 +48,7 @@ public class VotesPanel extends JPanel {
         String [] empty = {"_", "_"};
         
         int currRow = 0;
-        if (!votes.getMatchAChoice().isEmpty()) {
+        if (!votes.getMatchAChoice().isEmpty() && votes.getMatchABet() != 0) {
             model.addRow(empty);
             model.setValueAt(votes.getMatchAChoice(), currRow, 0);
             model.setValueAt(votes.getMatchABet(), currRow, 1);
@@ -56,7 +56,7 @@ public class VotesPanel extends JPanel {
             currRow++;
         }
         
-        if (!votes.getMatchBChoice().isEmpty()) {
+        if (!votes.getMatchBChoice().isEmpty() && votes.getMatchBBet() != 0) {
         	model.addRow(empty);
         	model.setValueAt(votes.getMatchBChoice(), currRow, 0);
             model.setValueAt(votes.getMatchBBet(), currRow, 1);
@@ -64,7 +64,7 @@ public class VotesPanel extends JPanel {
             currRow++;
         }
         
-        if (!votes.getMatchCChoice().isEmpty()) {
+        if (!votes.getMatchCChoice().isEmpty() && votes.getMatchCBet() != 0) {
         	model.addRow(empty);
         	model.setValueAt(votes.getMatchCChoice(), currRow, 0);
             model.setValueAt(votes.getMatchCBet(), currRow, 1);
@@ -72,7 +72,7 @@ public class VotesPanel extends JPanel {
             currRow++;
         }
 
-        if (!votes.getMatchDChoice().isEmpty()) {
+        if (!votes.getMatchDChoice().isEmpty() && votes.getMatchDBet() != 0) {
         	model.addRow(empty);
         	model.setValueAt(votes.getMatchDChoice(), currRow, 0);
             model.setValueAt(votes.getMatchDBet(), currRow, 1);
