@@ -281,7 +281,7 @@ public class VotingBoothDAO extends JPanel {
                                 match = 4;
                             }
                         }
-                        else if(loop.length < 12){
+                        else if(length < 12){
                             if(loop[9].equals(b)){
                                 red.setMatchAChoice(b.getName());
                                 match = 1;

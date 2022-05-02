@@ -106,11 +106,23 @@ public class VotingBoothGUI {
                         for (int j = 0; j < tally.size(); j++) {
                             if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchAChoice())) {
                                 bertvote++;
-                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
+                            }
+                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchAChoice())) {
+                                ganvote++;
+                            }
+                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
                                 bertvote++;
-                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
+                            }
+                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
+                                ganvote++;
+                            }
+                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
                                 bertvote++;
-                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchDChoice())) {
+                            }
+                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
+                                ganvote++;
+                            }
+                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchDChoice())) {
                                 bertvote++;
                             } else {
                                 ganvote++;
