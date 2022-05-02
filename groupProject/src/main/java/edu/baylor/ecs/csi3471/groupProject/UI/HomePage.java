@@ -2,6 +2,7 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterDAO;
 //import jdk.internal.icu.lang.UCharacterDirection;
 
 import java.awt.event.ActionEvent;
@@ -28,6 +29,7 @@ public class HomePage {
 	static String currUsername;
 	static TournamentBracketPanel p;
 	static JLayeredPane layered;
+	static JFrame mainFrame;
 
 	/**
 	 * createAndShowGUI
@@ -71,7 +73,7 @@ public class HomePage {
 		}
 		
 		// create mainFrame
-		JFrame mainFrame = new JFrame("Power Rankings");
+		mainFrame = new JFrame("Power Rankings");
 		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		
 		JPanel menuPanel = addMenu();
@@ -122,7 +124,7 @@ public class HomePage {
 		// variable declarations
 		JPanel menuPanel;
 		final JButton editProfile, charSearch, leaderboard, currentRound, createChar, cancelBet;
-		final JButton endRound;
+		final JButton endRound, newTournament;
 
 		// variable initialization
 		menuPanel = new JPanel();
@@ -304,10 +306,6 @@ public class HomePage {
 					//ready for winner
 					p.getWinner(layered);
 					endRound.setEnabled(false);
-					int option = JOptionPane.showConfirmDialog(null, "Do you want to Start a NEW Tournament?", "New Tourney", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-					if(option == JOptionPane.YES_OPTION){
-
-					}
 				}
 				else
 				{
@@ -316,6 +314,98 @@ public class HomePage {
 				}
 			}
 		});
+
+		newTournament = new JButton("Start new tournament");
+		newTournament.setBackground(Color.decode("#FF00E6"));
+		newTournament.setOpaque(true);
+		newTournament.setBorderPainted(false);
+		newTournament.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		newTournament.setForeground(Color.WHITE);
+		newTournament.setFocusPainted(false);
+
+		newTournament.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				//if tournament ongoing make this button invalid
+				int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to start a new tournament?", "New Tournament", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if(option == JOptionPane.YES_OPTION)
+				{
+					//create new tournament
+//					FileWriter fw = null;
+//					try
+//					{
+//						fw = new FileWriter("CharacterRounds.csv", true);
+//					}
+//					catch(Exception ex)
+//					{
+//						Runner.logger.severe("Unable to open CharacterRounds.csv");
+//						System.out.println(ex.getStackTrace());
+//					}
+//
+//
+//					BufferedWriter bw = new BufferedWriter(fw);
+					//PrintWriter pWriter = new PrintWriter(bw);
+					PrintWriter pWriter = null;
+
+					try
+					{
+						pWriter = new PrintWriter("CharacterRounds.csv");
+					}
+					catch(Exception ex)
+					{
+						Runner.logger.severe("unable to open CharacterRounds.csv");
+						System.out.println(ex.getStackTrace());
+					}
+
+					pWriter.flush();
+					pWriter.write("Name\tWorld\tDescription\tWin\tLoss\tID\tURL\tOwner");
+
+
+					CharacterDAO charDataBase = new CharacterDAO();
+					ArrayList<Character> myChars = charDataBase.makeList();
+
+
+					for(int i = 2; i < 10; i++)
+					{
+						//add entries to character rounds
+						try
+						{
+							pWriter.flush();
+							pWriter.print(myChars.get(i).charToCSV());
+							pWriter.flush();
+						}
+						catch(Exception ex) {
+							Runner.logger.severe("Can't write character");
+							System.out.println(ex.getStackTrace());
+						}
+					}
+
+					JOptionPane.showMessageDialog(null, "The next login will display the new tournament!");
+					//FUNCTIONS FOR CHARACTERDAO
+					/*
+					--> function to write to characterRounds file
+					--> function to clear characterRounds file
+					--> function to get the number of characters/a list of characters from the character rounds file
+					 */
+//
+//					layered = p.getBracket();
+//					mainFrame.add(layered);
+//
+//					pWriter.close();
+
+
+				}
+			}
+		});
+
+
+
+
+
+
+
+
 
 
 		// add items to JPanel
@@ -332,6 +422,7 @@ public class HomePage {
 		if(Runner.curUser.isAdmin())
 		{
 			menuPanel.add(endRound);
+			menuPanel.add(newTournament);
 			long lines = 0;
 			try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
 				while (reader.readLine() != null) lines++;
