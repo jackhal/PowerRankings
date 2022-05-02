@@ -83,6 +83,28 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
         pw.close();
     }
+    
+    public void removeCharacterVote(String username, String characterName) throws Exception {
+    	CharacterVotes votes = this.getCharacterVoteByUsername(username);
+    	
+    	if (votes.getMatchAChoice().equals(characterName)) {
+    		votes.setMatchAChoice("");
+    		votes.setMatchABet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchBChoice().equals(characterName)) {
+    		votes.setMatchBChoice("");
+    		votes.setMatchBBet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchCChoice().equals(characterName)) {
+    		votes.setMatchCChoice("");
+    		votes.setMatchCBet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchDChoice().equals(characterName)) {
+    		votes.setMatchDChoice("");
+    		votes.setMatchDBet(0);
+    		this.updateCharacterVotes(votes);
+    	}
+    }
 
     /**
      * getCharacterVoteByUsername

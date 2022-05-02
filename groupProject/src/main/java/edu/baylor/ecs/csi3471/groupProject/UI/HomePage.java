@@ -262,7 +262,7 @@ public class HomePage {
 		cancelBet.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				VotesPanel votePanel = new VotesPanel(Runner.curUser.getUsername());
 			}
 		});
 
