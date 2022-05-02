@@ -30,10 +30,16 @@ public class RegisterPage {
 		JMenuItem title = new JMenuItem("REGISTRATION"); 						// title name
 		title.setOpaque(true); 													// make opaque
 		title.setFont(new Font("roboto condensed", Font.PLAIN, 50)); 			// font of title
-		title.setBackground(Color.BLACK); 										// make title background black
+		title.setForeground((Color.WHITE));
+		title.setBackground(Color.decode("#051821")); 							// make title background black
 		registerMenuBar.add(title); 											// add title to title menu bar
 		
 		final JButton submitButton = new JButton("Submit");						// when clicked the form will be checked
+		submitButton.setBackground(Color.decode("#F58800"));
+		submitButton.setForeground(Color.WHITE);
+		submitButton.setOpaque(true);
+		submitButton.setBorderPainted(false);
+		
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent submit) {
 				Runner.logger.info("User selected submit on the register form.");
@@ -42,11 +48,10 @@ public class RegisterPage {
 			}
 		});
 		
-		submitButton.setBackground(Color.BLACK);
 		registerForm.add(submitButton, BorderLayout.SOUTH);
-		
 		registerPage.setJMenuBar(registerMenuBar);
 		registerPage.getContentPane().add(registerForm);
 		registerPage.setVisible(true);
 	}
 }
+
