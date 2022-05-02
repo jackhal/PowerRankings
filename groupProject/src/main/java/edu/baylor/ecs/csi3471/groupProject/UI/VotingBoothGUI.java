@@ -273,10 +273,11 @@ public class VotingBoothGUI {
                         }
                         int lengthy = 0;
                         Character[] myChars = frame.getBracketCharacters();
-                        while (myChars[lengthy] != null) {
+                        /*while (myChars[lengthy] != null) {
                             lengthy++;
                         }
-                        lengthy--;
+                        lengthy--;*/
+                        lengthy = myChars.length;
                         Integer match = 0;
                         bert.setCurrVote(0);
                         gandhi.setCurrVote(0);
@@ -288,7 +289,8 @@ public class VotingBoothGUI {
 
         // Exit when the window is closed.
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(700, 600));
+        //frame.setPreferredSize(new Dimension(700, 600));
+        frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
         frame.pack();
         frame.setVisible(true);
