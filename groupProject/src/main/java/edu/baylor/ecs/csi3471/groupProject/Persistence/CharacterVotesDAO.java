@@ -84,6 +84,14 @@ public class CharacterVotesDAO extends CharacterVotes {
         pw.close();
     }
     
+    
+    /** 
+     * removeCharacterVote
+     * This function removes a specific user's vote on a specific character
+     * @param username
+     * @param characterName
+     * @throws Exception
+     */
     public void removeCharacterVote(String username, String characterName) throws Exception {
     	CharacterVotes votes = this.getCharacterVoteByUsername(username);
     	
@@ -204,6 +212,14 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
     }
 
+    
+    /** 
+     * setCurrentBet
+     * This function sets a specific user's current bet
+     * @param username
+     * @param newBet
+     * @param match
+     */
     protected void setCurrentBet(String username, int newBet, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
