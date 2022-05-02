@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -198,4 +199,109 @@ public class CharacterDAO extends Character {
 			return true;
 		}
 	}
+
+
+    public long getCharacterRoundsLines()
+    {
+        long lines = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
+            while (reader.readLine() != null) lines++;
+        } catch (IOException ei) {
+            Runner.logger.severe("Unable to open CharacterRounds.csv");
+            ei.printStackTrace();
+        }
+
+        return lines;
+    }
+
+
+
+    public void reloadCharacterRounds()
+    {
+        Runner.logger.info("newTournament generated");
+        //create new tournament
+//					FileWriter fw = null;
+//					try
+//					{
+//						fw = new FileWriter("CharacterRounds.csv", true);
+//					}
+//					catch(Exception ex)
+//					{
+//						Runner.logger.severe("Unable to open CharacterRounds.csv");
+//						System.out.println(ex.getStackTrace());
+//					}
+//
+//
+//					BufferedWriter bw = new BufferedWriter(fw);
+        //PrintWriter pWriter = new PrintWriter(bw);
+        PrintWriter pWriter = null;
+
+        try
+        {
+            pWriter = new PrintWriter("CharacterRounds.csv");
+        }
+        catch(Exception ex)
+        {
+            Runner.logger.severe("unable to open CharacterRounds.csv");
+            System.out.println(ex.getStackTrace());
+        }
+
+        pWriter.flush();
+        pWriter.write("Name\tWorld\tDescription\tWin\tLoss\tID\tURL\tOwner");
+
+
+        CharacterDAO charDataBase = new CharacterDAO();
+        ArrayList<Character> myChars = charDataBase.makeList();
+
+        Random rand = new Random(); //instance of random class
+
+        int upperbound = myChars.size() - 1; //15
+        //generate random values from 0-14
+
+
+        ArrayList<Integer> usedNumbers = new ArrayList<>();
+        for(int i = 0; i < 8; i++)
+        {
+            int int_random = rand.nextInt(upperbound);
+            //add entries to character rounds
+
+            while(usedNumbers.contains(int_random))
+            {
+                int_random = rand.nextInt(upperbound);
+            }
+
+            usedNumbers.add(int_random);
+
+            try
+            {
+                pWriter.flush();
+                pWriter.print(myChars.get(int_random).charToCSV());
+                pWriter.flush();
+            }
+            catch(Exception ex) {
+                Runner.logger.severe("Can't write character");
+                System.out.println(ex.getStackTrace());
+            }
+        }
+
+        usedNumbers.clear();
+
+        JOptionPane.showMessageDialog(null, "The next login will display the new tournament!");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

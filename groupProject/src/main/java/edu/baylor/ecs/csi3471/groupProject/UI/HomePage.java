@@ -86,13 +86,8 @@ public class HomePage {
 		
 		p 	= new TournamentBracketPanel();
 		layered 		= p.getBracket();
-		long lines = 0;
-		try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
-			while (reader.readLine() != null) lines++;
-		} catch (IOException ei) {
-			Runner.logger.severe("Unable to open CharacterRounds.csv");
-			ei.printStackTrace();
-		}
+		CharacterDAO myCharDao = new CharacterDAO();
+		long lines = myCharDao.getCharacterRoundsLines();
 		if(lines >= 13)
 		{
 			p.getRound2(layered);
@@ -285,13 +280,9 @@ public class HomePage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Runner.logger.info("End round pressed");
-				long lines = 0;
-				try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
-					while (reader.readLine() != null) lines++;
-				} catch (IOException ei) {
-					Runner.logger.severe("Unable to open CharacterRounds.csv");
-					ei.printStackTrace();
-				}
+
+				CharacterDAO myCharDAO = new CharacterDAO();
+				long lines = myCharDAO.getCharacterRoundsLines();
 
 				if(lines == 13)
 				{
@@ -332,13 +323,9 @@ public class HomePage {
 				Runner.logger.info("newTournament pressed");
 				//if tournament ongoing make this button invalid
 
-				long lines = 0;
-				try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
-					while (reader.readLine() != null) lines++;
-				} catch (IOException ei) {
-					Runner.logger.severe("Unable to open CharacterRounds.csv");
-					ei.printStackTrace();
-				}
+				CharacterDAO myCharDAO = new CharacterDAO();
+
+				long lines = myCharDAO.getCharacterRoundsLines();
 				if(lines < 16)
 				{
 					JOptionPane.showMessageDialog(null, "Please wait for the current tournament to finish before starting a new one.");
@@ -348,102 +335,12 @@ public class HomePage {
 					int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to start a new tournament?", "New Tournament", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if(option == JOptionPane.YES_OPTION)
 					{
-						Runner.logger.info("newTournament generated");
-						//create new tournament
-//					FileWriter fw = null;
-//					try
-//					{
-//						fw = new FileWriter("CharacterRounds.csv", true);
-//					}
-//					catch(Exception ex)
-//					{
-//						Runner.logger.severe("Unable to open CharacterRounds.csv");
-//						System.out.println(ex.getStackTrace());
-//					}
-//
-//
-//					BufferedWriter bw = new BufferedWriter(fw);
-						//PrintWriter pWriter = new PrintWriter(bw);
-						PrintWriter pWriter = null;
-
-						try
-						{
-							pWriter = new PrintWriter("CharacterRounds.csv");
-						}
-						catch(Exception ex)
-						{
-							Runner.logger.severe("unable to open CharacterRounds.csv");
-							System.out.println(ex.getStackTrace());
-						}
-
-						pWriter.flush();
-						pWriter.write("Name\tWorld\tDescription\tWin\tLoss\tID\tURL\tOwner");
-
-
-						CharacterDAO charDataBase = new CharacterDAO();
-						ArrayList<Character> myChars = charDataBase.makeList();
-
-
-						Random rand = new Random(); //instance of random class
-
-						int upperbound = (int)lines - 1; //15
-						//generate random values from 0-14
-
-
-						ArrayList<Integer> usedNumbers = new ArrayList<>();
-						for(int i = 0; i < 8; i++)
-						{
-							int int_random = rand.nextInt(upperbound);
-							//add entries to character rounds
-
-							while(usedNumbers.contains(int_random))
-							{
-								int_random = rand.nextInt(upperbound);
-							}
-
-							usedNumbers.add(int_random);
-
-							try
-							{
-								pWriter.flush();
-								pWriter.print(myChars.get(int_random).charToCSV());
-								pWriter.flush();
-							}
-							catch(Exception ex) {
-								Runner.logger.severe("Can't write character");
-								System.out.println(ex.getStackTrace());
-							}
-						}
-
-						usedNumbers.clear();
-
-						JOptionPane.showMessageDialog(null, "The next login will display the new tournament!");
-						//FUNCTIONS FOR CHARACTERDAO
-					/*
-					--> function to write to characterRounds file
-					--> function to clear characterRounds file
-					--> function to get the number of characters/a list of characters from the character rounds file
-					 */
-//
-//					layered = p.getBracket();
-//					mainFrame.add(layered);
-//
-//					pWriter.close();
+						myCharDAO.reloadCharacterRounds();
 					}
 				}
 
-
 			}
 		});
-
-
-
-
-
-
-
-
-
 
 		// add items to JPanel
 		DailyCheckIn d = new DailyCheckIn();
@@ -473,12 +370,6 @@ public class HomePage {
 				endRound.setEnabled(false);
 			}
 		}
-
-
-
-
-
-
 
 		/*
 		 * BufferedImage image = null; try { image = ImageIO.read(new
