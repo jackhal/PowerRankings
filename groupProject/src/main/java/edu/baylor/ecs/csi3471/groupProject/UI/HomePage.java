@@ -6,7 +6,9 @@ import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterDAO;
 //import jdk.internal.icu.lang.UCharacterDirection;
 
 import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -83,6 +85,21 @@ public class HomePage {
 		menuPanel.setLayout(new GridLayout());
 		menuPanel.setBackground(Color.decode("#032930"));
 		mainFrame.add(menuPanel);
+		
+		JPanel eastDesignPanel = new JPanel();
+		eastDesignPanel.setLayout(new GridLayout(1,3));
+		eastDesignPanel.setPreferredSize(new Dimension(200, 200)); 	
+		eastDesignPanel.setBackground(Color.decode("#F58800"));
+		
+		JLabel eastLabel = new JLabel("Welcome to the tournament!");
+		eastDesignPanel.add(eastLabel);
+		
+		mainFrame.add(eastDesignPanel, BorderLayout.EAST);
+		
+		JPanel westDesignPanel = new JPanel();
+		westDesignPanel.setPreferredSize(new Dimension(200, 200)); 	
+		westDesignPanel.setBackground(Color.decode("#F58800"));
+		mainFrame.add(westDesignPanel, BorderLayout.WEST);
 		
 		p 	= new TournamentBracketPanel();
 		layered 		= p.getBracket();
@@ -273,9 +290,6 @@ public class HomePage {
 		endRound.setFont(new Font("sans-serif", Font.PLAIN, 10));
 		endRound.setForeground(Color.WHITE);
 		endRound.setFocusPainted(false);
-//			endRound.setBackground(Color.BLACK);
-//			endRound.setForeground(Color.RED);
-
 		endRound.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -309,7 +323,7 @@ public class HomePage {
 		});
 
 		newTournament = new JButton("Start new tournament");
-		newTournament.setBackground(Color.decode("#FF00E6"));
+		newTournament.setBackground(Color.decode("#db0000"));
 		newTournament.setOpaque(true);
 		newTournament.setBorderPainted(false);
 		newTournament.setFont(new Font("sans-serif", Font.PLAIN, 10));
@@ -391,5 +405,3 @@ public class HomePage {
 		return menuPanel;
 	}
 }
-
-
