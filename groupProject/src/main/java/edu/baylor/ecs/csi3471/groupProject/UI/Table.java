@@ -44,13 +44,13 @@ public class Table extends JPanel {
     //Creating the frame of the table, have to actually build table using something else
     protected static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("TableFilterDemo");
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
+        JFrame frame = new JFrame("Characters");
+        
         //Create and set up the content pane.
         Table newContentPane = new Table();
-        newContentPane.setOpaque(true); //content panes must be opaque
+        newContentPane.setBackground(Color.decode("#266867"));
+        newContentPane.setOpaque(true); 
+        
         frame.setContentPane(newContentPane);
 
         //Display the window.
@@ -66,10 +66,13 @@ public class Table extends JPanel {
         super();
         Runner.logger.info("Character table generated");
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+ 
         String[] columnNames = {"Name", "World", "Record", "Added By", "View", "Edit"};
         String[][] data = {{"yes", "no", "idk", "maybe"}};
-        int rowNumber = 0;
+        
+        //int rowNumber = 0;
         final DefaultTableModel model = new DefaultTableModel(null, columnNames);
+       
         //File selectedFile = openCSV();
         CharacterDAO cdao = new CharacterDAO();
         ArrayList<Character> cList = cdao.makeList();
@@ -104,8 +107,12 @@ public class Table extends JPanel {
         table.setRowSorter(sorter);
         table.setPreferredScrollableViewportSize(new Dimension(800, 70));
         table.setFillsViewportHeight(true);
-
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setBackground(Color.decode("#266867"));
+        table.setFont(new Font("roboto condensed", Font.PLAIN, 10));
+        table.setForeground(Color.white);
+        table.setSelectionBackground(Color.decode("#07566"));				// high light color of row user selects
+        table.setSelectionForeground(Color.WHITE);							// font color in high lighted row
 
         Box b = Box.createHorizontalBox();
         b.add(initMenu(model));
@@ -113,10 +120,10 @@ public class Table extends JPanel {
         add(b);
 
         JScrollPane scrollPane = new JScrollPane(table);
-
+        scrollPane.setBackground(Color.decode("#1A4645"));
         add(scrollPane);
+        
         TableFilterHeader filterHeader = new TableFilterHeader(table, AutoChoices.ENABLED);
-
 
         Action delete = new AbstractAction() {
             @Override
@@ -211,6 +218,9 @@ public class Table extends JPanel {
         ButtonColumn buttonColumn2 = new ButtonColumn(table, edit, 5);
         buttonColumn2.setMnemonic(KeyEvent.VK_E);
 
+        
+    	// I blocked this out because I was not sure if we were going to keep it!
+        /*
         JButton submit = new JButton("Save");
         submit.addActionListener(new ActionListener() {
             @Override
@@ -218,7 +228,7 @@ public class Table extends JPanel {
                 Runner.logger.info("Changes saved");
             }
         });
-        add(submit);
+        add(submit);*/
 
 
     }
@@ -236,23 +246,34 @@ public class Table extends JPanel {
         JMenuItem menuItem;
 
         menuBar = new JMenuBar();
-
+        menuBar.setBackground(Color.decode("#1A4645"));
+        menuBar.setOpaque(true);
+	    menuBar.setPreferredSize(new Dimension(2000, 30));		
+	    
         menu = new JMenu("Menu");
+        menu.setFont(new Font("roboto condensed", Font.PLAIN, 10));
+        menu.setForeground(Color.white);
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription(
                 "Allows the user to have controls over menu.");
+        
         menuBar.add(menu);
 
         menuItem = new JMenuItem("Remove", KeyEvent.VK_T);
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "Meant to remove item");
+        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// remove menu item font
+        menuItem.setForeground(Color.WHITE);
+	    menuItem.setBackground(Color.decode("#1A4645"));						// remove menu item background color
         menuItem.addActionListener(new RemoveLineActionListener());
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Add New Line");
+        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// add new line font
+        menuItem.setForeground(Color.WHITE);
+	    menuItem.setBackground(Color.decode("#266867"));						// add new line background color
         menuItem.addActionListener(new AddLineActionListener());
         menu.add(menuItem);
-
 
         menu.addSeparator();
         /***FIX MEEEE MAybe use to send out data when complete***/
