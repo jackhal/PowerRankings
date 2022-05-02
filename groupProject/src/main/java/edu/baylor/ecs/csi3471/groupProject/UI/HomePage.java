@@ -92,6 +92,8 @@ public class HomePage {
 		eastDesignPanel.setBackground(Color.decode("#F58800"));
 		
 		JLabel eastLabel = new JLabel("Welcome to the tournament!");
+		eastLabel.setFont(new Font("sans-serif", Font.PLAIN, 15));
+		eastLabel.setForeground(Color.WHITE);
 		eastDesignPanel.add(eastLabel);
 		
 		mainFrame.add(eastDesignPanel, BorderLayout.EAST);
