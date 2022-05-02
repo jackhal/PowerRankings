@@ -4,6 +4,7 @@ import java.util.Objects;
 
 /**
  * Class CharacterVotes
+ * This class keeps track of the choices the User make with their corresponding bets.
  */
 public class CharacterVotes {
     private String matchAChoice;

@@ -71,207 +71,6 @@ public class VotingBoothDAO extends JPanel {
         add(title, BorderLayout.NORTH);
         add(label, BorderLayout.SOUTH);
         add(choicePanel, BorderLayout.CENTER);
-/*
-        if(Runner.curUser.isAdmin()){
-            Runner.logger.info("User is Admin");
-            JButton endRound = new JButton("End Match");
-            endRound.setPreferredSize(new Dimension(100, 30));
-            endRound.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //FIXME GO TO NEXT ROUND FUNCTIONALITY
-                    endRound.setEnabled(false);
-                    TournamentBracketPanel frame = new TournamentBracketPanel();
-                    CharacterVotesDAO charVote = new CharacterVotesDAO();
-                    Runner.logger.info("End Match Button Pressed");
-                    Integer a = 0;
-                    ArrayList<CharacterVotes> tally = new ArrayList<>();
-                    try {
-                        tally = charVote.getCharacterVotes();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                    int bertvote = 0;
-                    int ganvote = 0;
-                    for(int i = 0; i < tally.size(); i++){
-                        if(bert.getName().equalsIgnoreCase(tally.get(i).getMatchAChoice())){
-                            bertvote++;
-                        }
-                        else if(bert.getName().equalsIgnoreCase(tally.get(i).getMatchBChoice())){
-                            bertvote++;
-                        }
-                        else if(bert.getName().equalsIgnoreCase(tally.get(i).getMatchCChoice())){
-                            bertvote++;
-                        }
-                        else if(bert.getName().equalsIgnoreCase(tally.get(i).getMatchDChoice())){
-                            bertvote++;
-                        }
-                        else{
-                            ganvote++;
-                        }
-
-                    }
-                    if(bertvote > ganvote) {
-                        a = bert.getWin();
-                        bert.setWin(a++);
-                        a = gandhi.getLoss();
-                        gandhi.setLoss(a++);
-                        //TournamentBracketPanel frame = new TournamentBracketPanel();
-                        FileWriter fileWriter = null;
-                        try {
-                            fileWriter = new FileWriter("CharacterRounds.csv", true);
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            fileWriter.write(bert.charToCSV());
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            fileWriter.close();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-
-                        JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
-                        Character[] myChars = frame.getBracketCharacters();
-                        int length = 0;
-                        while(myChars[length] != null){
-                            length++;
-                        }
-                        System.out.println(length);
-                        length--;
-                        Integer match = 0;
-                        if (length == 8 || length == 12) {
-                            match = 1;
-                        } else if (length == 9 || length == 13) {
-                            match = 2;
-                        } else if (length == 10) {
-                            match = 3;
-                        } else if (length == 11) {
-                            match = 4;
-                        }
-                        UserDAO users = new UserDAO();
-                        ArrayList<User> userList = null;
-                        try {
-                            userList = users.getUsers();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            ArrayList<CharacterVotes> votes = charVote.getCharacterVotes();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        for (User u : userList) {
-                            try {
-                                String opt = charVote.findCurrentVote(u.getUsername(), match);
-                                if(opt.equalsIgnoreCase(bert.getName())){
-                                    int base = u.getFunds();
-                                    int win = charVote.findCurrentBet(u.getUsername(), match);
-                                    u.setFunds(base + (win * 2));
-                                }
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                            }
-                        }
-                    }
-                    else{
-                        a = gandhi.getWin();
-                        gandhi.setWin(a++);
-                        a = bert.getLoss();
-                        bert.setLoss(a++);
-                        FileWriter fileWriter = null;
-                        try {
-                            fileWriter = new FileWriter("CharacterRounds.csv", true);
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            fileWriter.write(gandhi.charToCSV());
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            fileWriter.close();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        JOptionPane.showMessageDialog(null, gandhi.getName() + " won the match!");
-                        Character[] myChars = frame.getBracketCharacters();
-                        int length = 0;
-                        while(myChars[length] != null){
-                            length++;
-                        }
-                        System.out.println(length);
-                        length--;
-                        Integer match = 0;
-                        if (length == 8 || length == 12) {
-                            match = 1;
-                        } else if (length == 9 || length == 13) {
-                            match = 2;
-                        } else if (length == 10) {
-                            match = 3;
-                        } else if (length == 11) {
-                            match = 4;
-                        }
-                        UserDAO users = new UserDAO();
-                        ArrayList<User> userList = null;
-                        try {
-                            userList = users.getUsers();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        try {
-                            ArrayList<CharacterVotes> votes = charVote.getCharacterVotes();
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                        for (User u : userList) {
-                            try {
-                                String opt = charVote.findCurrentVote(u.getUsername(), match);
-                                if(opt.equalsIgnoreCase(gandhi.getName())){
-                                    int base = u.getFunds();
-                                    int win = charVote.findCurrentBet(u.getUsername(), match);
-                                    u.setFunds(base + (win * 2));
-                                }
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                            }
-                        }
-                    }
-                    int length = 0;
-                    Character[] myChars = frame.getBracketCharacters();
-                    while(myChars[length] != null){
-                        length++;
-                    }
-                    System.out.println(length);
-                    length--;
-                    Integer match = 0;
-                    if (length > 13) {
-                        PrintWriter writer = null;
-                        try {
-                            writer = new PrintWriter("CharacterVotes.tsv");
-                        } catch (FileNotFoundException ex) {
-                            ex.printStackTrace();
-                        }
-                        writer.print("");
-                        writer.close();
-                    }
-                    bert.setCurrVote(0);
-                    gandhi.setCurrVote(0);
-
-
-
-
-
-                }
-            });
-            add(endRound, BorderLayout.WEST);
-        }
-        */
-
     }
 
     /**
@@ -538,6 +337,45 @@ public class VotingBoothDAO extends JPanel {
                             }
                         }
                     } else {
+                        /*
+                        int length = 0;
+                        while(loop[length] != null){
+                            length++;
+                        }
+                        length--;
+                        if(length < 9){
+                            if(loop[1].equals(b)){
+                                red.setMatchAChoice("null");
+                                match = 1;
+                            }
+                            else if(loop[3].equals(b)){
+                                red.setMatchBChoice("null");
+                                match = 2;
+                            }
+                            else if(loop[5].equals(b)){
+                                red.setMatchCChoice("null");
+                                match = 3;
+                            }
+                            else{
+                                red.setMatchDChoice("null");
+                                match = 4;
+                            }
+                        }
+                        else if(loop.length < 12){
+                            if(loop[9].equals(b)){
+                                red.setMatchAChoice("null");
+                                match = 1;
+                            }
+                            else{
+                                red.setMatchBChoice("null");
+                                match = 2;
+                            }
+                        }
+                        else{
+                            red.setMatchAChoice("null");
+                            match = 1;
+                        }
+                        */
                         exit = true;
                         radioButtons[0].setEnabled(false);
                         radioButtons[1].setEnabled(false);
@@ -546,6 +384,7 @@ public class VotingBoothDAO extends JPanel {
                     try {
                         characterVotesDAO.updateCharacterVotes(red);
                     } catch (IOException ex) {
+                        Runner.logger.severe("Unable to get update CharacterVotes");
                         ex.printStackTrace();
                     }
                 }

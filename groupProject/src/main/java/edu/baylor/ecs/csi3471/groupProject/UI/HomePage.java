@@ -304,6 +304,10 @@ public class HomePage {
 					//ready for winner
 					p.getWinner(layered);
 					endRound.setEnabled(false);
+					int option = JOptionPane.showConfirmDialog(null, "Do you want to Start a NEW Tournament?", "New Tourney", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if(option == JOptionPane.YES_OPTION){
+
+					}
 				}
 				else
 				{

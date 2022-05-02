@@ -45,23 +45,23 @@ public class VotingBoothGUI {
         Integer round = 0;
         Container contentPane = frame.getContentPane();
         if(length < 8) {
-            contentPane.setLayout(new GridLayout(4, 4));
+            contentPane.setLayout(new GridLayout(3, 2));
             contentPane.add(new VotingBoothDAO(a[0], a[1]));
             contentPane.add(new VotingBoothDAO(a[2], a[3]));
             contentPane.add(new VotingBoothDAO(a[4], a[5]));
             contentPane.add(new VotingBoothDAO(a[6], a[7]));
-            round = 1;
+            Runner.logger.info("Round 1 Match Voting Booth Being Created");
         }
         else if(length <= 12){
             contentPane.setLayout(new GridLayout(2, 2));
             contentPane.add(new VotingBoothDAO(a[8], a[9]));
             contentPane.add(new VotingBoothDAO(a[10], a[11]));
-            round = 2;
+            Runner.logger.info("Round 2 Match Voting Booth Being Created");
         }
         else{
             contentPane.setLayout(new GridLayout(2, 2));
             contentPane.add(new VotingBoothDAO(a[12], a[13]));
-            round = 3;
+            Runner.logger.info("Round 3 Match Voting Booth Being Created");
         }
 
         if(Runner.curUser.isAdmin()) {
@@ -81,6 +81,7 @@ public class VotingBoothGUI {
                     try {
                         tally = charVote.getCharacterVotes();
                     } catch (IOException ex) {
+                        Runner.logger.severe("Unable to get CharacterVotes");
                         ex.printStackTrace();
                     }
 
@@ -126,20 +127,24 @@ public class VotingBoothGUI {
                             try {
                                 fileWriter = new FileWriter("CharacterRounds.csv", true);
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to append to CharacterRounds.csv");
                                 ex.printStackTrace();
                             }
                             try {
                                 fileWriter.write(bert.charToCSV());
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable write" + bert.getName() + "to file");
                                 ex.printStackTrace();
                             }
                             try {
                                 fileWriter.close();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable close File");
                                 ex.printStackTrace();
                             }
 
                             JOptionPane.showMessageDialog(null, bert.getName() + " won the match!");
+                            Runner.logger.info(bert.getName() + " won the match!");
                             Character[] myChars = frame.getBracketCharacters();
                             int slots = 0;
                             /*while (myChars[slots] != null) {
@@ -162,11 +167,13 @@ public class VotingBoothGUI {
                             try {
                                 userList = users.getUsers();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to get Users");
                                 ex.printStackTrace();
                             }
                             try {
                                 ArrayList<CharacterVotes> votes = charVote.getCharacterVotes();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to get CharacterVotes");
                                 ex.printStackTrace();
                             }
                             for (User u : userList) {
@@ -178,6 +185,7 @@ public class VotingBoothGUI {
                                         u.setFunds(base + (win * 2));
                                     }
                                 } catch (Exception ex) {
+                                    Runner.logger.severe("Unable to find CurrentVote");
                                     ex.printStackTrace();
                                 }
                             }
@@ -190,19 +198,23 @@ public class VotingBoothGUI {
                             try {
                                 fileWriter = new FileWriter("CharacterRounds.csv", true);
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to open CharacterRounds");
                                 ex.printStackTrace();
                             }
                             try {
                                 fileWriter.write(gandhi.charToCSV());
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to write" + gandhi.getName() + "to file");
                                 ex.printStackTrace();
                             }
                             try {
                                 fileWriter.close();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to close file");
                                 ex.printStackTrace();
                             }
                             JOptionPane.showMessageDialog(null, gandhi.getName() + " won the match!");
+                            Runner.logger.info(gandhi.getName() + " won the match!");
                             Character[] myChars = frame.getBracketCharacters();
                             int longy = 0;
                             while (myChars[longy] != null) {
@@ -224,11 +236,13 @@ public class VotingBoothGUI {
                             try {
                                 userList = users.getUsers();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to get Users");
                                 ex.printStackTrace();
                             }
                             try {
                                 ArrayList<CharacterVotes> votes = charVote.getCharacterVotes();
                             } catch (IOException ex) {
+                                Runner.logger.severe("Unable to get CharacterVotes");
                                 ex.printStackTrace();
                             }
                             for (User u : userList) {
@@ -240,6 +254,7 @@ public class VotingBoothGUI {
                                         u.setFunds(base + (win * 2));
                                     }
                                 } catch (Exception ex) {
+                                    Runner.logger.severe("Unable to find CurrentVote from User");
                                     ex.printStackTrace();
                                 }
                             }
@@ -251,16 +266,6 @@ public class VotingBoothGUI {
                         }
                         lengthy--;
                         Integer match = 0;
-                        if (lengthy >= 14) {
-                            PrintWriter writer = null;
-                            try {
-                                writer = new PrintWriter("CharacterVotes.tsv");
-                            } catch (FileNotFoundException ex) {
-                                ex.printStackTrace();
-                            }
-                            writer.print("");
-                            writer.close();
-                        }
                         bert.setCurrVote(0);
                         gandhi.setCurrVote(0);
                     }

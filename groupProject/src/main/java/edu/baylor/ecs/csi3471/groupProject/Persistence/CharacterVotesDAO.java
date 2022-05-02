@@ -180,11 +180,13 @@ public class CharacterVotesDAO extends CharacterVotes {
                     try {
                         updateCharacterVotes(newVote);
                     } catch (IOException e) {
+                        Runner.logger.severe("Unable to update Character Votes");
                         e.printStackTrace();
                     }
                 }
             }
         } catch (FileNotFoundException e) {
+            Runner.logger.severe("Unable to find File");
             e.printStackTrace();
         }
     }
@@ -233,11 +235,13 @@ public class CharacterVotesDAO extends CharacterVotes {
                     try {
                         updateCharacterVotes(charVotes);
                     } catch (IOException e) {
+                        Runner.logger.severe("Unable to update CharacterVotes");
                         e.printStackTrace();
                     }
                 }
             }
         } catch (FileNotFoundException e) {
+            Runner.logger.severe("Unable to find File");
             e.printStackTrace();
         }
     }
