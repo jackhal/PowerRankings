@@ -83,6 +83,37 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
         pw.close();
     }
+    
+    
+    /** 
+     * removeCharacterVote
+     * This function removes a specific user's vote on a specific character
+     * @param username
+     * @param characterName
+     * @throws Exception
+     */
+    public void removeCharacterVote(String username, String characterName) throws Exception {
+        Runner.logger.info("removing " + characterName + " from " + username);
+    	CharacterVotes votes = this.getCharacterVoteByUsername(username);
+    	
+    	if (votes.getMatchAChoice().equals(characterName)) {
+    		votes.setMatchAChoice("");
+    		votes.setMatchABet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchBChoice().equals(characterName)) {
+    		votes.setMatchBChoice("");
+    		votes.setMatchBBet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchCChoice().equals(characterName)) {
+    		votes.setMatchCChoice("");
+    		votes.setMatchCBet(0);
+    		this.updateCharacterVotes(votes);
+    	} else if (votes.getMatchDChoice().equals(characterName)) {
+    		votes.setMatchDChoice("");
+    		votes.setMatchDBet(0);
+    		this.updateCharacterVotes(votes);
+    	}
+    }
 
     /**
      * getCharacterVoteByUsername
@@ -182,6 +213,14 @@ public class CharacterVotesDAO extends CharacterVotes {
         }
     }
 
+    
+    /** 
+     * setCurrentBet
+     * This function sets a specific user's current bet
+     * @param username
+     * @param newBet
+     * @param match
+     */
     protected void setCurrentBet(String username, int newBet, Integer match) {
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
