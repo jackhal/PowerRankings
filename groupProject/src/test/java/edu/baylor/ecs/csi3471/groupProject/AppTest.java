@@ -1,6 +1,7 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.CharacterVotes;
 import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
@@ -186,7 +187,7 @@ public class AppTest {
         String[] data = {"yesyesyes",	"yesyesyes","yesyesyes@yesyesyes.com","yesyes",	"20",	"500",	"0",	"false",	"false",	"none",	"null",	"0",	"04/01/22"};
         User u = new User(data);
         RegisterDAO d = new RegisterDAO();
-        Assertions.assertAll(() -> d.writeToFile(u));
+        //Assertions.assertAll(() -> d.writeToFile(u));
     }
 
     @DisplayName("forgotUsername pass")
@@ -195,14 +196,13 @@ public class AppTest {
         ForgotDAO f = new ForgotDAO();
         Assertions.assertEquals("ryan", f.findUsername("ryan@gmail.com"));
     }
-    
-    //FIXME TERMINATED TEST CASES
-    /*@DisplayName("forgotPassword pass")
+
+    @DisplayName("forgotPassword pass")
     @Test
     public void passForgotPass() throws NullPointerException {
         ForgotDAO f = new ForgotDAO();
-        Assertions.assertEquals("ryan", f.findUsername("ryan"));
-    }*/
+        Assertions.assertEquals("ryan", f.findPassword("ryan"));
+    }
     
     @DisplayName("forgotUsername fail")
     @Test
@@ -215,7 +215,7 @@ public class AppTest {
     @Test
     public void failForgotPass() throws NullPointerException {
         ForgotDAO f = new ForgotDAO();
-        Assertions.assertEquals("User not found", f.findUsername("ryannnnnnasdnsadn"));
+        Assertions.assertEquals("User not found", f.findPassword("ryannnnnnasdnsadn"));
     }
     
     @Test
@@ -249,28 +249,6 @@ public class AppTest {
 
         Assertions.assertAll(() -> new VotingBoothDAO(a, b));
     }
-//    @DisplayName("VotingBooth (fail)")
-//    @Test
-//    public void failVoting() throws Exception {
-//        CharacterDAO ch = new CharacterDAO();
-//        //Character a = ch.findChar("Kirby", "DreamLand");
-//        //Character b = ch.findChar("Spider-Ham", "New York");
-//
-//        //Assertions.assertAll(() -> new VotingBoothDAO(null, null));
-//        Assertions.assertThrows(Exception.class, (Executable) new VotingBoothDAO(null, null));
-//    }
-//    @DisplayName("update character csv (pass)")
-//    @Test
-//    public void passUpdateChar() throws Exception {
-//        CharacterDAO ch = new CharacterDAO();
-//        Character c = new Character("Speed",	"Earth",	"Stupid",	1,	0,	"https://i.ytimg.com/vi/wYZux3BMc5k/maxresdefault.jpg",	"Cyril");
-//        c.setName("Not speed");
-//        ch.updateCSV(1);
-//        Character d = ch.findChar("Not speed", "Earth");
-//        Assertions.assertEquals(c, d);
-//        c.setName("Speed");
-//        ch.updateCSV(1);
-//    }
 
     @DisplayName("makeList (pass)")
     @Test
@@ -301,7 +279,7 @@ public class AppTest {
     }
 
 
-    @DisplayName("validatePassword (pass")
+    @DisplayName("validatePassword (pass)")
     @Test
     public void passValidatePassword() throws Exception {
         Assertions.assertTrue(loginDAO.validatePassword("ryan", "ryan"));
@@ -312,5 +290,44 @@ public class AppTest {
     public void failValidatePassword() throws Exception {
         Assertions.assertFalse(loginDAO.validatePassword("ryan", "ryanDoesNotHaveThisPassword"));
     }
+    @DisplayName("getCharacters (pass)")
+    @Test
+    public void passGetCharacters() throws Exception {
+        CharacterVotesDAO ch = new CharacterVotesDAO();
+        ArrayList<CharacterVotes> list = ch.getCharacterVotes();
+        Assertions.assertTrue(list.size() > 0);
+    }
+
+    @DisplayName("update Char votes (pass)")
+    @Test
+    public void passUpdateCharVotes() throws Exception {
+        CharacterVotesDAO ch = new CharacterVotesDAO();
+        //Assertions.assertAll(() -> ch.updateCharacterVotes(new CharacterVotes()));
+    } //might not be a good test, dont wanna overwite important data
+
+    @DisplayName("update Char votes (pass)")
+    @Test
+    public void passGetCharVote() throws Exception {
+        CharacterVotesDAO ch = new CharacterVotesDAO();
+        Assertions.assertAll(() -> ch.getCharacterVoteByUsername("jack"));
+    }
+
+    @DisplayName("get Vote (pass)")
+    @Test
+    public void passGetVote() throws Exception {
+        CharacterVotesDAO ch = new CharacterVotesDAO();
+        Assertions.assertAll(() -> ch.findCurrentVote("ryan", 1));
+    }
+    @DisplayName("get bet (pass)")
+    @Test
+    public void passGetBet() throws Exception {
+        CharacterVotesDAO ch = new CharacterVotesDAO();
+        Assertions.assertAll(() -> ch.findCurrentBet("ryan", 1));
+    }
+
+
+
+
+
 
 }

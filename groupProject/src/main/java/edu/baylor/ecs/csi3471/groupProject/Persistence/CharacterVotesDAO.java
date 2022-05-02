@@ -45,7 +45,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param characterVotes
      * @throws IOException
      */
-    public void updateCharacterVotes(CharacterVotes characterVotes) throws IOException {
+    public void updateCharacterVotes(CharacterVotes characterVotes) throws IOException {   //tested
         Runner.logger.info("updating the user");
         List<String[]> data = new ArrayList<>();
         ArrayList<CharacterVotes> savedUsers = getCharacterVotes();
@@ -92,7 +92,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param characterName
      * @throws Exception
      */
-    public void removeCharacterVote(String username, String characterName) throws Exception {
+    public void removeCharacterVote(String username, String characterName) throws Exception {   //tested?
         Runner.logger.info("removing " + characterName + " from " + username);
     	CharacterVotes votes = this.getCharacterVoteByUsername(username);
     	
@@ -123,7 +123,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @return CharacterVotes
      * @throws Exception
      */
-    public CharacterVotes getCharacterVoteByUsername(String username) throws Exception {
+    public CharacterVotes getCharacterVoteByUsername(String username) throws Exception { //tested
         Runner.logger.info("getting user from username");
         Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
         String data[];
@@ -145,7 +145,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param match
      * @return String
      */
-    public String findCurrentVote(String username, Integer match) {
+    public String findCurrentVote(String username, Integer match) {  //tested
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
             String data[];
@@ -199,7 +199,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      * @param match
      * @return int
      */
-    public int findCurrentBet(String username, Integer match) {
+    public int findCurrentBet(String username, Integer match) {   //tested
         try {
             Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
             String data[];

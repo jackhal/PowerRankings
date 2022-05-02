@@ -17,7 +17,7 @@ public class loginDAO {
 	 * @param password password of user
 	 * @return asserts that the username and password match for login
 	 */
-	public static boolean validatePassword(String username, String password) {
+	public static boolean validatePassword(String username, String password) { //tested
     	//Scan user file, seeing if a username and password match passed
     	//parameters
     	Scanner sc;
