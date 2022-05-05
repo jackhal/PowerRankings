@@ -99,7 +99,7 @@ public class Register {
 					newUser.setAge(Integer.parseInt(age));
 					newUser.setBet(0);
 					newUser.setCurrentVote("null");
-					newUser.setFunds(500);
+					newUser.setFunds(100);
 					newUser.setDescription("none");
 					newUser.setAdmin(false);
 					newUser.setVoted(false);
