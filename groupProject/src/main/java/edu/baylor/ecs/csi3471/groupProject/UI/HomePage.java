@@ -139,7 +139,7 @@ public class HomePage {
 	protected static JPanel addMenu() {
 		// variable declarations
 		JPanel menuPanel;
-		final JButton editProfile, charSearch, leaderboard, currentRound, createChar, cancelBet;
+		final JButton editProfile, charSearch, leaderboard, currentRound, createChar, cancelBet, exportToXLSX;
 		final JButton endRound, newTournament;
 
 		// variable initialization
@@ -323,6 +323,23 @@ public class HomePage {
 				}
 			}
 		});
+		
+		exportToXLSX = new JButton("Export to XLSX");
+		exportToXLSX.setBackground(Color.decode("#ff8153"));
+		exportToXLSX.setOpaque(true);
+		exportToXLSX.setBorderPainted(false);
+		exportToXLSX.setFont(new Font("sans-serif", Font.PLAIN, 10));
+		exportToXLSX.setForeground(Color.WHITE);
+		exportToXLSX.setFocusPainted(false);
+		exportToXLSX.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 
 		newTournament = new JButton("Start new tournament");
 		newTournament.setBackground(Color.decode("#db0000"));
@@ -357,6 +374,8 @@ public class HomePage {
 
 			}
 		});
+		
+		
 
 		// add items to JPanel
 		DailyCheckIn d = new DailyCheckIn();
@@ -368,6 +387,7 @@ public class HomePage {
 		menuPanel.add(currentRound);
 		menuPanel.add(createChar);
 		menuPanel.add(cancelBet);
+		menuPanel.add(exportToXLSX);
 
 		if(Runner.curUser.isAdmin())
 		{
