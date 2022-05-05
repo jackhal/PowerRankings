@@ -128,7 +128,6 @@ public class Table extends JPanel {
         Action delete = new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(Runner.curUser.isAdmin()) {
             	Runner.logger.info("delete action called");
                 JTable table = (JTable) e.getSource();
                 int modelRow = Integer.valueOf(e.getActionCommand());
@@ -153,7 +152,7 @@ public class Table extends JPanel {
                 if (answer == 0) {
                     model.removeRow(modelRow);
                 }*/}
-            }
+
 
         };
 
@@ -263,6 +262,9 @@ public class Table extends JPanel {
         menuBar.add(menu);
 
         menuItem = new JMenuItem("Remove", KeyEvent.VK_T);
+        if (!Runner.curUser.isAdmin()){
+            menuItem.setEnabled(false);
+        }
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "Meant to remove item");
         menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// remove menu item font
@@ -272,6 +274,9 @@ public class Table extends JPanel {
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Add New Line");
+        if (!Runner.curUser.isAdmin()){
+            menuItem.setEnabled(false);
+        }
         menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// add new line font
         menuItem.setForeground(Color.WHITE);
 	    menuItem.setBackground(Color.decode("#266867"));						// add new line background color
@@ -518,7 +523,6 @@ public class Table extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             Runner.logger.info("Remove action selected");
-            if (Runner.curUser.isAdmin()) {
                 int viewRow = table.getSelectedRow();
                 if (viewRow < 0) {
                     JOptionPane.showMessageDialog(null, "No row selected");
@@ -533,7 +537,6 @@ public class Table extends JPanel {
                     }
                 }
             }
-        }
     }
 }
 
