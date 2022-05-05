@@ -128,6 +128,7 @@ public class Table extends JPanel {
         Action delete = new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(Runner.curUser.isAdmin()) {
             	Runner.logger.info("delete action called");
                 JTable table = (JTable) e.getSource();
                 int modelRow = Integer.valueOf(e.getActionCommand());
@@ -146,12 +147,14 @@ public class Table extends JPanel {
                 }
                 ret.displayChar();
 
+
 /*
                 int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
                 if (answer == 0) {
                     model.removeRow(modelRow);
-                }*/
+                }*/}
             }
+
         };
 
         ButtonColumn buttonColumn = new ButtonColumn(table, delete, 4);
@@ -515,17 +518,19 @@ public class Table extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             Runner.logger.info("Remove action selected");
-            int viewRow = table.getSelectedRow();
-            if (viewRow < 0) {
-                JOptionPane.showMessageDialog(null, "No row selected");
+            if (Runner.curUser.isAdmin()) {
+                int viewRow = table.getSelectedRow();
+                if (viewRow < 0) {
+                    JOptionPane.showMessageDialog(null, "No row selected");
 
-            } else {
-                int modelRow = table.convertRowIndexToModel(viewRow);
-                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                } else {
+                    int modelRow = table.convertRowIndexToModel(viewRow);
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
 
-                int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
-                if (answer == 0) {
-                    model.removeRow(modelRow);
+                    int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
+                    if (answer == 0) {
+                        model.removeRow(modelRow);
+                    }
                 }
             }
         }
