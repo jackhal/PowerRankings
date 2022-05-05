@@ -276,7 +276,7 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters();
 
         Runner.logger.info("adding round three to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 525, 420, 120, -80, 12, 14);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 400, 420, 120, -80, 12, 14);
 
 //        frame.add(myBigPane);
 //        frame.setVisible(true);
@@ -295,7 +295,7 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters();
 
         Runner.logger.info("adding winner to the tournament bracket");
-        myBigPane = addImagesToBracket(myChars, myBigPane, 475, 100, 120, -80, 14, 15);
+        myBigPane = addImagesToBracket(myChars, myBigPane, 350, 100, 120, -80, 14, 15);
         myBigPane.add(new JTextField("WINNER"), new Integer(2), 0);
 
 //        frame.add(myBigPane);
