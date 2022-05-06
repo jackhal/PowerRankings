@@ -3,6 +3,8 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.RegisterDAO;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
 
 /**
@@ -97,10 +99,15 @@ public class Register {
 					newUser.setAge(Integer.parseInt(age));
 					newUser.setBet(0);
 					newUser.setCurrentVote("null");
-					newUser.setFunds(500);
+					newUser.setFunds(100);
 					newUser.setDescription("none");
 					newUser.setAdmin(false);
 					newUser.setVoted(false);
+					
+					Date today = new Date();
+					SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); 
+					String strDate = formatter.format(today);  
+					newUser.setLastLogin(strDate);	
 
 					RegisterDAO base = new RegisterDAO();
 					base.writeToFile(newUser);
