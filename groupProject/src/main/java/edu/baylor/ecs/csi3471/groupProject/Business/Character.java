@@ -309,6 +309,10 @@ public class Character {
 		return ret;
 	}
 
+	/**
+	 * Converts class into an array of objects which can be easily indexed
+	 * @return
+	 */
 	public Object[] toList() {
 		Object[] data = { this.name, this.world, this.desc, this.win, this.loss, id, this.picture, this.owner };
 		return data;

@@ -314,6 +314,10 @@ public class User {
 		return Objects.hash(getUsername());
 	}
 
+	/**
+	 * Converts class into an array of objects which can be easily indexed
+	 * @return
+	 */
 	public Object[] toList() {
 		Object[] data = { this.username, this.password, this.email, this.name, this.age, this.funds, this.bet,
 				this.voted, this.admin, this.description, this.currentVote, this.currentStreak, this.lastLogin };

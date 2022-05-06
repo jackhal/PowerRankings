@@ -246,6 +246,11 @@ public class UserDAO {
 		}
 	}
 
+	/**
+	 * Exports UserFile.tsv to UserFile.xlsx
+	 * @param dirPath
+	 * @throws IOException
+	 */
 	public void exportToExcel(String dirPath) throws IOException {
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
