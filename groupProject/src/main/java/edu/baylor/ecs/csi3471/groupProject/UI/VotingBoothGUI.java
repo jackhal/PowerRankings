@@ -159,14 +159,11 @@ public class VotingBoothGUI {
                             Runner.logger.info(bert.getName() + " won the match!");
                             Character[] myChars = frame.getBracketCharacters();
                             int slots = 0;
-                            while (myChars[slots] != null) {
+                            /*while (myChars[slots] != null) {
                                 slots++;
-                                if(slots == myChars.length){
-                                    break;
-                                }
                             }
-                            slots--;
-                            //slots = myChars.length;
+                            slots--;*/
+                            slots = myChars.length;
                             Integer match = 0;
                             if (slots == 8 || slots == 12) {
                                 match = 1;
@@ -197,16 +194,7 @@ public class VotingBoothGUI {
                                     if (opt.equalsIgnoreCase(bert.getName())) {
                                         int base = u.getFunds();
                                         int win = charVote.findCurrentBet(u.getUsername(), match);
-                                        int fine = base + (win * 2);
-                                        u.setFunds(fine);
-                                        users.setCurrentBal(u.getUsername(), fine);
-                                        users.updateUser(u);
-                                        if(u.equals(Runner.curUser)){
-                                            System.out.println("YESFUCK");
-                                            Runner.curUser.setFunds(fine);
-                                            users.setCurrentBal(Runner.curUser.getUsername(), fine);
-                                            users.updateUser(Runner.curUser);
-                                        }
+                                        u.setFunds(base + (win * 2));
                                     }
                                 } catch (Exception ex) {
                                     Runner.logger.severe("Unable to find CurrentVote");
@@ -243,9 +231,6 @@ public class VotingBoothGUI {
                             int longy = 0;
                             while (myChars[longy] != null) {
                                 longy++;
-                                if(longy == myChars.length){
-                                    break;
-                                }
                             }
                             longy--;
                             Integer match = 0;
@@ -278,16 +263,7 @@ public class VotingBoothGUI {
                                     if (opt.equalsIgnoreCase(gandhi.getName())) {
                                         int base = u.getFunds();
                                         int win = charVote.findCurrentBet(u.getUsername(), match);
-                                        int fine = base + (win * 2);
-                                        u.setFunds(fine);
-                                        users.setCurrentBal(u.getUsername(), fine);
-                                        users.updateUser(u);
-                                        if(u.equals(Runner.curUser)){
-                                            System.out.println("YESFUCK");
-                                            Runner.curUser.setFunds(fine);
-                                            users.setCurrentBal(Runner.curUser.getUsername(), fine);
-                                            users.updateUser(Runner.curUser);
-                                        }
+                                        u.setFunds(base + (win * 2));
                                     }
                                 } catch (Exception ex) {
                                     Runner.logger.severe("Unable to find CurrentVote from User");
@@ -295,16 +271,17 @@ public class VotingBoothGUI {
                                 }
                             }
                         }
+                        int lengthy = 0;
+                        Character[] myChars = frame.getBracketCharacters();
+                        /*while (myChars[lengthy] != null) {
+                            lengthy++;
+                        }
+                        lengthy--;*/
+                        lengthy = myChars.length;
                         Integer match = 0;
+                        bert.setCurrVote(0);
+                        gandhi.setCurrVote(0);
                     }
-                    PrintWriter p = null;
-                    try {
-                        p = new PrintWriter("CharacterVotes.tsv");
-                    } catch (FileNotFoundException ex) {
-                        ex.printStackTrace();
-                    }
-                    p.write("");
-                    p.close();
                 }
             });
             contentPane.add(endRound, BorderLayout.WEST);

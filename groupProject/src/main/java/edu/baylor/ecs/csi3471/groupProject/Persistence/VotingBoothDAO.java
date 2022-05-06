@@ -144,13 +144,8 @@ public class VotingBoothDAO extends JPanel {
                     Character[] loop = bracketPanel.getBracketCharacters();
                     CharacterVotesDAO characterVotesDAO = new CharacterVotesDAO();
                     UserDAO userDAO = new UserDAO();
-                    try {
-                        ArrayList<User> lista = userDAO.getUsers();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
                     CharacterVotes red = new CharacterVotes();
-                    red.setUser(bill.getUsername());
+                    //red.setUser(bill.getUsername());
                     Integer match = 0;
                     try {
                         red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
@@ -214,7 +209,7 @@ public class VotingBoothDAO extends JPanel {
                             radioButtons[0].setEnabled(false);
                             radioButtons[1].setEnabled(false);
                             finalVoteButton.setEnabled(false);
-                            String value = JOptionPane.showInputDialog("Would you Like to Wager?" + "\n You have " + bill.getFunds() + " coins.", "0");
+                            String value = JOptionPane.showInputDialog("Would you LIke to Wager?" + "\n You have " + bill.getFunds() + " coins.", "0");
                             if (value == null) {
                                 Runner.logger.info("User Doesn't Want to bet");
                                 value = "0";
@@ -301,7 +296,7 @@ public class VotingBoothDAO extends JPanel {
                             match = 1;
                         }
                         while (!broke) {
-                            String value = JOptionPane.showInputDialog("Would you Like to Wager?" + "\n You have " + bill.getFunds() + " coins.", "0");
+                            String value = JOptionPane.showInputDialog("Would you LIke to Wager?" + "\n You have " + bill.getFunds() + " coins.", "0");
                             if (value == null) {
                                 value = "0";
                             }
