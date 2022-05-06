@@ -3,7 +3,9 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO;
 //import jdk.internal.icu.lang.UCharacterDirection;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
@@ -25,6 +27,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 
 /**
  * HomePage
@@ -334,9 +337,29 @@ public class HomePage {
 		exportToXLSX.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+				jfc.setDialogTitle("Choose a directory to export each database to: ");
+				jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				
+				int returnValue = jfc.showSaveDialog(null);
+				if (returnValue == JFileChooser.APPROVE_OPTION) {
+					if (jfc.getSelectedFile().isDirectory()) {
+						UserDAO userDao = new UserDAO();
+						CharacterDAO charDao = new CharacterDAO();
+						CharacterVotesDAO charVotesDao = new CharacterVotesDAO();
+						
+						try {
+							userDao.exportToExcel(jfc.getSelectedFile().toString());
+							charDao.exportCharactersToExcel(jfc.getSelectedFile().toString());
+							charDao.exportCharacterRoundsToExcel(jfc.getSelectedFile().toString());
+							charVotesDao.exportToExcel(jfc.getSelectedFile().toString());
+						} catch (IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
+				}
 			}
 			
 		});
