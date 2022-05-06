@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 /**
  * Class ForgotDAO
+ * This is a Data Access Object meant to be used for finding password and Usernames
  */
 public class ForgotDAO {
     /**

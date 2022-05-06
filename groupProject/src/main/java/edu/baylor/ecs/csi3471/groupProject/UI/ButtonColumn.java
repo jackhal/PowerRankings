@@ -12,6 +12,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Class ButtonColumn
+ * This is UI that can create a button column for several tables throughout the program
+ */
 public class ButtonColumn extends AbstractCellEditor
         implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener
 {
@@ -125,6 +129,17 @@ public class ButtonColumn extends AbstractCellEditor
     //
 //  Implement TableCellRenderer interface
 //
+    /**
+     *  The foreground color of the button when the cell has focus
+     *
+     *  @param table which is the table which will have the component rendered
+     *  @param value an object which is the
+     *  @param isSelected a boolean on whether the table cell is selected or not
+     *  @param hasFocus a boolean on whether there is focus or not
+     *  @param row the int of the row that has the component
+     *  @param column the int of the column that has the component
+     * @return Component which will be the Renderbutton
+     */
     public Component getTableCellRendererComponent(
             JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
     {
@@ -173,6 +188,11 @@ public class ButtonColumn extends AbstractCellEditor
 //
     /*
      *	The button has been pressed. Stop editing and invoke the custom Action
+     */
+    /**
+     *  The button that has been pressed
+     *
+     *  @param e the ActionEvent that the button will accomplish
      */
     public void actionPerformed(ActionEvent e)
     {

@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 
 /**
  * class Table
+ * This is how a table is displayed by the UI
  */
 public class Table extends JPanel {
     private JTable table;

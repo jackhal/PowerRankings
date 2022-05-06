@@ -146,7 +146,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * isValidCharName
 	 * This function is responsible for checking if the input character name is valid
 	 * @param name
-	 * @return
+	 * @return boolean if the character name inputted is valid or not
 	 */
 	public boolean isValidCharName(String name) {
 		//checking if character name length is valid
@@ -170,7 +170,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * isValidWorld
 	 * This function is responsible for checking if the input world is valid
 	 * @param world
-	 * @return
+	 * @return boolean if the world string inputted is valid
 	 */
 	public boolean isValidWorld(String world) {
 		//checking if character world length is valid
@@ -194,7 +194,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * isValidCharDesc
 	 * This function is responsible for checking if the input description is valid
 	 * @param desc
-	 * @return
+	 * @return boolean whether or not the character description is valid
 	 */
 	public boolean isValidCharDesc(String desc) {
 		//checking if character description length is valid
@@ -218,7 +218,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * isValidCharURL
 	 * This function is responsible for checking if the input URL is valid
 	 * @param URL
-	 * @return
+	 * @return boolean whether or not the url is valid
 	 */
 	public boolean isValidCharURL(String URL) {
 		//checking if URL is within required length

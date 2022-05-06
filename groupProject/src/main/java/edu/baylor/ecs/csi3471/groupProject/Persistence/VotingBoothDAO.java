@@ -19,7 +19,7 @@ import javax.swing.*;
 //Based on Round Configure the List
 
 /**
- * The VotingBoothDAO sets up the voting booth and allows the user to place votes and bets.
+ * The VotingBoothDAO sets up the voting booth and writes to several databases depending on the votes
  */
 public class VotingBoothDAO extends JPanel {
     JLabel label;

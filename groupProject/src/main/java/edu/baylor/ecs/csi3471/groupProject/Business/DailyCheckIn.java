@@ -16,6 +16,9 @@ import javax.swing.JLabel;
 
 /**
  * DailyCheckIn class
+ * This is in charge of keeping track of the current user's balance and such
+ *
+ * @Author: Cyril P.
  */
 public class DailyCheckIn extends UserDAO {
 	/**

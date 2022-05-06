@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 
 /**
  * UserTable
+ * This is the UI for specifically the UserTable
  */
 public class UserTable extends JPanel {
         private JTable table;

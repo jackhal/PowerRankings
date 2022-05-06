@@ -18,6 +18,7 @@ import javax.swing.JPasswordField;
 
 /**
  * class LoginForm
+ * The UI for the LoginForm
  */
 public class LoginForm extends JPanel implements PropertyChangeListener{
     private String username = "";

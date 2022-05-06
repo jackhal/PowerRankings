@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
-
+/**
+ * Runner
+ * This starts up the whole program and starts the curUser
+ */
 public class Runner {
 	//Make sure it is correct
 	public static Logger logger = Logger.getLogger(Timer.class.getName());

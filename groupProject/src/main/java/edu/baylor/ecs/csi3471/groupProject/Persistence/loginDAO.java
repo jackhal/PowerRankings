@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
  * Class LoginDAO
+ * This is a Data Access Object for validating the login based on the username and password
  */
 public class loginDAO {
 	public static String[] userData;

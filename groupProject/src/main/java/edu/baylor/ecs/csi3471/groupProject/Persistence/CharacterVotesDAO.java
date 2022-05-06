@@ -23,6 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * Class CharacterVotesDAO
+ * This is the Data Access Object of the CharacterVotes object class
  */
 public class CharacterVotesDAO extends CharacterVotes {
 

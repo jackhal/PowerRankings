@@ -31,6 +31,7 @@ import javax.swing.filechooser.FileSystemView;
 
 /**
  * HomePage
+ * This is the UI for the main Homepage after the Login
  */
 public class HomePage {
 	static String currUsername;

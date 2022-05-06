@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 
 /**
+ * class ImagePanel
  * This class supports the addition of images to JPanels
  */
 class ImagePanel extends JPanel {
@@ -70,6 +71,7 @@ class ImagePanel extends JPanel {
 
 
 /**
+ * class TournamentBracketPanel
  * This is the TournamentBracketPanel class that creates and updates the Tournament Bracket
  */
 public class TournamentBracketPanel

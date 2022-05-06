@@ -7,6 +7,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class RegisterDAO
+ * This is a Data Access Object for creating a new user and adding it into the User database
+ */
 public class RegisterDAO {
     /**
      * writeToFile

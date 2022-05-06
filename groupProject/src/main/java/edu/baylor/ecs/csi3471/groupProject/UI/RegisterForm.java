@@ -21,7 +21,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 /**
- * RegisterFrom
+ * RegisterForm
+ * This is the UI for the Register Form
  */
 public class RegisterForm extends JPanel implements PropertyChangeListener {
 

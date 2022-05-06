@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 /**
  * ForgotPassword class
+ * This is the UI for the ForgotPassword
  */
 public class ForgotPassword extends JPanel {
 
