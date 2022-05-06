@@ -324,6 +324,7 @@ public class CharacterDAO extends Character {
 	 * @throws IOException
 	 */
 	public void exportCharactersToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting Characters to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 
@@ -376,6 +377,7 @@ public class CharacterDAO extends Character {
 	 * @throws IOException
 	 */
 	public void exportCharacterRoundsToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting CharacterRounds to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 

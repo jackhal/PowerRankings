@@ -252,6 +252,7 @@ public class UserDAO {
 	 * @throws IOException
 	 */
 	public void exportToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting Users to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 

@@ -52,8 +52,7 @@ public class VotesPanel extends JPanel {
         try {
 			votes = charDao.getCharacterVoteByUsername(username);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Runner.logger.severe("failed to get " + username + "'s votes");;
 		}
         
         final DefaultTableModel model = new DefaultTableModel(null, columnNames);
