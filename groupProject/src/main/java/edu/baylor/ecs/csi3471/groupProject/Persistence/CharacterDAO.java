@@ -319,7 +319,13 @@ public class CharacterDAO extends Character {
 		JOptionPane.showMessageDialog(null, "The next login will display the new tournament!");
 	}
 
+	/**
+	 * Exports CharacterFile.csv to CharacterFile.xlsx
+	 * @param dirPath
+	 * @throws IOException
+	 */
 	public void exportCharactersToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting Characters to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 
@@ -366,7 +372,13 @@ public class CharacterDAO extends Character {
 		out.close();
 	}
 	
+	/**
+	 * Exports CharacterRounds.csv to CharacterRounds.xlsx
+	 * @param dirPath
+	 * @throws IOException
+	 */
 	public void exportCharacterRoundsToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting CharacterRounds to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 

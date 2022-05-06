@@ -21,7 +21,6 @@ import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 
-
 /**
  *  Class VotesPanel
  *  this is the UI for displaying the votes window
@@ -30,6 +29,10 @@ public class VotesPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	
+	/**
+	 * Displays panel with User's current votes
+	 * @param username
+	 */
 	public VotesPanel(String username) {
 		super();
 		Runner.logger.info("displaying votes window");
@@ -48,8 +51,7 @@ public class VotesPanel extends JPanel {
         try {
 			votes = charDao.getCharacterVoteByUsername(username);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Runner.logger.severe("failed to get " + username + "'s votes");;
 		}
         
         final DefaultTableModel model = new DefaultTableModel(null, columnNames);
@@ -94,6 +96,10 @@ public class VotesPanel extends JPanel {
 
 			private static final long serialVersionUID = 1L;
 
+			/**
+			 * Handles "Cancel" action in which a user intends to cancel
+			 * a bet for a character they have previously voted on.
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Get table data
@@ -109,11 +115,14 @@ public class VotesPanel extends JPanel {
 				CharacterVotesDAO voteDAO = new CharacterVotesDAO();
 				try {
 					Integer betToGiveBack = voteDAO.getBetByCharacterName(username, characterName);
+					Runner.logger.info("Giving back " + betToGiveBack + " coins");
 					int funds = Runner.curUser.getFunds() + Integer.valueOf(betToGiveBack);
 					Runner.curUser.setFunds(funds);
+					Runner.logger.info("New user balance is " + funds);
 					
 					
 					voteDAO.removeCharacterVote(Runner.curUser.getUsername(), characterName);
+					Runner.logger.info("Removed " + characterName + " bet for " + username);
 					
 				} catch (Exception e1) {
 					Runner.logger.severe("Failed to remove character from database => " + e1.getMessage());
@@ -131,7 +140,6 @@ public class VotesPanel extends JPanel {
         table.setFillsViewportHeight(true);
 
         Box b = Box.createHorizontalBox();
-        //b.add(initMenu(model));
         b.add(Box.createHorizontalGlue());
         add(b);
 

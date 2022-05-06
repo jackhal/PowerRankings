@@ -356,8 +356,7 @@ public class HomePage {
 							charDao.exportCharacterRoundsToExcel(jfc.getSelectedFile().toString());
 							charVotesDao.exportToExcel(jfc.getSelectedFile().toString());
 						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
+							Runner.logger.severe("An error occurred while exporting to excel: " + e1.getLocalizedMessage());
 						}
 					}
 				}

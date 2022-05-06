@@ -256,6 +256,11 @@ public class CharacterVotes {
     public int hashCode() {
         return Objects.hash(getUser());
     }
+  
+  /**
+	 * Converts class into an array of objects which can be easily indexed
+	 * @return
+	 */
 	public Object[] toList() {
 		Object[] data = { this.User, this.matchAChoice, this.matchBChoice, this.matchCChoice, this.matchDChoice,
 				this.matchABet, this.matchBBet, this.matchCBet, this.matchDBet };

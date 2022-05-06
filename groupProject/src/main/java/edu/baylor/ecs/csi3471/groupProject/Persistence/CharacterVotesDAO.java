@@ -258,7 +258,15 @@ public class CharacterVotesDAO extends CharacterVotes {
 		}
 	}
 	
+	/**
+	 * Returns a User's current bet based on the given characterName
+	 * @param username
+	 * @param characterName
+	 * @return
+	 * @throws Exception
+	 */
 	public Integer getBetByCharacterName(String username, String characterName) throws Exception {
+		Runner.logger.info("Fetching bets for " + characterName + " placed by " + username);
 		CharacterVotes v = this.getCharacterVoteByUsername(username);
 		if (v.getMatchAChoice().equals(characterName)) {
 			return v.getMatchABet();
@@ -270,10 +278,18 @@ public class CharacterVotesDAO extends CharacterVotes {
 			return v.getMatchDBet();
 		}
 		
+		Runner.logger.warning(username + " does not have any bets for " + characterName);
+		
 		return 0;
 	}
 
+	/**
+	 * Exports the CharacterVotes.tsv to a CharacterVotes.xlsx
+	 * @param dirPath
+	 * @throws IOException
+	 */
 	public void exportToExcel(String dirPath) throws IOException {
+		Runner.logger.info("Exporting CharacterVotes to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 
