@@ -3,6 +3,8 @@ package edu.baylor.ecs.csi3471.groupProject.UI;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.Box;
@@ -17,6 +19,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.CharacterVotes;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 
 public class VotesPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -84,6 +87,8 @@ public class VotesPanel extends JPanel {
         
         ButtonColumn buttonColumn = new ButtonColumn(table, new AbstractAction() {
 
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Get table data
@@ -98,7 +103,13 @@ public class VotesPanel extends JPanel {
 				// Remove bet from CharacterVotes.csv
 				CharacterVotesDAO voteDAO = new CharacterVotesDAO();
 				try {
+					Integer betToGiveBack = voteDAO.getBetByCharacterName(username, characterName);
+					int funds = Runner.curUser.getFunds() + Integer.valueOf(betToGiveBack);
+					Runner.curUser.setFunds(funds);
+					
+					
 					voteDAO.removeCharacterVote(Runner.curUser.getUsername(), characterName);
+					
 				} catch (Exception e1) {
 					Runner.logger.severe("Failed to remove character from database => " + e1.getMessage());
 				}
