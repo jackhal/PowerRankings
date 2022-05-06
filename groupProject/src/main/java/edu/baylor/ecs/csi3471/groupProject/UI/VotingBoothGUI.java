@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
+ * Class VotingBoothGUI
  * The VotingBoothGUI is in charge of taking the two characters, creating the GUI
  * of the voting booth and calling the DAO for the functionality.
  */

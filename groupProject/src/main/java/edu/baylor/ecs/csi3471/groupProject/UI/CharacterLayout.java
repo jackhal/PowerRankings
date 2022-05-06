@@ -10,6 +10,7 @@ import java.net.URL;
 
 /**
  * Class CharacterLayout
+ * This is the UI for how the character will layed out on a table
  */
 public class CharacterLayout extends JFrame {
     /*public static void main(String[] args) {

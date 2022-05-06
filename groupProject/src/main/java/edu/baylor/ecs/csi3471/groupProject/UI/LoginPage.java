@@ -19,6 +19,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 
 /**
  * Class LoginPage
+ * The UI for the LoginPage
  */
 public class LoginPage {
 	public final static JFrame loginPage 	= new JFrame("Fantasy Fight Club Login");	

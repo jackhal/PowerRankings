@@ -143,7 +143,7 @@ public class EditProfile extends JPanel {
 	 * isNameValid
      * This function is responsible for checking if the new name is valid
      * @param newName
-     * @return
+     * @return boolean if the name inputted is valid
      */
     public boolean isNameValid(String newName) {
     	Runner.logger.info("checking new username for validity");
@@ -154,7 +154,7 @@ public class EditProfile extends JPanel {
 	 * isAgeValid
      * This function is responsible for checking if the new age is valid
      * @param newAge
-     * @return
+     * @return boolean if the age inputted is a valid int
      */
     public boolean isAgeValid(String newAge) {
     	Runner.logger.info("checking new age for validity");
@@ -165,7 +165,7 @@ public class EditProfile extends JPanel {
 	 * isDescValid
      * This function is responsible for checking if the new description is valid
      * @param newDesc
-     * @return
+     * @return boolean whether or not the description is valid or not.
      */
     public boolean isDescValid(String newDesc) {
     	Runner.logger.info("checking new description for validity");

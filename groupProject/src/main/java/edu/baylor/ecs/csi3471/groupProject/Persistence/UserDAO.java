@@ -19,11 +19,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-//Used to update the csv holding all of the user info without deleteing all the older data
-//just writes to the file
 
 /**
  * UserDao Class
+ * This is the Data Access Object that updates the User data without deleting older data
  */
 public class UserDAO {
 

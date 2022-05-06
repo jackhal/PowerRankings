@@ -9,6 +9,7 @@ import javax.swing.*;
 
 /**
  * Class Register
+ * This is the UI for the Registering your character
  */
 public class Register {
 	Integer passwordMinSize = 8;

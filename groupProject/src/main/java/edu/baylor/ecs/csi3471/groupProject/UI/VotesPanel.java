@@ -21,6 +21,11 @@ import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 
+
+/**
+ *  Class VotesPanel
+ *  this is the UI for displaying the votes window
+ */
 public class VotesPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTable table;

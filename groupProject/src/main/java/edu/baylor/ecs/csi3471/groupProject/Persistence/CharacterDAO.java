@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 
 /**
  * Class CharacterDAO
+ * The CharacterDAO is an extension of Character as a Data Access Object and writes to the Character database
  */
 public class CharacterDAO extends Character {
 	/**

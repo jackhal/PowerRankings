@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 /**
  * ForgotUserName class
+ * this is the UI for the Forget Username
  */
 public class ForgotUsername extends JPanel {
 
