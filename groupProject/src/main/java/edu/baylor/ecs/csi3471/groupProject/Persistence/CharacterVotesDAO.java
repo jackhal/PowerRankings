@@ -256,6 +256,21 @@ public class CharacterVotesDAO extends CharacterVotes {
 			e.printStackTrace();
 		}
 	}
+	
+	public Integer getBetByCharacterName(String username, String characterName) throws Exception {
+		CharacterVotes v = this.getCharacterVoteByUsername(username);
+		if (v.getMatchAChoice().equals(characterName)) {
+			return v.getMatchABet();
+		} else if (v.getMatchBChoice().equals(characterName)) {
+			return v.getMatchBBet();
+		} else if (v.getMatchCChoice().equals(characterName)) {
+			return v.getMatchCBet();
+		} else if (v.getMatchDChoice().equals(characterName)) {
+			return v.getMatchDBet();
+		}
+		
+		return 0;
+	}
 
 	public void exportToExcel(String dirPath) throws IOException {
 		Workbook workbook = new XSSFWorkbook();
