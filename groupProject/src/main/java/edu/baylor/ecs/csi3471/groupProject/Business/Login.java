@@ -39,6 +39,7 @@ public class Login {
             }
 
         } catch (NullPointerException e) {
+            Runner.logger.severe("Unable to get the database of the login");
         } catch (IOException e) {
             Runner.logger.severe("Exception found when trying to get begin login process");
             e.printStackTrace();
