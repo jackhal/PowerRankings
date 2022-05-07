@@ -32,6 +32,10 @@ public class UserTable extends JPanel {
         //dont think i need status text
         private TableRowSorter<DefaultTableModel> sorter;
 
+    final Class<?>[] columnClass = new Class[] {
+            Integer.class, Integer.class, String.class
+    };
+
 
     /**
      * createAndShowUserGUI
@@ -66,7 +70,19 @@ public class UserTable extends JPanel {
             String[] columnNames = {"Rank", "Currency", "Name"};
             String[][] data = {{"yes", "no", "idk", "maybe"}};
             int rowNumber = 0;
-            final DefaultTableModel model = new DefaultTableModel(null, columnNames);
+            //final DefaultTableModel model = new DefaultTableModel(null, columnNames);
+        final DefaultTableModel model = new DefaultTableModel(null, columnNames) {
+            @Override
+            public boolean isCellEditable(int row, int column)
+            {
+                return false;
+            }
+            @Override
+            public Class<?> getColumnClass(int columnIndex)
+            {
+                return columnClass[columnIndex]
+            }
+        };
             //File selectedFile = openCSV();
 
             Map<Integer, String> m = new HashMap();
