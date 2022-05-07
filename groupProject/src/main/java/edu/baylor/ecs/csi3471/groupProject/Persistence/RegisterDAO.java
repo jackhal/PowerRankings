@@ -15,17 +15,16 @@ public class RegisterDAO {
     /**
      * writeToFile
      * This function writes the register data to the database.
+     *
      * @param newUser
      */
-    public void writeToFile(User newUser)
-    {
-        try
-        {
+    public void writeToFile(User newUser) {
+        try {
             List<String[]> allData = new ArrayList<String[]>();
             BufferedReader br = new BufferedReader(new FileReader("UserFile.tsv"));
             String data[];
             String line = "";
-            while((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
                 data = line.split("\t");
                 allData.add(data);
             }
@@ -33,7 +32,7 @@ public class RegisterDAO {
 
             File tsvOut = new File("UserFile.tsv");
             PrintWriter pw = new PrintWriter(tsvOut);
-            for(String currLine[]: allData) {
+            for (String currLine[] : allData) {
                 pw.write(String.join("\t", currLine));
                 pw.write("\n");
             }
@@ -46,9 +45,7 @@ public class RegisterDAO {
             pw.flush();
             pw.close();
 
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             Runner.logger.severe("Error when writing");
             e.printStackTrace();
         }

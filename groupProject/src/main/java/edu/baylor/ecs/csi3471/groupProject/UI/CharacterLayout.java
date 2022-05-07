@@ -30,6 +30,7 @@ public class CharacterLayout extends JFrame {
      * CharacterLayout Constructor
      * This function is the custom constructor for the CharacterLayout that creates
      * a panel for the character passed in.
+     *
      * @param c character to display
      */
     public CharacterLayout(Character c) {
@@ -84,8 +85,7 @@ public class CharacterLayout extends JFrame {
 
             JLabel lblimage = new JLabel(new ImageIcon(newImage));
             buttonBox.add(lblimage);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Runner.logger.severe("Can't get picture for buttonBox");
         }
 
@@ -95,16 +95,18 @@ public class CharacterLayout extends JFrame {
         this.pack();
         this.setVisible(true);
     }
+
     /**
      * addItem
      * This function adds an element to the JPanel passed in.
-     * @param p panel
-     * @param c component
-     * @param x x-dem
-     * @param y y-dem
-     * @param width width of panel
+     *
+     * @param p      panel
+     * @param c      component
+     * @param x      x-dem
+     * @param y      y-dem
+     * @param width  width of panel
      * @param height height of panel
-     * @param align alignment og panel
+     * @param align  alignment og panel
      */
     private void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
         GridBagConstraints gc = new GridBagConstraints();

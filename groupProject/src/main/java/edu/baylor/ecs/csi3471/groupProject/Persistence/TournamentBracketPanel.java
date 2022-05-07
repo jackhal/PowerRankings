@@ -50,6 +50,7 @@ class ImagePanel extends JPanel {
 
     /**
      * getPreferredSize
+     *
      * @return Dimension
      */
     @Override
@@ -60,6 +61,7 @@ class ImagePanel extends JPanel {
 
     /**
      * paintComponent
+     *
      * @param g
      */
     @Override
@@ -74,37 +76,32 @@ class ImagePanel extends JPanel {
  * class TournamentBracketPanel
  * This is the TournamentBracketPanel class that creates and updates the Tournament Bracket
  */
-public class TournamentBracketPanel
-{
+public class TournamentBracketPanel {
     //public static Logger logger = Logger.getLogger(Runner.class.getName());
 
     /**
      * initTournamentCharacters()
-     * @param  fileName -- filename from whcih the characters must be read from.
-     * This function gets the characters fot the tournament from the
-     * CharacterRounds.csv file and returns a list of the characters.
+     *
+     * @param fileName -- filename from whcih the characters must be read from.
+     *                 This function gets the characters fot the tournament from the
+     *                 CharacterRounds.csv file and returns a list of the characters.
      * @return Character[]
      */
-    public Character[] initTournamentCharacters(String fileName)
-    {
+    public Character[] initTournamentCharacters(String fileName) {
         Runner.logger.info("Initializing tournament characters");
         Character[] characters = new Character[15];
         BufferedReader reader = null;
-        try
-        {
+        try {
             reader = new BufferedReader(new FileReader(fileName));
             reader.readLine();
 
             int i = 0;
-            for(String temp = reader.readLine(); temp != null; temp = reader.readLine())
-            {
+            for (String temp = reader.readLine(); temp != null; temp = reader.readLine()) {
                 characters[i] = new Character(temp);
                 i++;
             }
             reader.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             Runner.logger.severe("unable to read characters from " + fileName + " file");
             System.exit(1);
         }
@@ -116,10 +113,10 @@ public class TournamentBracketPanel
      * getBracketCharacters()
      * This function returns the characters created
      * by the reading of the CharacterRounds.csv file.
+     *
      * @return Character[]
      */
-    public Character[] getBracketCharacters()
-    {
+    public Character[] getBracketCharacters() {
         Runner.logger.info("returning tournament characters");
         Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
         return myChars;
@@ -131,6 +128,7 @@ public class TournamentBracketPanel
      * This function adds the images to the
      * bracket as per the round (specified
      * by the arguments).
+     *
      * @param myChars
      * @param myBigPane
      * @param x
@@ -142,20 +140,15 @@ public class TournamentBracketPanel
      * @return JLayeredPane
      * @Throws MalformedURLException
      */
-    public JLayeredPane addImagesToBracket(Character[] myChars, JLayeredPane myBigPane, int x, int y, int xInc, int yInc, int iBeg, int iEnd) throws MalformedURLException
-    {
+    public JLayeredPane addImagesToBracket(Character[] myChars, JLayeredPane myBigPane, int x, int y, int xInc, int yInc, int iBeg, int iEnd) throws MalformedURLException {
         int xCoord = x, yCoord = y;
         ImagePanel tempImgPanel = null;
-        try
-        {
-            for(int i = iBeg; i < iEnd; i++)
-            {
-                if(i == (iBeg + iEnd)/2)
-                {
+        try {
+            for (int i = iBeg; i < iEnd; i++) {
+                if (i == (iBeg + iEnd) / 2) {
                     xCoord += xInc;
 
-                    if(i!=13)
-                    {
+                    if (i != 13) {
                         yCoord = y;
                     }
 
@@ -169,9 +162,7 @@ public class TournamentBracketPanel
                 myBigPane.add(tempImgPanel, JLayeredPane.PALETTE_LAYER);
                 yCoord += yInc;
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             Runner.logger.severe("could not load the images onto the tournament bracket");
             throw new MalformedURLException();
         }
@@ -185,10 +176,10 @@ public class TournamentBracketPanel
      * This function creates the bracket as a LayeredPane
      * and then adds to it the characters participating
      * in the first roun matchup.
+     *
      * @return JLayeredPane
      */
-    public JLayeredPane getBracket()
-    {
+    public JLayeredPane getBracket() {
 //        JFrame frame = new JFrame("TEMP");
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setSize(550, 550);
@@ -198,13 +189,10 @@ public class TournamentBracketPanel
 
         Runner.logger.info("tournament bracket being generated");
         ImagePanel imgPanel = null;
-        try
-        {
+        try {
             Image img = ImageIO.read(new File("bracket_template.png"));
             imgPanel = new ImagePanel(img);
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             Runner.logger.severe("Can't read from File");
             System.out.println(e);
             System.exit(1);
@@ -220,12 +208,9 @@ public class TournamentBracketPanel
 
 
         Runner.logger.info("adding round one to the tournament bracket");
-        try
-        {
+        try {
             myBigPane = addImagesToBracket(myChars, myBigPane, 225, 125, 450, 175, 0, 8);
-        }
-        catch(MalformedURLException me)
-        {
+        } catch (MalformedURLException me) {
             Runner.logger.severe("Unable to load images to bracket");
             System.exit(1);
         }
@@ -249,11 +234,11 @@ public class TournamentBracketPanel
      * This function accepts a JLayeredPane
      * and adds to it the characters taht advanced from
      * round 1 to the next stage of the bracket.
+     *
      * @param myBigPane
      * @return
      */
-    public JLayeredPane getRound2(JLayeredPane myBigPane)
-    {
+    public JLayeredPane getRound2(JLayeredPane myBigPane) {
 //        JFrame frame = new JFrame("TEMP");
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setSize(550, 550);
@@ -264,12 +249,9 @@ public class TournamentBracketPanel
 
         Runner.logger.info("adding round two to the tournament bracket");
 
-        try
-        {
+        try {
             myBigPane = addImagesToBracket(myChars, myBigPane, 410, 230, 120, 350, 8, 12);
-        }
-        catch(MalformedURLException me)
-        {
+        } catch (MalformedURLException me) {
             Runner.logger.severe("Unable to load images to bracket");
             System.exit(1);
         }
@@ -285,11 +267,11 @@ public class TournamentBracketPanel
      * getRound3
      * This funcion aceepts a JLayeredPane and
      * adds to it the winners from round 2.
+     *
      * @param myBigPane
      * @return
      */
-    public JLayeredPane getRound3(JLayeredPane myBigPane)
-    {
+    public JLayeredPane getRound3(JLayeredPane myBigPane) {
 //        JFrame frame = new JFrame("TEMP");
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setSize(550, 550);
@@ -299,12 +281,9 @@ public class TournamentBracketPanel
         Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
 
         Runner.logger.info("adding round three to the tournament bracket");
-        try
-        {
+        try {
             myBigPane = addImagesToBracket(myChars, myBigPane, 400, 420, 120, -80, 12, 14);
-        }
-        catch(MalformedURLException me)
-        {
+        } catch (MalformedURLException me) {
             Runner.logger.severe("Unable to load images to bracket");
             System.exit(1);
         }
@@ -316,8 +295,7 @@ public class TournamentBracketPanel
         return myBigPane;
     }
 
-    public JLayeredPane getWinner(JLayeredPane myBigPane)
-    {
+    public JLayeredPane getWinner(JLayeredPane myBigPane) {
 //        JFrame frame = new JFrame("TEMP");
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setSize(550, 550);
@@ -328,12 +306,9 @@ public class TournamentBracketPanel
 
         Runner.logger.info("adding winner to the tournament bracket");
 
-        try
-        {
+        try {
             myBigPane = addImagesToBracket(myChars, myBigPane, 350, 100, 120, -80, 14, 15);
-        }
-        catch(MalformedURLException me)
-        {
+        } catch (MalformedURLException me) {
             Runner.logger.severe("Unable to load images to bracket");
             System.exit(1);
         }

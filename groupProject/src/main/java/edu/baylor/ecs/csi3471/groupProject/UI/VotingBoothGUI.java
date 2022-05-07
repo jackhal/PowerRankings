@@ -27,47 +27,46 @@ import java.util.logging.Logger;
  */
 public class VotingBoothGUI {
     private static Logger applicationlog = Logger.getLogger(Timer.class.getName());
+
     /**
      * createAndShowGUI()
      * This method always takes two Characters and creates the GUI of the
      * Voting Booth parameters.
      *
-     * @param  a  an absolute URL giving the base location of the image
-     * @return      void
+     * @param a an absolute URL giving the base location of the image
+     * @return void
      * @throws Exception
      */
     protected void createAndShowGUI(Character[] a) throws Exception {
         JFrame frame = new JFrame("VoteDialog");
         applicationlog.info("create GUI invoked");
         int length = 0;
-        while(a[length] != null){
+        while (a[length] != null) {
             length++;
         }
         length--;
 
         Integer round = 0;
         Container contentPane = frame.getContentPane();
-        if(length < 8) {
+        if (length < 8) {
             contentPane.setLayout(new GridLayout(3, 2));
             contentPane.add(new VotingBoothDAO(a[0], a[1]));
             contentPane.add(new VotingBoothDAO(a[2], a[3]));
             contentPane.add(new VotingBoothDAO(a[4], a[5]));
             contentPane.add(new VotingBoothDAO(a[6], a[7]));
             Runner.logger.info("Round 1 Match Voting Booth Being Created");
-        }
-        else if(length <= 12){
+        } else if (length <= 12) {
             contentPane.setLayout(new GridLayout(2, 2));
             contentPane.add(new VotingBoothDAO(a[8], a[9]));
             contentPane.add(new VotingBoothDAO(a[10], a[11]));
             Runner.logger.info("Round 2 Match Voting Booth Being Created");
-        }
-        else{
+        } else {
             contentPane.setLayout(new GridLayout(2, 2));
             contentPane.add(new VotingBoothDAO(a[12], a[13]));
             Runner.logger.info("Round 3 Match Voting Booth Being Created");
         }
 
-        if(Runner.curUser.isAdmin()) {
+        if (Runner.curUser.isAdmin()) {
             Runner.logger.info("User is Admin");
             JButton endRound = new JButton("End All Matches");
             endRound.setPreferredSize(new Dimension(100, 30));
@@ -109,23 +108,17 @@ public class VotingBoothGUI {
                         for (int j = 0; j < tally.size(); j++) {
                             if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchAChoice())) {
                                 bertvote++;
-                            }
-                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchAChoice())) {
+                            } else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchAChoice())) {
                                 ganvote++;
-                            }
-                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
+                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
                                 bertvote++;
-                            }
-                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
+                            } else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchBChoice())) {
                                 ganvote++;
-                            }
-                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
+                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
                                 bertvote++;
-                            }
-                            else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
+                            } else if (gandhi.getName().equalsIgnoreCase(tally.get(j).getMatchCChoice())) {
                                 ganvote++;
-                            }
-                            else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchDChoice())) {
+                            } else if (bert.getName().equalsIgnoreCase(tally.get(j).getMatchDChoice())) {
                                 bertvote++;
                             } else {
                                 ganvote++;
@@ -164,7 +157,7 @@ public class VotingBoothGUI {
                             int slots = 0;
                             while (myChars[slots] != null) {
                                 slots++;
-                                if(slots == myChars.length){
+                                if (slots == myChars.length) {
                                     break;
                                 }
                             }
@@ -179,8 +172,7 @@ public class VotingBoothGUI {
                                 match = 3;
                             } else if (slots == 11) {
                                 match = 4;
-                            }
-                            else{
+                            } else {
                                 match = 1;
                             }
                             UserDAO users = new UserDAO();
@@ -207,7 +199,7 @@ public class VotingBoothGUI {
                                         u.setFunds(fine);
                                         users.setCurrentBal(u.getUsername(), fine);
                                         users.updateUser(u);
-                                        if(u.equals(Runner.curUser)){
+                                        if (u.equals(Runner.curUser)) {
                                             Runner.curUser.setFunds(fine);
                                             users.setCurrentBal(Runner.curUser.getUsername(), fine);
                                             users.updateUser(Runner.curUser);
@@ -248,7 +240,7 @@ public class VotingBoothGUI {
                             int longy = 0;
                             while (myChars[longy] != null) {
                                 longy++;
-                                if(longy == myChars.length){
+                                if (longy == myChars.length) {
                                     break;
                                 }
                             }
@@ -262,8 +254,7 @@ public class VotingBoothGUI {
                                 match = 3;
                             } else if (longy == 11) {
                                 match = 4;
-                            }
-                            else{
+                            } else {
                                 match = 1;
                             }
                             UserDAO users = new UserDAO();
@@ -290,7 +281,7 @@ public class VotingBoothGUI {
                                         u.setFunds(fine);
                                         users.setCurrentBal(u.getUsername(), fine);
                                         users.updateUser(u);
-                                        if(u.equals(Runner.curUser)){
+                                        if (u.equals(Runner.curUser)) {
                                             Runner.curUser.setFunds(fine);
                                             users.setCurrentBal(Runner.curUser.getUsername(), fine);
                                             users.updateUser(Runner.curUser);

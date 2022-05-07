@@ -5,44 +5,45 @@ import java.util.Objects;
 /**
  * Class CharacterVotes
  * This class keeps track of the choices the User make with their corresponding bets.
- * @Author: Matt Harrison
  *
+ * @Author: Matt Harrison
  */
 public class CharacterVotes {
-	private String matchAChoice;
-	private String User;
-	private String matchBChoice;
-	private String matchCChoice;
-	private String matchDChoice;
-	private Integer matchABet;
-	private Integer matchBBet;
-	private Integer matchCBet;
-	private Integer matchDBet;
+    private String matchAChoice;
+    private String User;
+    private String matchBChoice;
+    private String matchCChoice;
+    private String matchDChoice;
+    private Integer matchABet;
+    private Integer matchBBet;
+    private Integer matchCBet;
+    private Integer matchDBet;
 
-	/**
-	 * CharacterVotes
-	 * This function is the default constructor for the Character
-	 * Votes class.
-	 */
-	public CharacterVotes() {
-		this.User = "";
-		this.matchAChoice = "";
-		this.matchBChoice = "";
-		this.matchCChoice = "";
-		this.matchDChoice = "";
-		this.matchABet = -1;
-		this.matchBBet = -1;
-		this.matchCBet = -1;
-		this.matchDBet = -1;
-	}
+    /**
+     * CharacterVotes
+     * This function is the default constructor for the Character
+     * Votes class.
+     */
+    public CharacterVotes() {
+        this.User = "";
+        this.matchAChoice = "";
+        this.matchBChoice = "";
+        this.matchCChoice = "";
+        this.matchDChoice = "";
+        this.matchABet = -1;
+        this.matchBBet = -1;
+        this.matchCBet = -1;
+        this.matchDBet = -1;
+    }
 
     /**
      * Character Votes
      * This function is the custom constructor for the CharacterVotes
      * class that uses a String array to populate the attributes.
+     *
      * @param a- which is a string that describes CharacterVotes
      */
-    public CharacterVotes(String[] a){
+    public CharacterVotes(String[] a) {
         this.User = a[0];
         this.matchAChoice = a[1];
         this.matchBChoice = a[2];
@@ -57,6 +58,7 @@ public class CharacterVotes {
     /**
      * getMatchABet()
      * The function of this is to return the bet from match A from the Character Vote.
+     *
      * @return Integer
      */
     public Integer getMatchABet() {
@@ -66,6 +68,7 @@ public class CharacterVotes {
     /**
      * getMatchBBet()
      * The function of this is to return the bet from match B from the Character Vote.
+     *
      * @return Integer
      */
     public Integer getMatchBBet() {
@@ -75,6 +78,7 @@ public class CharacterVotes {
     /**
      * getMatchCBet()
      * The function of this is to return the bet from match C from the Character Vote.
+     *
      * @return Integer
      */
     public Integer getMatchCBet() {
@@ -84,6 +88,7 @@ public class CharacterVotes {
     /**
      * getMatchDBet()
      * The function of this is to return the bet from match D from the Character Vote.
+     *
      * @return Integer
      */
     public Integer getMatchDBet() {
@@ -93,6 +98,7 @@ public class CharacterVotes {
     /**
      * getMatchAChoice()
      * The function of this is to return the vote from match A from the Character Vote.
+     *
      * @return String
      */
     public String getMatchAChoice() {
@@ -102,6 +108,7 @@ public class CharacterVotes {
     /**
      * getMatchBChoice()
      * The function of this is to return the vote from match B from the Character Vote.
+     *
      * @return String
      */
     public String getMatchBChoice() {
@@ -111,6 +118,7 @@ public class CharacterVotes {
     /**
      * getMatchCChoice()
      * The function of this is to return the vote from match C from the Character Vote.
+     *
      * @return String
      */
     public String getMatchCChoice() {
@@ -120,6 +128,7 @@ public class CharacterVotes {
     /**
      * setMatchABet()
      * The function of this is to set the wager for match A.
+     *
      * @param matchABet
      */
     public void setMatchABet(Integer matchABet) {
@@ -129,6 +138,7 @@ public class CharacterVotes {
     /**
      * setMatchAChoice()
      * The function of this is to set the vote for match A.
+     *
      * @param matchAChoice
      */
     public void setMatchAChoice(String matchAChoice) {
@@ -138,6 +148,7 @@ public class CharacterVotes {
     /**
      * setMatchBBet()
      * The function of this is to set the wager for match B.
+     *
      * @param matchBBet
      */
     public void setMatchBBet(Integer matchBBet) {
@@ -147,6 +158,7 @@ public class CharacterVotes {
     /**
      * setMatchBChoice()
      * The function of this is to set the vote for match B
+     *
      * @param matchBChoice
      */
     public void setMatchBChoice(String matchBChoice) {
@@ -156,6 +168,7 @@ public class CharacterVotes {
     /**
      * setMatchCBet()
      * The function of this is to set the wager for match C.
+     *
      * @param matchCBet
      */
     public void setMatchCBet(Integer matchCBet) {
@@ -165,6 +178,7 @@ public class CharacterVotes {
     /**
      * setMatchCChoice()
      * The function of this is to set the vote for match C.
+     *
      * @param matchCChoice
      */
     public void setMatchCChoice(String matchCChoice) {
@@ -174,6 +188,7 @@ public class CharacterVotes {
     /**
      * setMatchDBet()
      * The function of this is to set the wager for match D.
+     *
      * @param matchDBet
      */
     public void setMatchDBet(Integer matchDBet) {
@@ -183,6 +198,7 @@ public class CharacterVotes {
     /**
      * getMatchDChoice()
      * The function of this is to return the vote for match D.
+     *
      * @return
      */
     public String getMatchDChoice() {
@@ -192,6 +208,7 @@ public class CharacterVotes {
     /**
      * setMatchDChoice()
      * The function of this is to set the vote for match D.
+     *
      * @param matchDChoice
      */
     public void setMatchDChoice(String matchDChoice) {
@@ -201,6 +218,7 @@ public class CharacterVotes {
     /**
      * setUser()
      * The function is to set the user of the CharacterVote
+     *
      * @param user
      */
     public void setUser(String user) {
@@ -210,6 +228,7 @@ public class CharacterVotes {
     /**
      * getUser()
      * the function is to return the user of the CharacterVote
+     *
      * @return String
      */
     public String getUser() {
@@ -219,6 +238,7 @@ public class CharacterVotes {
     /**
      * toString()
      * the function is to return the CharacterVotes in a string form.
+     *
      * @return String
      */
     @Override
@@ -235,9 +255,11 @@ public class CharacterVotes {
                 ", matchDBet=" + matchDBet +
                 '}';
     }
+
     /**
      * equals()
      * The function is to determine whether or not two characterVotes have the same User
+     *
      * @return boolean
      */
     @Override
@@ -247,23 +269,26 @@ public class CharacterVotes {
         CharacterVotes that = (CharacterVotes) o;
         return Objects.equals(getUser(), that.getUser());
     }
+
     /**
      * hashCode()
      * The function is to return the hashcode
+     *
      * @return int
      */
     @Override
     public int hashCode() {
         return Objects.hash(getUser());
     }
-  
-  /**
-	 * Converts class into an array of objects which can be easily indexed
-	 * @return
-	 */
-	public Object[] toList() {
-		Object[] data = { this.User, this.matchAChoice, this.matchBChoice, this.matchCChoice, this.matchDChoice,
-				this.matchABet, this.matchBBet, this.matchCBet, this.matchDBet };
-		return data;
-	}
+
+    /**
+     * Converts class into an array of objects which can be easily indexed
+     *
+     * @return
+     */
+    public Object[] toList() {
+        Object[] data = {this.User, this.matchAChoice, this.matchBChoice, this.matchCChoice, this.matchDChoice,
+                this.matchABet, this.matchBBet, this.matchCBet, this.matchDBet};
+        return data;
+    }
 }
