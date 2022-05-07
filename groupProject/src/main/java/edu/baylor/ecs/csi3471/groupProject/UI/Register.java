@@ -279,6 +279,11 @@ public class Register {
 		if (age.charAt(0) > '2') {
 			valid = false;
 		}
+		if(age.charAt(0) == '2') {
+			if(age.charAt(1) > '0' || age.charAt(2) > '0') {
+				valid = false;
+			}
+		}
 		return valid;
 	}
 
