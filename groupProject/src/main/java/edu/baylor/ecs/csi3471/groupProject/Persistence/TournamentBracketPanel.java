@@ -105,7 +105,7 @@ public class TournamentBracketPanel
         }
         catch(Exception e)
         {
-            Runner.logger.severe("unable to read characters from characterRounds.csv file");
+            Runner.logger.severe("unable to read characters from " + fileName + " file");
             System.exit(1);
         }
         return characters;
@@ -140,6 +140,7 @@ public class TournamentBracketPanel
      * @param iBeg
      * @param iEnd
      * @return JLayeredPane
+     * @Throws MalformedURLException
      */
     public JLayeredPane addImagesToBracket(Character[] myChars, JLayeredPane myBigPane, int x, int y, int xInc, int yInc, int iBeg, int iEnd) throws MalformedURLException
     {

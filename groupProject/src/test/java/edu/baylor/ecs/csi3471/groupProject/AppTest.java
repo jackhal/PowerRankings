@@ -303,7 +303,6 @@ public class AppTest {
         assertNotNull(myPane);
     }
 
-    //FIXME TERMINATED TEST CASES
     @Test
     public void addImagesToBracketFail()
     {
@@ -312,46 +311,10 @@ public class AppTest {
             p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
     }
 
-    //FIXME TERMINATED TEST CASES
-//    @Test
-//    public void getRound2Success()
-//    {
-//        TournamentBracketPanel p = new TournamentBracketPanel();
-//        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
-//        JLayeredPane myPane = null;
-//        try
-//        {
-//            myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-//        }
-//        catch(MalformedURLException me)
-//        {
-//            System.out.println(me.getMessage());
-//        }
-//
-//        p.getRound2(myPane);
-//        assertNotNull(myPane);
-//    }
-
-//still terminating test
-//    @Test
-//    public void getRound3Success()
-//    {
-//        TournamentBracketPanel p = new TournamentBracketPanel();
-//        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
-//        JLayeredPane myPane = null;
-//        try
-//        {
-//            myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-//        }
-//        catch(MalformedURLException me)
-//        {
-//            System.out.println(me.getMessage());
-//        }
-//
-//        p.getRound3(myPane);
-//        assertNotNull(myPane);
-//    }
-
+    /*
+    Get round1, round2, round3, and winner functions all solely use addImagesToBracket with different parameters.
+    Thus, testing addImagesToBracket encompasses all testing for the class.
+     */
 
     @Test
     public void getCharacterRoundLinesSuccess()

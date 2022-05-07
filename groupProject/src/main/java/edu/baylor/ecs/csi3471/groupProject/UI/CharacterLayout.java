@@ -47,7 +47,6 @@ public class CharacterLayout extends JFrame {
 
 
 
-
         addItem(panel1, nameW, 1, 0, 2, 1, GridBagConstraints.WEST);
         nameW.setText(c.getName());
         nameW.setEditable(false);
