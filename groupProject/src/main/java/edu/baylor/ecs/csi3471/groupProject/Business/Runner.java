@@ -27,6 +27,7 @@ public class Runner {
 		logger.info("starting the app");
 	}
 	public static User curUser;
+	public static Integer numchar = 0;
 	public static void main(String[] args) {
 		LoginPage lp = new LoginPage();
 	}

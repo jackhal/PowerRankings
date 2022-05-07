@@ -2,20 +2,30 @@ package edu.baylor.ecs.csi3471.groupProject.Persistence;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
-import org.apache.poi.ss.usermodel.*;
+import edu.baylor.ecs.csi3471.groupProject.Business.User;
+
+import javax.swing.*;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 /**
  * Class CharacterDAO
- * The CharacterDAO is an extension of Character as a Data Access Object and writes to the Character database
  */
 public class CharacterDAO extends Character {
 	/**
@@ -47,7 +57,6 @@ public class CharacterDAO extends Character {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("Cannot open File!");
 			e.printStackTrace();
 		}
 		Character c = new Character();
@@ -62,7 +71,7 @@ public class CharacterDAO extends Character {
 	 */
 	// When you change values for a character, use setters to update and then use
 	// update to store changes
-	public void updateCSV(Integer id) { // tested?? yea something is wrong here
+	public void updateCSV(Integer id, Character cc) { // tested?? yea something is wrong here
 		Runner.logger.info("Updating character in database with id " + id);
 		String filePath = "CharacterFile.csv";
 		// Instantiating the Scanner class to read the file
@@ -70,11 +79,12 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("Can't find file and can't update CSV");
 			e.printStackTrace();
 		}
 		String oldLine = "";
 		String line = "";
+		String n = "";
+		String w = "";
 		// instantiating the StringBuffer class
 		StringBuffer buffer = new StringBuffer();
 		// Reading lines of the file and appending them to StringBuffer
@@ -84,6 +94,8 @@ public class CharacterDAO extends Character {
 			String[] split = line.split("\t");
 			if (split[5].equals(String.valueOf(id))) {
 				oldLine = line;
+				n = split[0];
+				w = split[1];
 			}
 		}
 		String fileContents = buffer.toString();
@@ -92,7 +104,17 @@ public class CharacterDAO extends Character {
 		sc.close();
 		// String oldLine = "No preconditions and no impediments. Simply Easy
 		// Learning!";
-		String newLine = charToCSV();
+		Character c = new Character();
+		try {
+			c = findChar(n, w);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		 c.setName(cc.getName());
+		c.setWorld(cc.getWorld());
+		c.setDesc(cc.getDesc());
+		c.setPicture(cc.getPicture());
+		String newLine = c.charToCSV();
 		newLine = newLine.replace("\n", "");
 		// Replacing the old line with new line
 		fileContents = fileContents.replace(oldLine, newLine);
@@ -101,7 +123,6 @@ public class CharacterDAO extends Character {
 		try {
 			writer = new FileWriter(filePath);
 		} catch (IOException e) {
-			Runner.logger.severe("Exception found when trying to get begin login process");
 			e.printStackTrace();
 		}
 		// System.out.println("");
@@ -109,13 +130,11 @@ public class CharacterDAO extends Character {
 		try {
 			writer.append(fileContents);
 		} catch (IOException e) {
-			Runner.logger.severe("Exception found when trying to get begin login process");
 			e.printStackTrace();
 		}
 		try {
 			writer.flush();
 		} catch (IOException e) {
-			Runner.logger.severe("Exception found when trying to input");
 			e.printStackTrace();
 		}
 	}
@@ -134,7 +153,6 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("File unable to open!");
 			e.printStackTrace();
 		}
 		String line = sc.nextLine();
@@ -158,7 +176,6 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("Unable to find Character CSV");
 			e.printStackTrace();
 		}
 		String line = sc.nextLine();
@@ -208,7 +225,6 @@ public class CharacterDAO extends Character {
 					+ "\t" + URL + "\t" + currUser);
 			pw.close();
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("Unable to open Character File");
 			e.printStackTrace();
 		}
 	}
@@ -235,7 +251,6 @@ public class CharacterDAO extends Character {
 			Runner.logger.info(name + " is not in database");
 			return false;
 		} catch (FileNotFoundException e) {
-			Runner.logger.severe("Unable to open Character.csv");
 			e.printStackTrace();
 			return true;
 		}
@@ -317,13 +332,7 @@ public class CharacterDAO extends Character {
 		JOptionPane.showMessageDialog(null, "The next login will display the new tournament!");
 	}
 
-	/**
-	 * Exports CharacterFile.csv to CharacterFile.xlsx
-	 * @param dirPath
-	 * @throws IOException
-	 */
 	public void exportCharactersToExcel(String dirPath) throws IOException {
-		Runner.logger.info("Exporting Characters to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 
@@ -370,13 +379,7 @@ public class CharacterDAO extends Character {
 		out.close();
 	}
 	
-	/**
-	 * Exports CharacterRounds.csv to CharacterRounds.xlsx
-	 * @param dirPath
-	 * @throws IOException
-	 */
 	public void exportCharacterRoundsToExcel(String dirPath) throws IOException {
-		Runner.logger.info("Exporting CharacterRounds to excel");
 		Workbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Users");
 

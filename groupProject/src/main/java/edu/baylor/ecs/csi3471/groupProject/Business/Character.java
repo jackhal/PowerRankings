@@ -53,7 +53,8 @@ public class Character {
 		this.loss = loss;
 		this.picture = picture;
 		this.owner = owner;
-		id = id++;
+		id = Runner.numchar;
+		Runner.numchar = Runner.numchar + 1;
 	}
 
 	/**
