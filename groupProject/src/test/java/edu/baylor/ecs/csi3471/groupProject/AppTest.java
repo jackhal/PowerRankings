@@ -1,14 +1,13 @@
 package edu.baylor.ecs.csi3471.groupProject;
 
+import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
-import edu.baylor.ecs.csi3471.groupProject.Business.CharacterVotes;
-import edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn;
-import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
 import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
 import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -16,8 +15,10 @@ import org.junit.jupiter.api.function.Executable;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -106,54 +107,10 @@ public class AppTest {
     public void loadCharactersSuccess()
     {
         TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters();
+        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
 
         assertEquals(c.length, 15);
     }
-
-    //FIXME TERMINATED TEST CASES
-    /*@Test
-    public void addImagesToBracketSuccess()
-    {
-        TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters();
-        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-
-        assertNotNull(myPane);
-    }*/
-
-    //FIXME TERMINATED TEST CASES
-    /*@Test
-    public void addImagesToBracketFail()
-    {
-        TournamentBracketPanel p = new TournamentBracketPanel();
-        assertThrows(MalformedURLException.class, () -> {
-            p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
-    }*/
-
-    //FIXME TERMINATED TEST CASES
-    /*@Test
-    public void getRound2Success()
-    {
-        TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters();
-        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-        p.getRound2(myPane);
-
-        assertNotNull(myPane);
-    }*/
-
-    //FIXME terminated the rest of the tests
-    /*@Test
-    public void getRound3Success()
-    {
-        TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters();
-        JLayeredPane myPane = p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);
-        p.getRound3(myPane);
-
-        assertNotNull(myPane);
-    }*/
 
     @DisplayName("Test updateUser (pass)")
     @Test
@@ -327,6 +284,78 @@ public class AppTest {
 
 
 
+    //FIXME TERMINATED TEST CASES
+
+    @Test
+    @DisplayName("update Char votes (pass)")
+    public void addImagesToBracketSuccess()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
+        JLayeredPane myPane = null;
+        try
+        {
+            myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        }
+        catch(MalformedURLException me)
+        {
+            System.out.println(me.getMessage());
+        }
+
+        assertNotNull(myPane);
+    }
+
+    //FIXME TERMINATED TEST CASES
+    @Test
+    public void addImagesToBracketFail()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        assertThrows(MalformedURLException.class, () -> {
+            p.addImagesToBracket(new Character[1], new JLayeredPane(), 0, 0, 0, 0, 0, 1);}, "malrformed URL excpetion expected");
+    }
+
+    //FIXME TERMINATED TEST CASES
+    @Test
+    public void getRound2Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
+        JLayeredPane myPane = null;
+        try
+        {
+            myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        }
+        catch(MalformedURLException me)
+        {
+            System.out.println(me.getMessage());
+        }
+
+        p.getRound2(myPane);
+        assertNotNull(myPane);
+    }
+
+
+    @Test
+    public void getRound3Success()
+    {
+        TournamentBracketPanel p = new TournamentBracketPanel();
+        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
+        JLayeredPane myPane = null;
+        try
+        {
+            myPane = p.addImagesToBracket(c, new JLayeredPane(), 0, 0, 0, 0, 0, 1);
+        }
+        catch(MalformedURLException me)
+        {
+            System.out.println(me.getMessage());
+        }
+
+        p.getRound3(myPane);
+        assertNotNull(myPane);
+    }
+
+
+    //DO CharacterDAO added functions
 
 
 
