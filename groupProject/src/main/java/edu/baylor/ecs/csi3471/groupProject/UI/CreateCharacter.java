@@ -149,7 +149,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * @param name
 	 * @return boolean if the character name inputted is valid or not
 	 */
-	public boolean isValidCharName(String name) {
+	public boolean isValidCharName(String name) { //tested
 		//checking if character name length is valid
 		if(49<name.length()||name.length()==0) {
 			return false;
@@ -173,7 +173,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * @param world
 	 * @return boolean if the world string inputted is valid
 	 */
-	public boolean isValidWorld(String world) {
+	public boolean isValidWorld(String world) { //tested
 		//checking if character world length is valid
 		if(49<world.length()||world.length()==0) {
 			return false;
@@ -197,7 +197,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * @param desc
 	 * @return boolean whether or not the character description is valid
 	 */
-	public boolean isValidCharDesc(String desc) {
+	public boolean isValidCharDesc(String desc) { //tested
 		//checking if character description length is valid
 		if(299<desc.length()||desc.length()==0) {
 			return false;
@@ -221,7 +221,7 @@ public class CreateCharacter extends CharacterDAO {
 	 * @param URL
 	 * @return boolean whether or not the url is valid
 	 */
-	public boolean isValidCharURL(String URL) {
+	public boolean isValidCharURL(String URL) { //tested
 		//checking if URL is within required length
 		if(299<URL.length()) {
 			return false;
