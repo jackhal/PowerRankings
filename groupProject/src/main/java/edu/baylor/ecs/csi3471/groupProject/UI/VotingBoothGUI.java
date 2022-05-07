@@ -297,7 +297,7 @@ public class VotingBoothGUI {
                     }
                     PrintWriter p = null;
                     try {
-                        p = new PrintWriter("CharacterVotes.tsv");
+                        p = new PrintWriter("src/resources/CharacterVotes.tsv");
                     } catch (FileNotFoundException ex) {
                         Runner.logger.severe("Can't print CharacterVotes.tsv");
                         ex.printStackTrace();

@@ -37,7 +37,7 @@ public class CharacterVotesDAO extends CharacterVotes {
     public ArrayList<CharacterVotes> getCharacterVotes() throws IOException {
         Runner.logger.info("getting all the users from the file into list");
         ArrayList<CharacterVotes> users = new ArrayList<CharacterVotes>();
-        BufferedReader br = new BufferedReader(new FileReader("CharacterVotes.tsv"));
+        BufferedReader br = new BufferedReader(new FileReader("src/resources/CharacterVotes.tsv"));
         String line = "";
         br.readLine();
 
@@ -86,7 +86,7 @@ public class CharacterVotesDAO extends CharacterVotes {
                     String.valueOf(u.getMatchCBet()), String.valueOf(u.getMatchDBet())});
         }
 
-        File tsvOut = new File("CharacterVotes.tsv");
+        File tsvOut = new File("src/resources/CharacterVotes.tsv");
         PrintWriter pw = new PrintWriter(tsvOut);
         pw.write("User	MatchAChoice	MatchBChoice	MatchCChoice	MatchDChoice	ABet	BBet	CBet	DBet");
         pw.write("\n");
@@ -138,7 +138,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      */
     public CharacterVotes getCharacterVoteByUsername(String username) throws Exception { // tested
         Runner.logger.info("getting user from username");
-        Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
+        Scanner sc = new Scanner(new File("src/resources/CharacterVotes.tsv"));
         String data[];
         while (sc.hasNextLine()) {
             data = sc.nextLine().split("\t");
@@ -147,7 +147,7 @@ public class CharacterVotesDAO extends CharacterVotes {
                 return curr;
             }
         }
-        Runner.logger.warning("username did not exist");
+        //Runner.logger.warning("username did not exist");
         throw new NoSuchElementException("This CharacterVotes does not exist");
     }
 
@@ -160,7 +160,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      */
     public String findCurrentVote(String username, Integer match) { // tested
         try {
-            Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/CharacterVotes.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -184,7 +184,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      */
     protected void setCurrentVote(String username, String charVote, Integer match) {
         try {
-            Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/CharacterVotes.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -215,7 +215,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      */
     public int findCurrentBet(String username, Integer match) { // tested
         try {
-            Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/CharacterVotes.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -238,7 +238,7 @@ public class CharacterVotesDAO extends CharacterVotes {
      */
     protected void setCurrentBet(String username, int newBet, Integer match) {
         try {
-            Scanner sc = new Scanner(new File("CharacterVotes.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/CharacterVotes.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
