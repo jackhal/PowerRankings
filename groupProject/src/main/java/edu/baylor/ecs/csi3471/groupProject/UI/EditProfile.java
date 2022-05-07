@@ -74,6 +74,7 @@ public class EditProfile extends JPanel {
 									", age: " + ageInput.getText() + ", and description: " + descInput.getText());
 						} catch (IOException e1) {
 							// TODO Auto-generated catch block
+							Runner.logger.severe("Can't update " + user.getUsername());
 							e1.printStackTrace();
 						}
 						editFrame.dispose();
@@ -135,6 +136,7 @@ public class EditProfile extends JPanel {
 	        editFrame.setVisible(true);
 	        editFrame.setSize(325, 300);
 		} catch (Exception e2) {
+			Runner.logger.severe("can't get current User to edit the profile");
 			e2.printStackTrace();
 		}
     }

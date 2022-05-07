@@ -1,6 +1,7 @@
 package edu.baylor.ecs.csi3471.groupProject.UI;
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
+import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -86,6 +87,7 @@ public class CharacterLayout extends JFrame {
             buttonBox.add(lblimage);
         }
         catch (IOException e) {
+            Runner.logger.severe("Can't get picture for buttonBox");
         }
 
         addItem(panel1, buttonBox, 2, 8, 1, 1, GridBagConstraints.NORTH);

@@ -1,5 +1,7 @@
 package edu.baylor.ecs.csi3471.groupProject.Persistence;
 
+import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -34,6 +36,7 @@ public class loginDAO {
 	    	}
 			return false;
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to find file");
 			e.printStackTrace();
 			return false;
 		}

@@ -40,8 +40,10 @@ public class Login  {
         	}
         	
         } catch (NullPointerException e) { } catch (IOException e) {
+			Runner.logger.severe("Exception found when trying to get begin login process");
 			e.printStackTrace();
 		} catch (ParseException e) {
+			Runner.logger.severe("Exception found when trying to parse information");
 			e.printStackTrace();
 		}
 

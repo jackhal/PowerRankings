@@ -160,6 +160,7 @@ public class HomePage {
 				try {
 					EditProfile ep = new EditProfile(currUsername);
 				} catch (Exception e1) {
+					Runner.logger.severe("Unable to edit profile of User");
 					e1.printStackTrace();
 				}
 			}
@@ -268,6 +269,7 @@ public class HomePage {
 				try {
 					windvote.createAndShowGUI(myChars);
 				} catch (Exception ex) {
+					Runner.logger.severe("unable to create currentround GUI");
 					ex.printStackTrace();
 				}
 				// }

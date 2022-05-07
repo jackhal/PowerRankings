@@ -143,6 +143,7 @@ public class Table extends JPanel {
                 try {
                     ret = c.findChar(n, w);
                 } catch (Exception ex) {
+                    Runner.logger.severe("Can't find Character!");
                     throw new RuntimeException(ex);
                 }
                 ret.displayChar();
@@ -177,6 +178,7 @@ public class Table extends JPanel {
                     try {
                         cc = c.findChar(animalField.getText(), idField.getText());
                     } catch (Exception ex) {
+                        Runner.logger.severe("Can't find Character");
                         throw new RuntimeException(ex);
                     }
                     JTextField nameField = new JTextField(10);
@@ -362,6 +364,7 @@ public class Table extends JPanel {
                             }
                             writer.close();
                         } catch (IOException ex) {
+                            Runner.logger.severe("Can't open the specified file");
                             ex.printStackTrace();
                         }
                     }
@@ -510,8 +513,10 @@ public class Table extends JPanel {
                     raf.seek(raf.length());
                     raf.writeBytes(res);
                 } catch (FileNotFoundException ex) {
+                    Runner.logger.severe("CharacterFile.csv can't be opened");
                     ex.printStackTrace();
                 } catch (IOException ex) {
+                    Runner.logger.severe("Can't open the User file");
                     ex.printStackTrace();
                 }
                 model.insertRow(0, new Object[]{c.getName(), c.getWorld(),  String.valueOf(c.getRatio()), c.getOwner(),"View", "Edit"});

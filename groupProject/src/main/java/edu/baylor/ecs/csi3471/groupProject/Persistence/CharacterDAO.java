@@ -58,6 +58,7 @@ public class CharacterDAO extends Character {
 				}
 			}
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Cannot open File!");
 			e.printStackTrace();
 		}
 		Character c = new Character();
@@ -80,6 +81,7 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Can't find file and can't update CSV");
 			e.printStackTrace();
 		}
 		String oldLine = "";
@@ -110,6 +112,7 @@ public class CharacterDAO extends Character {
 		try {
 			writer = new FileWriter(filePath);
 		} catch (IOException e) {
+			Runner.logger.severe("Exception found when trying to get begin login process");
 			e.printStackTrace();
 		}
 		// System.out.println("");
@@ -117,11 +120,13 @@ public class CharacterDAO extends Character {
 		try {
 			writer.append(fileContents);
 		} catch (IOException e) {
+			Runner.logger.severe("Exception found when trying to get begin login process");
 			e.printStackTrace();
 		}
 		try {
 			writer.flush();
 		} catch (IOException e) {
+			Runner.logger.severe("Exception found when trying to input");
 			e.printStackTrace();
 		}
 	}
@@ -140,6 +145,7 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("File unable to open!");
 			e.printStackTrace();
 		}
 		String line = sc.nextLine();
@@ -163,6 +169,7 @@ public class CharacterDAO extends Character {
 		try {
 			sc = new Scanner(new File(filePath));
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to find Character CSV");
 			e.printStackTrace();
 		}
 		String line = sc.nextLine();
@@ -212,6 +219,7 @@ public class CharacterDAO extends Character {
 					+ "\t" + URL + "\t" + currUser);
 			pw.close();
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to open Character File");
 			e.printStackTrace();
 		}
 	}
@@ -238,6 +246,7 @@ public class CharacterDAO extends Character {
 			Runner.logger.info(name + " is not in database");
 			return false;
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to open Character.csv");
 			e.printStackTrace();
 			return true;
 		}

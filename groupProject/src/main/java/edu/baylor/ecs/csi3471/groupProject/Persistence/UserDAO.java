@@ -108,6 +108,7 @@ public class UserDAO {
 			}
 			return 0;
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to find File");
 			return 0;
 		}
 	}
@@ -136,11 +137,13 @@ public class UserDAO {
 					try {
 						updateUser(newUser);
 					} catch (IOException e) {
+						Runner.logger.severe("Exception found when trying to get begin login process");
 						e.printStackTrace();
 					}
 				}
 			}
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Unable to open User file");
 			e.printStackTrace();
 		}
 	}
@@ -164,6 +167,7 @@ public class UserDAO {
 			}
 			return 0;
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("User file unable to open");
 			return 0;
 		}
 	}
@@ -187,11 +191,13 @@ public class UserDAO {
 					try {
 						updateUser(newUser);
 					} catch (IOException e) {
+						Runner.logger.severe("Can't update User");
 						e.printStackTrace();
 					}
 				}
 			}
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Can't open the User file");
 			e.printStackTrace();
 		}
 	}
@@ -214,6 +220,7 @@ public class UserDAO {
 			}
 			return "null";
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Can't open the User file");
 			return "null";
 		}
 	}
@@ -236,11 +243,13 @@ public class UserDAO {
 					try {
 						updateUser(newUser);
 					} catch (IOException e) {
+						Runner.logger.severe("Can't update User");
 						e.printStackTrace();
 					}
 				}
 			}
 		} catch (FileNotFoundException e) {
+			Runner.logger.severe("Can't open the User file");
 			e.printStackTrace();
 		}
 	}

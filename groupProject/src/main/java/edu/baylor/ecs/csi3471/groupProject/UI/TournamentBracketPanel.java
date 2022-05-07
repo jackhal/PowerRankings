@@ -203,6 +203,7 @@ public class TournamentBracketPanel
         }
         catch(Exception e)
         {
+            Runner.logger.severe("Can't read from File");
             System.out.println(e);
             System.exit(1);
         }

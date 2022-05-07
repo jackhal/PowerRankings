@@ -49,6 +49,7 @@ public class RegisterDAO {
         }
         catch (IOException e)
         {
+            Runner.logger.severe("Error when writing");
             e.printStackTrace();
         }
 

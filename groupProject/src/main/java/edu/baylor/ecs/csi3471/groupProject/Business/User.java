@@ -42,6 +42,7 @@ public class User {
 			this.currentStreak = Integer.parseInt(data[11]);
 			this.lastLogin = data[12];
 		} catch (NullPointerException e) {
+			Runner.logger.severe("can't parse the data up to 13 slots");
 			e.printStackTrace();
 		}
 	}

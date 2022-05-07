@@ -76,6 +76,7 @@ public class UserTable extends JPanel {
             try {
                 uList = udao.getUsers();
             } catch (IOException e) {
+                Runner.logger.severe("Can't get Users from DAO");
                 e.printStackTrace();
             }
 
@@ -255,8 +256,10 @@ public class UserTable extends JPanel {
                         raf.seek(raf.length());
                         raf.writeBytes(res);
                     } catch (FileNotFoundException ex) {
+                        Runner.logger.severe("Can't open the CharacterFile.csv file");
                         ex.printStackTrace();
                     } catch (IOException ex) {
+                        Runner.logger.severe("Can't seek file");
                         ex.printStackTrace();
                     }
                     model.insertRow(0, new Object[]{c.getName(), c.getWorld(),  String.valueOf(c.getRatio()), c.getOwner(),"View", "Edit"});

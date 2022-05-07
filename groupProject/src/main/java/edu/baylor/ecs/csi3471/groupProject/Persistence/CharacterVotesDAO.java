@@ -170,6 +170,7 @@ public class CharacterVotesDAO extends CharacterVotes {
 			}
 			return "";
 		} catch (FileNotFoundException e) {
+			Runner.logger.info("Can't find file");
 			return "";
 		}
 	}

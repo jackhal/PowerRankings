@@ -112,6 +112,7 @@ public class CreateCharacter extends CharacterDAO {
 						}
 					}
 				} catch (NullPointerException n) {
+					Runner.logger.severe("unable to get Text fromfields");
 					n.printStackTrace();
 				}
 			}
@@ -230,6 +231,7 @@ public class CreateCharacter extends CharacterDAO {
 			new URL(URL).toURI();
 			return true;
 		} catch (Exception e) {
+			Runner.logger.info("Not valid URL");
 			return false;
 		}
 	}

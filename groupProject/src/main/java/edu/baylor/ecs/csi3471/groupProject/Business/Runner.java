@@ -21,8 +21,8 @@ public class Runner {
 			LogManager.getLogManager().readConfiguration(configFile);
 			configFile.close();
 		} catch (IOException ex) {
-			System.out.println("WARNING: Could not open configuration file");
-			System.out.println("WARNING: Logging not configured (console output only)");
+			logger.severe("WARNING: Could not open configuration file");
+			logger.severe("WARNING: Logging not configured (console output only)");
 		}
 		logger.info("starting the app");
 	}

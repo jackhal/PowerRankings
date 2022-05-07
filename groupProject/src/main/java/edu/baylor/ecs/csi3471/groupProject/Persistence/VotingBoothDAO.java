@@ -147,6 +147,7 @@ public class VotingBoothDAO extends JPanel {
                     try {
                         ArrayList<User> lista = userDAO.getUsers();
                     } catch (IOException ex) {
+                        Runner.logger.severe("can't get users from UserDAO");
                         ex.printStackTrace();
                     }
                     CharacterVotes red = new CharacterVotes();
@@ -155,6 +156,7 @@ public class VotingBoothDAO extends JPanel {
                     try {
                         red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
                     } catch (Exception ex) {
+                        Runner.logger.severe("Unable to get Username");
                         red.setUser(bill.getUsername());
                     }
 
