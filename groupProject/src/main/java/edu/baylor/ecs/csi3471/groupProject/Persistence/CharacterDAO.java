@@ -62,7 +62,7 @@ public class CharacterDAO extends Character {
 	 */
 	// When you change values for a character, use setters to update and then use
 	// update to store changes
-	public void updateCSV(Integer id) { // tested??
+	public void updateCSV(Integer id) { // tested?? yea something is wrong here
 		Runner.logger.info("Updating character in database with id " + id);
 		String filePath = "CharacterFile.csv";
 		// Instantiating the Scanner class to read the file

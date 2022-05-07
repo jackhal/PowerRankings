@@ -212,6 +212,9 @@ public class Table extends JPanel {
                         cc.setWorld(idField.getText());
                         cc.setDesc(nameField.getText());
                         cc.setPicture(ageField.getText());
+                        //FIXME SOMETHING IS WRONG WITH THIS
+                        //all the ids are the same, so the updates arent exactly correct. So when updating the csv file
+                        //it is just all wrong, and deletes an entire line but leaves the win, loss, and id
                         c.updateCSV(c.getId());
                         Runner.logger.info(nameField.getText() + " successfully edited");
                     }

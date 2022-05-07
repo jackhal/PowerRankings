@@ -5,6 +5,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel;
+import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
 import edu.baylor.ecs.csi3471.groupProject.UI.Register;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -609,6 +610,37 @@ public class AppTest {
     public void passEmailAnalysis(){
         Register r = new Register();
         Assertions.assertAll(() -> r.emailAnalysis());
+    }
+
+    @Test
+    public void passNameValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertTrue(() -> e.isNameValid("newRyan"));
+    }
+    @Test
+    public void failNameValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertFalse(() -> e.isNameValid("newRyan{}|()*&#^%$"));
+    }
+    @Test
+    public void passAgeValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertTrue(() -> e.isAgeValid("20"));
+    }
+    @Test
+    public void failAgeValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertFalse(() -> e.isNameValid("not a number"));
+    }
+    @Test
+    public void passDescValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertTrue(() -> e.isDescValid("newRyan"));
+    }
+    @Test
+    public void failDescValid(){
+        EditProfile e = new EditProfile("ryan");
+        Assertions.assertFalse(() -> e.isDescValid("this line is gonna be way too long and it gonna have some wierd characters cus why not @$@!^*@(#)_@fbahlfbvsdvauvcSD CSDJV VJ ASDJ VDSVAJ VSDAJ VCJHASDFBSD CJSDBCDJS CSD CJHDS C CAK"));
     }
 
 
