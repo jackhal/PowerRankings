@@ -4,21 +4,15 @@ import edu.baylor.ecs.csi3471.groupProject.Business.*;
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
-import edu.baylor.ecs.csi3471.groupProject.UI.EditProfile;
-import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
-import edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI;
-import org.junit.Before;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.function.Executable;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.Random;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;

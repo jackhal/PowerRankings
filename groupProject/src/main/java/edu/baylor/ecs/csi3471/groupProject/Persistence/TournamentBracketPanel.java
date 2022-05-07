@@ -1,4 +1,4 @@
-package edu.baylor.ecs.csi3471.groupProject.UI;
+package edu.baylor.ecs.csi3471.groupProject.Persistence;
 
 
 import edu.baylor.ecs.csi3471.groupProject.Business.Character;
@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.logging.Logger;
 
 
 /**
