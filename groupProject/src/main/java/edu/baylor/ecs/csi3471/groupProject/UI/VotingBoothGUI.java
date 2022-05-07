@@ -5,6 +5,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.CharacterVotes;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO;
 
@@ -178,6 +179,9 @@ public class VotingBoothGUI {
                             } else if (slots == 11) {
                                 match = 4;
                             }
+                            else{
+                                match = 1;
+                            }
                             UserDAO users = new UserDAO();
                             ArrayList<User> userList = null;
                             try {
@@ -203,7 +207,6 @@ public class VotingBoothGUI {
                                         users.setCurrentBal(u.getUsername(), fine);
                                         users.updateUser(u);
                                         if(u.equals(Runner.curUser)){
-                                            System.out.println("YESFUCK");
                                             Runner.curUser.setFunds(fine);
                                             users.setCurrentBal(Runner.curUser.getUsername(), fine);
                                             users.updateUser(Runner.curUser);
@@ -259,6 +262,9 @@ public class VotingBoothGUI {
                             } else if (longy == 11) {
                                 match = 4;
                             }
+                            else{
+                                match = 1;
+                            }
                             UserDAO users = new UserDAO();
                             ArrayList<User> userList = null;
                             try {
@@ -284,7 +290,6 @@ public class VotingBoothGUI {
                                         users.setCurrentBal(u.getUsername(), fine);
                                         users.updateUser(u);
                                         if(u.equals(Runner.curUser)){
-                                            System.out.println("YESFUCK");
                                             Runner.curUser.setFunds(fine);
                                             users.setCurrentBal(Runner.curUser.getUsername(), fine);
                                             users.updateUser(Runner.curUser);

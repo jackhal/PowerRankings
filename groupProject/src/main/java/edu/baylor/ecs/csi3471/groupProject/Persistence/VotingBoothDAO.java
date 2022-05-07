@@ -4,7 +4,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Business.CharacterVotes;
 import edu.baylor.ecs.csi3471.groupProject.Business.Runner;
 import edu.baylor.ecs.csi3471.groupProject.Business.User;
-import edu.baylor.ecs.csi3471.groupProject.UI.TournamentBracketPanel;
+import edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -156,7 +156,7 @@ public class VotingBoothDAO extends JPanel {
                     try {
                         red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
                     } catch (Exception ex) {
-                        Runner.logger.severe("Unable to get Username");
+                        Runner.logger.info("Unable to get Username");
                         red.setUser(bill.getUsername());
                     }
 
