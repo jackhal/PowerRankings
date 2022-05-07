@@ -5,6 +5,7 @@ import edu.baylor.ecs.csi3471.groupProject.Business.Character;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.*;
 import edu.baylor.ecs.csi3471.groupProject.UI.CreateCharacter;
 import edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel;
+import edu.baylor.ecs.csi3471.groupProject.UI.Register;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -479,8 +480,140 @@ public class AppTest {
         Assertions.assertFalse(() -> ch.isValidCharURL("this is not a url"));
     }
 
+    @Test
+    public void registration(){
+        Register r = new Register();
+        Assertions.assertAll(() -> r.beginRegistration());
+    }
+    @Test
+    public void passName(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyName("validName"));
+    }
+    @Test
+    public void failName(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyName("Inv@l!d nAmmmmmmeeeeeefewb$%^&{}|FHLWFBHEBDVHAVHABSDVHBDASVHA SH"));
+    }
+    @Test
+    public void passPassword(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyPassword("validPassword"));
+    }
+    @Test
+    public void failPassword(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyPassword("Inv@l!d nAmmmmmmeeeee$&()_|efewbFHLWFBHEBDVHAVHABSDVHBDASVHA SH"));
+    }
+    @Test
+    public void passAge(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyAge("20"));
+    }
+    @Test
+    public void failAge(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyAge("Inv@l!d nAmmmmmmeeeeeefewbFHLWFBHEBDVHAVHABSDVHBDASVHA SH"));
+    }
+    @Test
+    public void passEmail(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyEmail("valid@valid.com"));
+    }
+    @Test
+    public void failEmail(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyEmail("Inv@l!d nAmmmmmmeeeeeefewbFHLWFBHEBDVHAVHABSDVHBDASVHA SH"));
+    }
 
-    //todo left, register, edit profile, and added character dao functions
+    @Test
+    public void passInputSize(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyInputSizeIsValid(2, 8, "valid"));
+    }
+    @Test
+    public void failInputSize(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyInputSizeIsValid(2, 3, "not valid"));
+    }
+    @Test
+    public void passAgeLength(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyAgeLength("20"));
+    }
+    @Test
+    public void failAgeLength(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyAgeLength("333333"));
+    }
+    @Test
+    public void passAgeNumeric(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyAgeIsNumeric("2"));
+    }
+    @Test
+    public void failAgeNumeric(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyAgeIsNumeric("twelve"));
+    }
+    @Test
+    public void passAgeOlder(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyOlderThanEighteen("20"));
+    }
+
+    //FIXME NOT PASSING
+    @Test
+    public void failAgeOlder(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyOlderThanEighteen("2"));
+    }
+    @Test
+    public void passAgeYounger(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyYoungerThanTwoHundred("20"));
+    }
+    @Test
+    public void failAgeYounger(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyYoungerThanTwoHundred("333"));
+    }
+    @Test
+    public void passInputAlphaDigit(){
+        Register r = new Register();
+        Assertions.assertTrue(r.verifyInputIsDigitOrLetter("username1234"));
+    }
+    @Test
+    public void failInputAlphaDigit(){
+        Register r = new Register();
+        Assertions.assertFalse(r.verifyInputIsDigitOrLetter("N0tV@l!d Usern#m*"));
+    }
+
+    //FIXME, Might have to remove these tests because of the pop up dialogs
+    @Test
+    public void passUsernameAnalysis(){
+        Register r = new Register();
+        Assertions.assertAll(() -> r.usernameAnalysis());
+    }
+    @Test
+    public void passPasswordAnalysis(){
+        Register r = new Register();
+        Assertions.assertAll(() -> r.passwordAnalysis());
+    }
+    @Test
+    public void passAgeAnalysis(){
+        Register r = new Register();
+        Assertions.assertAll(() -> r.ageAnalysis());
+    }
+    @Test
+    public void passEmailAnalysis(){
+        Register r = new Register();
+        Assertions.assertAll(() -> r.emailAnalysis());
+    }
+
+
+
+    //todo left, edit profile, and added character dao functions
 
 
 
