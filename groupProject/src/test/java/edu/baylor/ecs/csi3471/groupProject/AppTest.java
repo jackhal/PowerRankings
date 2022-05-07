@@ -613,7 +613,7 @@ public class AppTest {
 
 
 
-    //todo left, edit profile, and added character dao functions
+    //todo left, edit profile, and added character dao functions (fix those tests)
 
 
 
