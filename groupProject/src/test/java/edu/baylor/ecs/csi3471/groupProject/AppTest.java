@@ -355,6 +355,17 @@ public class AppTest {
     }
 
 
+    @Test
+    public void getCharacterRoundLinesSuccess()
+    {
+        long lines = -1;
+        CharacterDAO myCharDAO = new CharacterDAO();
+        lines = myCharDAO.getCharacterRoundsLines();
+
+        assertTrue(lines >= 0);
+    }
+
+
     //DO CharacterDAO added functions
 
 
