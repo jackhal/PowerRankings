@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AppTest {
@@ -359,6 +360,83 @@ public class AppTest {
 
         assertTrue(lines >= 0);
     }
+    
+    @Test
+    public void exportUsersToExcelSuccess() {
+    	String homePath = System.getProperty("user.home");
+    	UserDAO myUserDAO = new UserDAO();
+    	
+    	assertDoesNotThrow(() -> {
+    		myUserDAO.exportToExcel(homePath);
+    	});
+    }
+    
+    @Test
+    public void exportUsersToExcelFail() {
+    	UserDAO myUserDAO = new UserDAO();
+    	
+    	assertThrows(IOException.class, () -> {
+    		myUserDAO.exportToExcel("asfasfawr322asfaf");
+    	});
+    }
+    
+    @Test
+    public void exportCharactersToExcelSuccess() {
+    	String homePath = System.getProperty("user.home");
+    	CharacterDAO myCharDAO = new CharacterDAO();
+    	
+    	assertDoesNotThrow(() -> {
+    		myCharDAO.exportCharactersToExcel(homePath);
+    	});
+    }
+    
+    @Test
+    public void exportCharactersToExcelFail() {
+    	CharacterDAO myCharDAO = new CharacterDAO();
+    	
+    	assertThrows(IOException.class, () -> {
+    		myCharDAO.exportCharactersToExcel("asfasd2easkljf");
+    	});
+    }
+    
+    @Test
+    public void exportCharacterRoundsToExcelSuccess() {
+    	String homePath = System.getProperty("user.home");
+    	CharacterDAO myCharDAO = new CharacterDAO();
+    	
+    	assertDoesNotThrow(() -> {
+    		myCharDAO.exportCharactersToExcel(homePath);
+    	});
+    }
+    
+    @Test
+    public void exportCharacterRoundsToExcelFail() {
+    	CharacterDAO myCharDAO = new CharacterDAO();
+    	
+    	assertThrows(IOException.class, () -> {
+    		myCharDAO.exportCharacterRoundsToExcel("asfasfasfasfasf");
+    	});
+    }
+    
+    @Test
+    public void exportCharacterVotesToExcelSuccess() {
+    	String homePath = System.getProperty("user.home");
+    	CharacterVotesDAO myCharVotesDAO = new CharacterVotesDAO();
+    	
+    	assertDoesNotThrow(() -> {
+    		myCharVotesDAO.exportToExcel(homePath);
+    	});
+    }
+    
+    @Test
+    public void exportCharacterVotesToExcelFail() {
+    	CharacterVotesDAO myCharVotesDAO = new CharacterVotesDAO();
+    	
+    	assertThrows(IOException.class, () -> {
+    		myCharVotesDAO.exportToExcel("asfasf32rasgasbas");
+    	});
+    }
+
     //create character
     @Test
     public void passValidCharName(){
