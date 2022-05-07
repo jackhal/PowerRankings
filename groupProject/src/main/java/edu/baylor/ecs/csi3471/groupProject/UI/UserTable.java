@@ -80,7 +80,7 @@ public class UserTable extends JPanel {
             @Override
             public Class<?> getColumnClass(int columnIndex)
             {
-                return columnClass[columnIndex]
+                return columnClass[columnIndex];
             }
         };
             //File selectedFile = openCSV();
