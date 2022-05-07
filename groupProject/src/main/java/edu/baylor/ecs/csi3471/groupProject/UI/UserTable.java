@@ -147,6 +147,14 @@ public class UserTable extends JPanel {
 
 
             sorter = new TableRowSorter<DefaultTableModel>(model);
+                Comparator<Integer> comp = new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return Integer.compare(o1, o2);
+                    }
+                };
+                sorter.setComparator(0, comp);
+
             table = new JTable(model);
 
             table.setRowSorter(sorter);
@@ -283,6 +291,7 @@ public class UserTable extends JPanel {
                 ;
             }
         }
+
 
     }
 

@@ -110,7 +110,7 @@ public class CharacterDAO extends Character {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		 c.setName(cc.getName());
+		c.setName(cc.getName());
 		c.setWorld(cc.getWorld());
 		c.setDesc(cc.getDesc());
 		c.setPicture(cc.getPicture());

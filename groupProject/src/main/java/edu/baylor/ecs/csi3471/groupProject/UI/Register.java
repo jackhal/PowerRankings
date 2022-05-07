@@ -255,11 +255,16 @@ public class Register {
 	 */
 	public boolean verifyOlderThanEighteen(String age) { //tested
 		boolean valid = true;
-		if (age.charAt(0) == '1') {
-			if (age.charAt(1) < '8') {
-				valid = false;
-			}
+		int num = Integer.parseInt(age);
+		if(num <= 18){
+			valid = false;
 		}
+
+//		if (age.charAt(0) == '1') {
+//			if (age.charAt(1) < '8') {
+//				valid = false;
+//			}
+//		}
 		return valid;
 	}
 
