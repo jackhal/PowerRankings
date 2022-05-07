@@ -162,6 +162,11 @@ public class VotingBoothDAO extends JPanel {
                     }
 
                      */
+                    try {
+                        red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
+                    } catch (Exception ex) {
+                        red.setUser(bill.getUsername());
+                    }
 
                     // ok dialog
 
