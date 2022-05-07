@@ -1,6 +1,6 @@
 Username	Password	Email	Name	Age	Currency	Bet	Voted	Admin	Description	CurrentVote	CurrentStreak	LastLogin
-jack	jack	jack@gmail.com	Jack	32	2330	1000	true	true	User1	Kirby	2	05/07/22
-ryan	ryan	ryan@gmail.com	Ryan	20	1000	0	true	true	Cool dude	Matthew Mayer	0	05/07/22
+jack	jack	jack@gmail.com	Jack	32	2530	0	true	true	User1	Thanos	2	05/07/22
+ryan	ryan	ryan@gmail.com	Ryan	20	1000	100	true	true	Cool dude	Superman	0	05/07/22
 test	test	test@gmail.com	testNonAdmin	5	0	0	true	false	This is a tester user so we can make sure admin privileges are separate	Spider-Ham	0	04/01/22
 testRegister	test1234	test2@gmail.com	testRegister	20	500	0	false	false	none	null	0	04/01/22
 testRegister2	test1234	test3@gmail.com	TestAgain	22	500	500	true	false	none	Ghandi	0	04/01/22
@@ -8,8 +8,8 @@ MattHarrison2	MattHarrison2	matt_harrison1@baylor.edu	Matt	20	500	0	false	false	
 Cerny123	Cerny123	cerny@gmail.com	cernster	20	500	500	true	false	none	Jidion	0	04/01/22
 jackhale	jackhale	jack@jack.com	jack	20	500	0	false	false	none	null	0	04/01/22
 cyrilpillai	cyrilpillai	cyrilpillai@cyrilpillai.com	cyril	20	500	0	false	false	none	null	0	04/01/22
-ryanryan	ryanryan	ryanryan@ryanryan.com	ryan	20	200	300	true	false	none	Ferb	0	05/05/22
+ryanryan	ryanryan	ryanryan@ryanryan.com	ryan	20	200	300	true	false	none	Ferb	0	05/07/22
 yesyesyes	yesyesyes	yesyesyes@yesyesyes.com	yesyes	20	500	0	false	false	none	null	0	04/01/22
 testing	testrunn	testrun@gmail.com	test	20	500	250	true	false	this is a test run to make sure everything is working	Matthew Mayer	0	04/01/22
 jackTest	jackTest	jackTest@gmail.com	jackTest	45	750	0	false	false	none	null	1	04/03/22
-coolboy	coolboy2	cool@baylor.edu	coolestkid	21	100	0	false	false	none	null	-1	05/05/2022
+coolboy	coolboy2	cool@baylor.edu	coolestkid	21	100	0	true	false	none	Batman	-1	05/05/2022

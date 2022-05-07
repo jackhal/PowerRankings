@@ -20,7 +20,7 @@ import javax.swing.JPasswordField;
  * class LoginForm
  * The UI for the LoginForm
  */
-public class LoginForm extends JPanel implements PropertyChangeListener{
+public class LoginForm extends JPanel implements PropertyChangeListener {
     private String username = "";
     private String password = "";
 
@@ -29,15 +29,16 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     private JLabel passwordLabel;
 
     // Label names
-    private static String usernameString 	= "(case sensitive) Username: ";
-    private static String passwordString 	= "(case sensitive) Password: ";
+    private static String usernameString = "(case sensitive) Username: ";
+    private static String passwordString = "(case sensitive) Password: ";
 
     // text field for the input
     private JFormattedTextField usernameField;
     public static JPasswordField passwordField;
- 
+
     /**
      * getUserName
+     *
      * @return the username
      */
     public String getUsername() {
@@ -46,6 +47,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setUsername
+     *
      * @param username
      */
     public void setUsername(String username) {
@@ -54,6 +56,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getPassword()
+     *
      * @return the password
      */
     public String getPassword() {
@@ -62,6 +65,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setPassword()
+     *
      * @param password the password to set
      */
     public void setPassword(String password) {
@@ -70,6 +74,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getUsernameLabel()
+     *
      * @return the usernameLabel
      */
     public JLabel getUsernameLabel() {
@@ -78,6 +83,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setUsernameLabel()
+     *
      * @param usernameLabel the usernameLabel to set
      */
     public void setUsernameLabel(JLabel usernameLabel) {
@@ -86,6 +92,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getPasswordLabel()
+     *
      * @return the passwordLabel
      */
     public JLabel getPasswordLabel() {
@@ -94,6 +101,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setPasswordLabel()
+     *
      * @param passwordLabel the passwordLabel to set
      */
     public void setPasswordLabel(JLabel passwordLabel) {
@@ -102,6 +110,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getUsernameString()
+     *
      * @return the usernameString
      */
     public static String getUsernameString() {
@@ -110,6 +119,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setUsernameString()
+     *
      * @param usernameString the usernameString to set
      */
     public static void setUsernameString(String usernameString) {
@@ -118,6 +128,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getPasswordString()
+     *
      * @return the passwordString
      */
     public static String getPasswordString() {
@@ -126,6 +137,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setPasswordString()
+     *
      * @param passwordString the passwordString to set
      */
     public static void setPasswordString(String passwordString) {
@@ -134,6 +146,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getUsernameField()
+     *
      * @return the usernameField
      */
     public JFormattedTextField getUsernameField() {
@@ -142,6 +155,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setUsernameField()
+     *
      * @param usernameField the usernameField to set
      */
     public void setUsernameField(JFormattedTextField usernameField) {
@@ -150,6 +164,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * getPasswordField()
+     *
      * @return the passwordField
      */
     public JPasswordField getPasswordField() {
@@ -158,6 +173,7 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
 
     /**
      * setPasswordField()
+     *
      * @param passwordField the passwordField to set
      */
     public void setPasswordField(JPasswordField passwordField) {
@@ -171,83 +187,82 @@ public class LoginForm extends JPanel implements PropertyChangeListener{
     public LoginForm() {
         super(new BorderLayout());
 
-        usernameLabel 	= new JLabel(usernameString);
+        usernameLabel = new JLabel(usernameString);
         usernameLabel.setForeground(Color.WHITE);
-        passwordLabel 	= new JLabel(passwordString);
+        passwordLabel = new JLabel(passwordString);
         passwordLabel.setForeground(Color.WHITE);
 
-        usernameField 	= new JFormattedTextField();
+        usernameField = new JFormattedTextField();
         usernameField.setValue(new String(username));
-        usernameField.setColumns(30);								// changes the width of textFields
+        usernameField.setColumns(30);                                // changes the width of textFields
         usernameField.addPropertyChangeListener("value", this);
 
         passwordField = new JPasswordField();
         passwordField.setText(new String(password));
         passwordField.setEchoChar('*');
-        passwordField.setColumns(30);	
-        passwordField.addPropertyChangeListener("value",this);
+        passwordField.setColumns(30);
+        passwordField.addPropertyChangeListener("value", this);
 
         usernameLabel.setLabelFor(usernameField);
         passwordLabel.setLabelFor(passwordField);
 
         JPanel pane = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        
-		c.gridx = 0;								// row
-		c.gridy = 0;								// column
+
+        c.gridx = 0;                                // row
+        c.gridy = 0;                                // column
         pane.add(usernameLabel, c);
-        
-        c.gridx = 1;								
-		c.gridy = 0;
-		pane.add(usernameField, c);
-		
-		c.gridx = 0;								
-		c.gridy = 1;
+
+        c.gridx = 1;
+        c.gridy = 0;
+        pane.add(usernameField, c);
+
+        c.gridx = 0;
+        c.gridy = 1;
         pane.add(passwordLabel, c);
-        
-        c.gridx = 1;								
-		c.gridy = 1;
+
+        c.gridx = 1;
+        c.gridy = 1;
         pane.add(passwordField, c);
-        
+
         // creates a show password box
-        c.gridx = 0;								
-		c.gridy = 2;
-        
-		JCheckBox showPassword = new JCheckBox("Show password", false); 	// check box with label and initial set value (false == not checked)
-        showPassword.setForeground(Color.WHITE);							// set check-box label to white
-        
-        showPassword.addItemListener(new ItemListener() {    
-            public void itemStateChanged(ItemEvent e) {    
-            	if(e.getStateChange()== 1) {
-            		passwordField.setEchoChar((char)0);
-            	}
-            	else {
-            		String contents = passwordField.getText();
-            		passwordField.setEchoChar('*');
-            		passwordField.setText("");
-            		passwordField.setText(contents);
-            	}
-            }    
-         });    
-        
+        c.gridx = 0;
+        c.gridy = 2;
+
+        JCheckBox showPassword = new JCheckBox("Show password", false);    // check box with label and initial set value (false == not checked)
+        showPassword.setForeground(Color.WHITE);                            // set check-box label to white
+
+        showPassword.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == 1) {
+                    passwordField.setEchoChar((char) 0);
+                } else {
+                    String contents = passwordField.getText();
+                    passwordField.setEchoChar('*');
+                    passwordField.setText("");
+                    passwordField.setText(contents);
+                }
+            }
+        });
+
         showPassword.setBackground(Color.decode("#07566"));
         pane.add(showPassword);
         pane.setBackground(Color.decode("#07566"));
-        
+
         add(pane);
     }
 
     /**
      * propertyChange()
      * This function changes the properties of the file.
+     *
      * @param e
      */
     public void propertyChange(PropertyChangeEvent e) {
         Object source = e.getSource();
         if (source == usernameField) {
             username = usernameField.getText();
-        }
-        else if (source == passwordField) {
+        } else if (source == passwordField) {
             password = passwordField.getText();
         }
     }

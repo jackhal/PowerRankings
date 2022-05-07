@@ -12,8 +12,8 @@ import java.util.logging.Logger;
  * This starts up the whole program and starts the curUser
  */
 public class Runner {
-	//Make sure it is correct
-	public static Logger logger = Logger.getLogger(Timer.class.getName());
+    //Make sure it is correct
+    public static Logger logger = Logger.getLogger(Timer.class.getName());
 
 	static {
 		try {
@@ -27,6 +27,7 @@ public class Runner {
 		logger.info("starting the app");
 	}
 	public static User curUser;
+	public static Integer numchar = 0;
 	public static void main(String[] args) {
 		LoginPage lp = new LoginPage();
 	}

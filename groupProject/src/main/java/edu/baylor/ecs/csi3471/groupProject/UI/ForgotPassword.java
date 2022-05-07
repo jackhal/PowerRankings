@@ -19,13 +19,13 @@ public class ForgotPassword extends JPanel {
      * This function is the default constructor for the
      * ForgotPassword class.
      */
-    public ForgotPassword(){
+    public ForgotPassword() {
         Runner.logger.info("Forgot password has been launched");
 
         //JFrame frame = new JFrame("Forgot Username");				// creating instance of JFrame
-        this.setSize(500, 500);									// 500 width and 500 height
+        this.setSize(500, 500);                                    // 500 width and 500 height
         this.setLayout(new GridLayout(3, 2));
-        this.setVisible(true);										// making the frame visible
+        this.setVisible(true);                                        // making the frame visible
 
         final JLabel label = new JLabel("Please enter Username:");
         label.setBounds(100, 110, 100, 40);
@@ -43,13 +43,12 @@ public class ForgotPassword extends JPanel {
         //this.add(username);
 
 
-
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Runner.logger.info("User submitted to get their password back");
-            	ForgotDAO f = new ForgotDAO();
-            	password.setText(f.findPassword(userField.getText()));
+                ForgotDAO f = new ForgotDAO();
+                password.setText(f.findPassword(userField.getText()));
             }
         });
 
@@ -68,7 +67,6 @@ public class ForgotPassword extends JPanel {
         //Create and set up the window.
         JFrame frame = new JFrame("TableFilterDemo");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
 
 
         //Create and set up the content pane.

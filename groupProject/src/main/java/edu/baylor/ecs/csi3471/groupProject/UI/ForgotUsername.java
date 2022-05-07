@@ -22,14 +22,14 @@ public class ForgotUsername extends JPanel {
      * ForgotUsername
      * This function is the default constructor for the ForgotUserName
      */
-    public ForgotUsername(){
+    public ForgotUsername() {
 
         Runner.logger.info("Forgot password has been launched");
 
         //JFrame frame = new JFrame("Forgot Username");				// creating instance of JFrame
-        this.setSize(500, 500);									// 500 width and 500 height
+        this.setSize(500, 500);                                    // 500 width and 500 height
         this.setLayout(new GridLayout(3, 2));
-        this.setVisible(true);										// making the frame visible
+        this.setVisible(true);                                        // making the frame visible
 
         final JLabel label = new JLabel("Please enter Email:");
         label.setBounds(100, 110, 100, 40);
@@ -47,14 +47,13 @@ public class ForgotUsername extends JPanel {
         //this.add(username);
 
 
-
         submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Runner.logger.info("User submitted to get their email back");
 
-            	ForgotDAO f = new ForgotDAO();
-            	username.setText(f.findUsername(emailField.getText()));
+                ForgotDAO f = new ForgotDAO();
+                username.setText(f.findUsername(emailField.getText()));
             }
         });
 
@@ -74,7 +73,6 @@ public class ForgotUsername extends JPanel {
         //Create and set up the window.
         JFrame frame = new JFrame("TableFilterDemo");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
 
 
         //Create and set up the content pane.

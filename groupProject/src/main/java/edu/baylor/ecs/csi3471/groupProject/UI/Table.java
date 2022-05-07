@@ -46,12 +46,12 @@ public class Table extends JPanel {
     protected static void createAndShowGUI() {
         //Create and set up the window.
         JFrame frame = new JFrame("Characters");
-        
+
         //Create and set up the content pane.
         Table newContentPane = new Table();
         newContentPane.setBackground(Color.decode("#266867"));
-        newContentPane.setOpaque(true); 
-        
+        newContentPane.setOpaque(true);
+
         frame.setContentPane(newContentPane);
 
         //Display the window.
@@ -67,17 +67,17 @@ public class Table extends JPanel {
         super();
         Runner.logger.info("Character table generated");
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
- 
+
         String[] columnNames = {"Name", "World", "Record", "Added By", "View", "Edit"};
         String[][] data = {{"yes", "no", "idk", "maybe"}};
-        
+
         //int rowNumber = 0;
         final DefaultTableModel model = new DefaultTableModel(null, columnNames);
-       
+
         //File selectedFile = openCSV();
         CharacterDAO cdao = new CharacterDAO();
         ArrayList<Character> cList = cdao.makeList();
-        for(int i = 0; i < cList.size(); i++){
+        for (int i = 0; i < cList.size(); i++) {
             Object[] row = new Object[4];
             model.addRow(row);
             model.setValueAt(cList.get(i).getName(), i, 0);
@@ -88,7 +88,7 @@ public class Table extends JPanel {
             if (iii != 0) {
                 r = Double.valueOf(ii / (ii + iii));
             } else {
-                if(ii == 0){
+                if (ii == 0) {
                     r = 0.0;
                 } else {
                     r = 1.0;
@@ -112,8 +112,8 @@ public class Table extends JPanel {
         table.setBackground(Color.decode("#266867"));
         table.setFont(new Font("roboto condensed", Font.PLAIN, 10));
         table.setForeground(Color.white);
-        table.setSelectionBackground(Color.decode("#07566"));				// high light color of row user selects
-        table.setSelectionForeground(Color.WHITE);							// font color in high lighted row
+        table.setSelectionBackground(Color.decode("#07566"));                // high light color of row user selects
+        table.setSelectionForeground(Color.WHITE);                            // font color in high lighted row
 
         Box b = Box.createHorizontalBox();
         b.add(initMenu(model));
@@ -123,13 +123,13 @@ public class Table extends JPanel {
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBackground(Color.decode("#1A4645"));
         add(scrollPane);
-        
+
         TableFilterHeader filterHeader = new TableFilterHeader(table, AutoChoices.ENABLED);
 
         Action delete = new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	Runner.logger.info("delete action called");
+                Runner.logger.info("delete action called");
                 JTable table = (JTable) e.getSource();
                 int modelRow = Integer.valueOf(e.getActionCommand());
                 /***FIX MEEE -> get character and call display function***/
@@ -137,7 +137,7 @@ public class Table extends JPanel {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
                 String n = (String) model.getValueAt(modelRow, 0);
                 String w = (String) model.getValueAt(modelRow, 1);
-                Runner.logger.info("Deleted: " + n +" w");
+                Runner.logger.info("Deleted: " + n + " w");
                 CharacterDAO c = new CharacterDAO();
                 Character ret = null;
                 try {
@@ -153,7 +153,8 @@ public class Table extends JPanel {
                 int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
                 if (answer == 0) {
                     model.removeRow(modelRow);
-                }*/}
+                }*/
+            }
 
 
         };
@@ -165,7 +166,7 @@ public class Table extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Runner.logger.info("Edit action selected");
-                if(Runner.curUser.isAdmin()) {
+                if (Runner.curUser.isAdmin()) {
                     JTable table = (JTable) e.getSource();
                     int modelRow = Integer.valueOf(e.getActionCommand());
 
@@ -215,7 +216,7 @@ public class Table extends JPanel {
                         //FIXME SOMETHING IS WRONG WITH THIS
                         //all the ids are the same, so the updates arent exactly correct. So when updating the csv file
                         //it is just all wrong, and deletes an entire line but leaves the win, loss, and id
-                        c.updateCSV(c.getId());
+                        c.updateCSV(c.getId(), cc);
                         Runner.logger.info(nameField.getText() + " successfully edited");
                     }
                 }
@@ -226,8 +227,8 @@ public class Table extends JPanel {
         ButtonColumn buttonColumn2 = new ButtonColumn(table, edit, 5);
         buttonColumn2.setMnemonic(KeyEvent.VK_E);
 
-        
-    	// I blocked this out because I was not sure if we were going to keep it!
+
+        // I blocked this out because I was not sure if we were going to keep it!
         /*
         JButton submit = new JButton("Save");
         submit.addActionListener(new ActionListener() {
@@ -244,6 +245,7 @@ public class Table extends JPanel {
     /**
      * initMenu
      * This functionc creates the menu.
+     *
      * @param model table to add menu to
      * @return menu bar for table
      */
@@ -256,36 +258,36 @@ public class Table extends JPanel {
         menuBar = new JMenuBar();
         menuBar.setBackground(Color.decode("#1A4645"));
         menuBar.setOpaque(true);
-	    menuBar.setPreferredSize(new Dimension(2000, 30));		
-	    
+        menuBar.setPreferredSize(new Dimension(2000, 30));
+
         menu = new JMenu("Menu");
         menu.setFont(new Font("roboto condensed", Font.PLAIN, 10));
         menu.setForeground(Color.white);
         menu.setMnemonic(KeyEvent.VK_A);
         menu.getAccessibleContext().setAccessibleDescription(
                 "Allows the user to have controls over menu.");
-        
+
         menuBar.add(menu);
 
         menuItem = new JMenuItem("Remove", KeyEvent.VK_T);
-        if (!Runner.curUser.isAdmin()){
+        if (!Runner.curUser.isAdmin()) {
             menuItem.setEnabled(false);
         }
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "Meant to remove item");
-        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// remove menu item font
+        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));            // remove menu item font
         menuItem.setForeground(Color.WHITE);
-	    menuItem.setBackground(Color.decode("#1A4645"));						// remove menu item background color
+        menuItem.setBackground(Color.decode("#1A4645"));                        // remove menu item background color
         menuItem.addActionListener(new RemoveLineActionListener());
         menu.add(menuItem);
 
         menuItem = new JMenuItem("Add New Line");
-        if (!Runner.curUser.isAdmin()){
+        if (!Runner.curUser.isAdmin()) {
             menuItem.setEnabled(false);
         }
-        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));			// add new line font
+        menuItem.setFont(new Font("roboto condensed", Font.PLAIN, 10));            // add new line font
         menuItem.setForeground(Color.WHITE);
-	    menuItem.setBackground(Color.decode("#266867"));						// add new line background color
+        menuItem.setBackground(Color.decode("#266867"));                        // add new line background color
         menuItem.addActionListener(new AddLineActionListener());
         menu.add(menuItem);
 
@@ -387,6 +389,7 @@ public class Table extends JPanel {
     /**
      * openCSV
      * This function opens the CSV file.
+     *
      * @return
      */
     public File openCSV() {
@@ -406,13 +409,14 @@ public class Table extends JPanel {
     /**
      * addItem
      * This function adds an item to the JPanel passed in.
-     * @param p panel
-     * @param c component
-     * @param x x-dem
-     * @param y y-dem
-     * @param width width of panel
+     *
+     * @param p      panel
+     * @param c      component
+     * @param x      x-dem
+     * @param y      y-dem
+     * @param width  width of panel
      * @param height height of panel
-     * @param align alignment og panel
+     * @param align  alignment og panel
      */
     public void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
         GridBagConstraints gc = new GridBagConstraints();
@@ -450,7 +454,7 @@ public class Table extends JPanel {
             myPanel.add(ageField);*/
             //**myPanel.add(new JLabel("Info (Optional): "));
             //myPanel.add(infoField);
-        	Runner.logger.info("Add action selected");
+            Runner.logger.info("Add action selected");
 
             JTextField nameW = new JTextField(20), worldW = new JTextField(10), descW = new JTextField(20);
             JTextField recordW = new JTextField(20);
@@ -512,7 +516,7 @@ public class Table extends JPanel {
                 Character c = new Character(nameW.getText(), worldW.getText(), descW.getText(), i, Integer.valueOf(lossesW.getText()), picW.getText(), ownerW.getText());
                 String res = c.charToCSV();
                 try {
-                    RandomAccessFile raf = new RandomAccessFile("CharacterFile.csv","rw");
+                    RandomAccessFile raf = new RandomAccessFile("CharacterFile.csv", "rw");
                     raf.seek(raf.length());
                     raf.writeBytes(res);
                 } catch (FileNotFoundException ex) {
@@ -522,7 +526,7 @@ public class Table extends JPanel {
                     Runner.logger.severe("Can't open the User file");
                     ex.printStackTrace();
                 }
-                model.insertRow(0, new Object[]{c.getName(), c.getWorld(),  String.valueOf(c.getRatio()), c.getOwner(),"View", "Edit"});
+                model.insertRow(0, new Object[]{c.getName(), c.getWorld(), String.valueOf(c.getRatio()), c.getOwner(), "View", "Edit"});
             }
             ;
         }
@@ -532,20 +536,20 @@ public class Table extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             Runner.logger.info("Remove action selected");
-                int viewRow = table.getSelectedRow();
-                if (viewRow < 0) {
-                    JOptionPane.showMessageDialog(null, "No row selected");
+            int viewRow = table.getSelectedRow();
+            if (viewRow < 0) {
+                JOptionPane.showMessageDialog(null, "No row selected");
 
-                } else {
-                    int modelRow = table.convertRowIndexToModel(viewRow);
-                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+            } else {
+                int modelRow = table.convertRowIndexToModel(viewRow);
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
 
-                    int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
-                    if (answer == 0) {
-                        model.removeRow(modelRow);
-                    }
+                int answer = JOptionPane.showConfirmDialog(null, "Do you want to remove " + model.getValueAt(modelRow, 0) + " " + model.getValueAt(modelRow, 1) + "?", "Warning", JOptionPane.YES_NO_OPTION);
+                if (answer == 0) {
+                    model.removeRow(modelRow);
                 }
             }
+        }
     }
 }
 

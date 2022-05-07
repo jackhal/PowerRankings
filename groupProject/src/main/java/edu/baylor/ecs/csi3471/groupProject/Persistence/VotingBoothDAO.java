@@ -36,6 +36,7 @@ public class VotingBoothDAO extends JPanel {
      * This function creates a voting booth for 2 characters
      * so that the user can vote on who they want to advance
      * in the matchup.
+     *
      * @param a
      * @param b
      * @throws Exception
@@ -45,7 +46,7 @@ public class VotingBoothDAO extends JPanel {
         Runner.logger.info("VotingBooth Class Called");
         Character bert = a;
         Character gandhi = b;
-        if(a == null || b == null){
+        if (a == null || b == null) {
             Runner.logger.severe("One of the Characters isn't loading!");
             Exception Exception = new Exception();
             throw Exception;
@@ -56,7 +57,6 @@ public class VotingBoothDAO extends JPanel {
 
         // Create the components.
         JPanel choicePanel = createSimpleDialogBox(bert, gandhi);
-
 
 
         title = new JLabel("Click the \"Vote\" button"
@@ -77,9 +77,9 @@ public class VotingBoothDAO extends JPanel {
      * createSimpleDialogBox
      * This method always takes two Characters in order to make the voting mechanism
      *
-     * @param  a  One of the characters in the match
-     * @param  b The other characters in the match
-     * @return      JPanel
+     * @param a One of the characters in the match
+     * @param b The other characters in the match
+     * @return JPanel
      */
     private JPanel createSimpleDialogBox(final Character a, final Character b) throws MalformedURLException {
         final int numButtons = 3;
@@ -96,20 +96,20 @@ public class VotingBoothDAO extends JPanel {
         radioButtons[0] = new JRadioButton(
                 a.getName() + " from " + a.getWorld());
         radioButtons[0].setActionCommand(choosingA);
-        URL url  = new URL(a.getPicture());
+        URL url = new URL(a.getPicture());
         ImageIcon img1 = new ImageIcon(url, "Option");
         Image image = img1.getImage(); // transform it
-        Image newimg = image.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        Image newimg = image.getScaledInstance(120, 120, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
         img1 = new ImageIcon(newimg);
         radioButtons[0].setIcon(img1);
 
         radioButtons[1] = new JRadioButton(
                 b.getName() + " from " + b.getWorld());
         radioButtons[1].setActionCommand(choosingB);
-        URL url2  = new URL(b.getPicture());
+        URL url2 = new URL(b.getPicture());
         ImageIcon img2 = new ImageIcon(url2, "Option");
         Image image2 = img2.getImage(); // transform it
-        Image newimg2 = image2.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        Image newimg2 = image2.getScaledInstance(120, 120, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
         img2 = new ImageIcon(newimg2);
         radioButtons[1].setIcon(img2);
 
@@ -124,7 +124,6 @@ public class VotingBoothDAO extends JPanel {
             group.add(radioButtons[i]);
             subPanel.add(radioButtons[i]);
         }
-
 
 
         // Select the first button by default.
@@ -152,7 +151,9 @@ public class VotingBoothDAO extends JPanel {
                     }
                     CharacterVotes red = new CharacterVotes();
                     red.setUser(bill.getUsername());
+
                     Integer match = 0;
+                    /*
                     try {
                         red = characterVotesDAO.getCharacterVoteByUsername(bill.getUsername());
                     } catch (Exception ex) {
@@ -160,7 +161,9 @@ public class VotingBoothDAO extends JPanel {
                         red.setUser(bill.getUsername());
                     }
 
-                // ok dialog
+                     */
+
+                    // ok dialog
 
                     if (command == choosingA) {
                         JOptionPane.showMessageDialog(frame,
@@ -171,41 +174,35 @@ public class VotingBoothDAO extends JPanel {
                         finalVoteButton.setEnabled(false);
 
                         int length = 0;
-                        while(loop[length] != null){
+                        while (loop[length] != null) {
                             length++;
                         }
                         length--;
 
 
-                        if(length < 9){
-                            if(loop[0].equals(a)){
+                        if (length < 9) {
+                            if (loop[0].equals(a)) {
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
-                            }
-                            else if(loop[2].equals(a)){
+                            } else if (loop[2].equals(a)) {
                                 red.setMatchBChoice(a.getName());
                                 match = 2;
-                            }
-                            else if(loop[4].equals(a)){
+                            } else if (loop[4].equals(a)) {
                                 red.setMatchCChoice(a.getName());
                                 match = 3;
-                            }
-                            else{
+                            } else {
                                 red.setMatchDChoice(a.getName());
                                 match = 4;
                             }
-                        }
-                        else if(length < 12){
-                            if(loop[8].equals(a)){
+                        } else if (length < 12) {
+                            if (loop[8].equals(a)) {
                                 red.setMatchAChoice(a.getName());
                                 match = 1;
-                            }
-                            else{
+                            } else {
                                 red.setMatchBChoice(a.getName());
                                 match = 2;
                             }
-                        }
-                        else{
+                        } else {
                             red.setMatchAChoice(a.getName());
                             match = 1;
                         }
@@ -229,16 +226,13 @@ public class VotingBoothDAO extends JPanel {
                                 broke = true;
                                 exit = true;
                                 bill.setBet(totel);
-                                if(match == 1){
+                                if (match == 1) {
                                     red.setMatchABet(totel);
-                                }
-                                else if(match == 2){
+                                } else if (match == 2) {
                                     red.setMatchBBet(totel);
-                                }
-                                else if(match == 3){
+                                } else if (match == 3) {
                                     red.setMatchCBet(totel);
-                                }
-                                else if(match == 4){
+                                } else if (match == 4) {
                                     red.setMatchDBet(totel);
                                 }
                                 bill.setFunds(bill.getFunds() - totel);
@@ -246,12 +240,12 @@ public class VotingBoothDAO extends JPanel {
                                 bill.setCurrentVote(a.getName());
                                 UserDAO update = new UserDAO();
                                 try {
-									update.updateUser(Runner.curUser);
-								} catch (IOException e1) {
-									// TODO Auto-generated catch block
+                                    update.updateUser(Runner.curUser);
+                                } catch (IOException e1) {
+                                    // TODO Auto-generated catch block
                                     Runner.logger.severe("Can't Update User!");
-									e1.printStackTrace();
-								}
+                                    e1.printStackTrace();
+                                }
                                 JOptionPane.showMessageDialog(null, "Total Wager on " + a.getName() + " is:  " + totel + "\n You have " + bill.getFunds() + " coins.");
                             }
                         }
@@ -266,39 +260,33 @@ public class VotingBoothDAO extends JPanel {
                                 "Thank you for choosing " + b.getName() + "!");
 
                         int length = 0;
-                        while(loop[length] != null){
+                        while (loop[length] != null) {
                             length++;
                         }
                         length--;
-                        if(length < 9){
-                            if(loop[1].equals(b)){
+                        if (length < 9) {
+                            if (loop[1].equals(b)) {
                                 red.setMatchAChoice(b.getName());
                                 match = 1;
-                            }
-                            else if(loop[3].equals(b)){
+                            } else if (loop[3].equals(b)) {
                                 red.setMatchBChoice(b.getName());
                                 match = 2;
-                            }
-                            else if(loop[5].equals(b)){
+                            } else if (loop[5].equals(b)) {
                                 red.setMatchCChoice(b.getName());
                                 match = 3;
-                            }
-                            else{
+                            } else {
                                 red.setMatchDChoice(b.getName());
                                 match = 4;
                             }
-                        }
-                        else if(length < 12){
-                            if(loop[9].equals(b)){
+                        } else if (length < 12) {
+                            if (loop[9].equals(b)) {
                                 red.setMatchAChoice(b.getName());
                                 match = 1;
-                            }
-                            else{
+                            } else {
                                 red.setMatchBChoice(b.getName());
                                 match = 2;
                             }
-                        }
-                        else{
+                        } else {
                             red.setMatchAChoice(b.getName());
                             match = 1;
                         }
@@ -315,16 +303,13 @@ public class VotingBoothDAO extends JPanel {
                                 broke = true;
                                 exit = true;
                                 bill.setBet(totel);
-                                if(match == 1){
+                                if (match == 1) {
                                     red.setMatchABet(totel);
-                                }
-                                else if(match == 2){
+                                } else if (match == 2) {
                                     red.setMatchBBet(totel);
-                                }
-                                else if(match == 3){
+                                } else if (match == 3) {
                                     red.setMatchCBet(totel);
-                                }
-                                else if(match == 4){
+                                } else if (match == 4) {
                                     red.setMatchDBet(totel);
                                 }
                                 bill.setFunds(bill.getFunds() - totel);
@@ -333,12 +318,12 @@ public class VotingBoothDAO extends JPanel {
 
                                 UserDAO update = new UserDAO();
                                 try {
-									update.updateUser(Runner.curUser);
-								} catch (IOException e1) {
-									// TODO Auto-generated catch block
+                                    update.updateUser(Runner.curUser);
+                                } catch (IOException e1) {
+                                    // TODO Auto-generated catch block
                                     Runner.logger.severe("Can't Update User!");
-									e1.printStackTrace();
-								}
+                                    e1.printStackTrace();
+                                }
                                 //FIXME TRACK NUMBER OF VOTES PER CHARACTER
                                 JOptionPane.showMessageDialog(null, "Total Wager on " + b.getName() + " is:  " + totel + "\n You have " + bill.getFunds() + " coins.");
                             }
@@ -410,10 +395,10 @@ public class VotingBoothDAO extends JPanel {
      * createPane
      * This method always takes two Characters in order to create a VotingBoothDAO
      *
-     * @param  description  the description of the pane to come
-     * @param  radioButtons The voting buttons
-     * @param  showButton the vote button
-     * @return      JPanel
+     * @param description  the description of the pane to come
+     * @param radioButtons The voting buttons
+     * @param showButton   the vote button
+     * @return JPanel
      */
     private JPanel createPane(String description, JRadioButton[] radioButtons,
                               JButton showButton) {
