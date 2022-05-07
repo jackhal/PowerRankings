@@ -45,6 +45,8 @@ public class HomePage {
 	 * This function creates the graphic user interface for the Home Page.
 	 * @param username current user passed from login creates the homepage of the
 	 *                 app
+	 * @throws IOException
+	 * @throws ParseException
 	 */
 	public static void createAndShowGUI(String username) throws IOException, ParseException {
 		currUsername = username;

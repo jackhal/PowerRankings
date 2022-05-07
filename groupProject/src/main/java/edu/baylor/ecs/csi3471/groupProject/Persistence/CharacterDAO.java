@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class CharacterDAO extends Character {
 	/**
 	 * findChar This function
-	 * 
+	 * @throws Exception
 	 * @param name  name of character
 	 * @param world world of charcter
 	 * @return Character object matching name and world

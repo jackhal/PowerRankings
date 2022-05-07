@@ -23,6 +23,7 @@ public class RegisterPage {
 	public static JFrame registerPage = new JFrame("Register"); 				// register page frame with name
 	/**
 	 *  RegisterPage
+	 *  Constructor for RegisterPage
 	 */
 	public RegisterPage() {
 		registerPage.setExtendedState(JFrame.MAXIMIZED_BOTH); 					// make frame full screen

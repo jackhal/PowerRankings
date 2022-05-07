@@ -34,6 +34,7 @@ public class VotingBoothGUI {
      *
      * @param  a  an absolute URL giving the base location of the image
      * @return      void
+     * @throws Exception
      */
     protected void createAndShowGUI(Character[] a) throws Exception {
         JFrame frame = new JFrame("VoteDialog");
