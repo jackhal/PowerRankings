@@ -516,7 +516,7 @@ public class Table extends JPanel {
                 Character c = new Character(nameW.getText(), worldW.getText(), descW.getText(), i, Integer.valueOf(lossesW.getText()), picW.getText(), ownerW.getText());
                 String res = c.charToCSV();
                 try {
-                    RandomAccessFile raf = new RandomAccessFile("CharacterFile.csv", "rw");
+                    RandomAccessFile raf = new RandomAccessFile(Runner.class.getClassLoader().getResource("CharacterFile.csv").getPath(), "rw");
                     raf.seek(raf.length());
                     raf.writeBytes(res);
                 } catch (FileNotFoundException ex) {

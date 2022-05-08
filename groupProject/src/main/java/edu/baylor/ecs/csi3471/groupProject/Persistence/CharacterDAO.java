@@ -41,11 +41,11 @@ public class CharacterDAO extends Character {
         if (name == null || world == null) {
             throw new Exception();
         }
-        File file = new File("CharacterFile.csv");
+
         Runner.logger.info("Searching file for " + name);
 
-        try {
-            Scanner scanner = new Scanner(file);
+        // try {
+            Scanner scanner = new Scanner(Runner.class.getClassLoader().getResourceAsStream("CharacterFile.csv"));
 
 			// now read the file line by line...
 			int lineNum = 0;
@@ -58,9 +58,9 @@ public class CharacterDAO extends Character {
 					return c;
 				}
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		// } catch (FileNotFoundException e) {
+		// 	e.printStackTrace();
+		// }
 		Character c = new Character();
 		return c;
 	}
@@ -75,15 +75,11 @@ public class CharacterDAO extends Character {
 	// update to store changes
 	public void updateCSV(Integer id, Character cc) { // tested?? yea something is wrong here
 		Runner.logger.info("Updating character in database with id " + id);
-		String filePath = "CharacterFile.csv";
 		// Instantiating the Scanner class to read the file
 		Scanner sc = null;
-		try {
-			sc = new Scanner(new File(filePath));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		String oldLine = "";
+		sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("CharacterFile.csv"));
+		
+        String oldLine = "";
 		String line = "";
 		String n = "";
 		String w = "";
@@ -123,7 +119,7 @@ public class CharacterDAO extends Character {
 		// instantiating the FileWriter class
 		FileWriter writer = null;
 		try {
-			writer = new FileWriter(filePath);
+			writer = new FileWriter(Runner.class.getClassLoader().getResource("CharacterFile.csv").getPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -148,15 +144,10 @@ public class CharacterDAO extends Character {
 	 */
 	public ArrayList<Character> makeList() { // tested
 		Runner.logger.info("Making list of all characters from database");
-		String filePath = "CharacterFile.csv";
 		ArrayList<Character> cList = new ArrayList();
 		// Instantiating the Scanner class to read the file
 		Scanner sc = null;
-		try {
-			sc = new Scanner(new File(filePath));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("CharacterFile.csv"));
 		String line = sc.nextLine();
 		// instantiating the StringBuffer class
 		StringBuffer buffer = new StringBuffer();
@@ -210,14 +201,14 @@ public class CharacterDAO extends Character {
         Runner.logger.info("Adding " + name + " to database");
         try {
             List<String[]> allData = new ArrayList<String[]>();
-            Scanner sc = new Scanner(new File("CharacterFile.csv"));
+            Scanner sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("CharacterFile.csv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
                 allData.add(data);
             }
 
-			PrintWriter pw = new PrintWriter(new File("CharacterFile.csv"));
+			PrintWriter pw = new PrintWriter(new File(Runner.class.getClassLoader().getResource("CharacterFile.csv").getPath()));
 			for (String currLine[] : allData) {
 				pw.write(String.join("\t", currLine));
 				pw.write("\n");
@@ -241,8 +232,8 @@ public class CharacterDAO extends Character {
      */
     public boolean doesCharExist(String name, String world) { // tested
         Runner.logger.info("Checking if " + name + " is in database");
-        try {
-            Scanner sc = new Scanner(new File("CharacterFile.csv"));
+        // try {
+            Scanner sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("CharacterFile.csv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -253,11 +244,11 @@ public class CharacterDAO extends Character {
             }
             Runner.logger.info(name + " is not in database");
             return false;
-        } catch (FileNotFoundException e) {
-            Runner.logger.severe("Unable to open Character.csv");
-            e.printStackTrace();
-            return true;
-        }
+        // } catch (FileNotFoundException e) {
+        //     Runner.logger.severe("Unable to open Character.csv");
+        //     e.printStackTrace();
+        //     return true;
+        // }
     }
 
     public long getCharacterRoundsLines() {
@@ -383,7 +374,7 @@ public class CharacterDAO extends Character {
             currRow++;
         }
 
-        FileOutputStream out = new FileOutputStream(new File(dirPath + "/CharacterFile.xlsx"));
+        FileOutputStream out = new FileOutputStream(new File(Runner.class.getClassLoader().getResource("CharacterFile.csv").getPath()));
 
         workbook.write(out);
         workbook.close();
