@@ -803,14 +803,6 @@ public class AppTest {
         Assertions.assertFalse(r.verifyOlderThanEighteen("2"));
     }
 
-    /**
-     * Tests verifyYoungerThanTwoHundred with valid age
-     */
-    @Test
-    public void passAgeYounger(){
-        Register r = new Register();
-        Assertions.assertTrue(r.verifyYoungerThanTwoHundred("20"));
-    }
 
     /**
      * Tests verifyYoungerThanTwoHundred with invalid age
