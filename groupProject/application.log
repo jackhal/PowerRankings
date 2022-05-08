@@ -1,335 +1,48 @@
-2022-05-07 18:08:08 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.UI.LoginPage$1 actionPerformed User clicked submit and is attempting to login.
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Login beginLoginProcess jack signed in
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance starting rendering of balance
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance balance rendered
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracket tournament bracket being generated
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:15 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracket adding round one to the tournament bracket
-2022-05-07 18:08:18 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 0 is being added to the bracket
-2022-05-07 18:08:18 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 1 is being added to the bracket
-2022-05-07 18:08:18 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 2 is being added to the bracket
-2022-05-07 18:08:19 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 3 is being added to the bracket
-2022-05-07 18:08:19 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 4 is being added to the bracket
-2022-05-07 18:08:19 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 5 is being added to the bracket
-2022-05-07 18:08:19 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 6 is being added to the bracket
-2022-05-07 18:08:19 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 7 is being added to the bracket
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI create GUI invoked
-2022-05-07 18:08:23 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:08:24 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:08:24 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:08:24 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:08:24 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI Round 1 Match Voting Booth Being Created
-2022-05-07 18:08:25 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI User is Admin
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:08:40 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:08:40 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:41 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:08:41 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:08:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:08:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:08:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:48 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:08:51 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:08:51 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:52 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:08:52 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:08:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI create GUI invoked
-2022-05-07 18:10:14 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:10:16 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO <init> VotingBooth Class Called
-2022-05-07 18:10:17 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createSimpleDialogBox calling createPane
-2022-05-07 18:10:17 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane create pane
-2022-05-07 18:10:17 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO createPane returning pane
-2022-05-07 18:10:17 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI Round 1 Match Voting Booth Being Created
-2022-05-07 18:10:17 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI createAndShowGUI User is Admin
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:21 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:10:30 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:30 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:31 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:10:31 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:33 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:10:35 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:35 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:36 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:10:36 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:38 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:10:40 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:40 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:41 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:10:41 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.VotingBoothDAO$1 actionPerformed Vote Button is Activated
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVoteByUsername getting user from username
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO updateCharacterVotes updating the user
-2022-05-07 18:10:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:52 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI$1 actionPerformed End Match Button Pressed
-2022-05-07 18:10:52 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:52 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character charToCSV Character converted to csv form to print
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI$1 actionPerformed Batman won the match!
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:54 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character charToCSV Character converted to csv form to print
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI$1 actionPerformed Danny Phantom won the match!
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:55 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character charToCSV Character converted to csv form to print
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI$1 actionPerformed Kim Possible won the match!
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:56 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character charToCSV Character converted to csv form to print
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.UI.VotingBoothGUI$1 actionPerformed Speed won the match!
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracketCharacters returning tournament characters
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterVotesDAO getCharacterVotes getting all the users from the file into list
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 18:10:58 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.UI.HomePage$7 actionPerformed End round pressed
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getRound2 adding round two to the tournament bracket
-2022-05-07 18:11:04 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 8 is being added to the bracket
-2022-05-07 18:11:05 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 9 is being added to the bracket
-2022-05-07 18:11:05 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 10 is being added to the bracket
-2022-05-07 18:11:05 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 11 is being added to the bracket
+2022-05-07 21:16:38 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.UI.LoginPage$1 actionPerformed User clicked submit and is attempting to login.
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Login beginLoginProcess jack signed in
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance starting rendering of balance
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance balance rendered
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracket tournament bracket being generated
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-07 21:16:43 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracket adding round one to the tournament bracket
+2022-05-07 21:16:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 0 is being added to the bracket
+2022-05-07 21:16:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 1 is being added to the bracket
+2022-05-07 21:16:44 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 2 is being added to the bracket
+2022-05-07 21:16:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 3 is being added to the bracket
+2022-05-07 21:16:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 4 is being added to the bracket
+2022-05-07 21:16:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 5 is being added to the bracket
+2022-05-07 21:16:45 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 6 is being added to the bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 7 is being added to the bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Jidion created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Spider-Ham created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Candace created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Matthew Mayer created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Batman created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Danny Phantom created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Kim Possible created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Business.Character <init> Character Speed created from splitting constructor
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getRound2 adding round two to the tournament bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 8 is being added to the bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 9 is being added to the bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 10 is being added to the bracket
+2022-05-07 21:16:46 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel addImagesToBracket image 11 is being added to the bracket
