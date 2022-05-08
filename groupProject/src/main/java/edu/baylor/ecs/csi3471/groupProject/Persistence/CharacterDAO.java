@@ -171,7 +171,7 @@ public class CharacterDAO extends Character {
 
 	public ArrayList<Character> makeCharacterRoundsList() {
 		Runner.logger.info("Making list of character rounds from database");
-		String filePath = "CharacterRounds.csv";
+		String filePath = "src/resources/CharacterRounds.csv";
 		ArrayList<Character> cList = new ArrayList();
 		// Instantiating the Scanner class to read the file
 		Scanner sc = null;
@@ -262,7 +262,7 @@ public class CharacterDAO extends Character {
 
     public long getCharacterRoundsLines() {
         long lines = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/resources/CharacterRounds.csv"))) {
             while (reader.readLine() != null)
                 lines++;
         } catch (IOException ei) {
@@ -293,7 +293,7 @@ public class CharacterDAO extends Character {
         PrintWriter pWriter = null;
 
         try {
-            pWriter = new PrintWriter("CharacterRounds.csv");
+            pWriter = new PrintWriter("src/resources/CharacterRounds.csv");
         } catch (Exception ex) {
             Runner.logger.severe("unable to open CharacterRounds.csv");
             System.out.println(ex.getStackTrace());

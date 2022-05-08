@@ -26,7 +26,7 @@ public class loginDAO {
         //parameters
         Scanner sc;
         try {
-            sc = new Scanner(new File("UserFile.tsv"));
+            sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");

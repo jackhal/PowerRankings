@@ -133,7 +133,7 @@ public class VotingBoothGUI {
                             //TournamentBracketPanel frame = new TournamentBracketPanel();
                             FileWriter fileWriter = null;
                             try {
-                                fileWriter = new FileWriter("CharacterRounds.csv", true);
+                                fileWriter = new FileWriter("src/resources/CharacterRounds.csv", true);
                             } catch (IOException ex) {
                                 Runner.logger.severe("Unable to append to CharacterRounds.csv");
                                 ex.printStackTrace();
@@ -217,7 +217,7 @@ public class VotingBoothGUI {
                             bert.setLoss(i1++);
                             FileWriter fileWriter = null;
                             try {
-                                fileWriter = new FileWriter("CharacterRounds.csv", true);
+                                fileWriter = new FileWriter("src/resources/CharacterRounds.csv", true);
                             } catch (IOException ex) {
                                 Runner.logger.severe("Unable to open CharacterRounds");
                                 ex.printStackTrace();

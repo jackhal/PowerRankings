@@ -20,7 +20,7 @@ public class ForgotDAO {
      */
     public String findPassword(String userField) { //tested
         try {
-            Scanner scanner = new Scanner(new FileReader("UserFile.tsv"));
+            Scanner scanner = new Scanner(new FileReader("src/resources/UserFile.tsv"));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] data = line.split("\t");
@@ -46,7 +46,7 @@ public class ForgotDAO {
      */
     public String findUsername(String email) { //tested
         try {
-            Scanner scanner = new Scanner(new FileReader("UserFile.tsv"));
+            Scanner scanner = new Scanner(new FileReader("src/resources/UserFile.tsv"));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] data = line.split("\t");

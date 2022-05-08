@@ -410,12 +410,8 @@ public class HomePage {
             menuPanel.add(endRound);
             menuPanel.add(newTournament);
             long lines = 0;
-            try (BufferedReader reader = new BufferedReader(new FileReader("CharacterRounds.csv"))) {
-                while (reader.readLine() != null) lines++;
-            } catch (IOException ei) {
-                Runner.logger.severe("Unable to open CharacterRounds.csv");
-                ei.printStackTrace();
-            }
+            CharacterDAO myCharDAO = new CharacterDAO();
+            lines = myCharDAO.getCharacterRoundsLines();
 
             if (lines == 16) {
                 endRound.setEnabled(false);

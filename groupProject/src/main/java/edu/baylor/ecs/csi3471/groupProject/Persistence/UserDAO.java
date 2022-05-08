@@ -51,7 +51,7 @@ public class UserDAO {
                     String.valueOf(u.getCurrentStreak()), u.getLastLogin()});
         }
 
-        File tsvOut = new File("UserFile.tsv");
+        File tsvOut = new File("src/resources/UserFile.tsv");
         PrintWriter pw = new PrintWriter(tsvOut);
         pw.write(
                 "Username	Password	Email	Name	Age	Currency	Bet	Voted	Admin	Description	CurrentVote	CurrentStreak	LastLogin");
@@ -73,7 +73,7 @@ public class UserDAO {
     public ArrayList<User> getUsers() throws IOException {
         Runner.logger.info("getting all the users from the file into list");
         ArrayList<User> users = new ArrayList<User>();
-        BufferedReader br = new BufferedReader(new FileReader("UserFile.tsv"));
+        BufferedReader br = new BufferedReader(new FileReader("src/resources/UserFile.tsv"));
         String line = "";
         br.readLine();
 
@@ -98,7 +98,7 @@ public class UserDAO {
             throw new NullPointerException();
         }
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -127,7 +127,7 @@ public class UserDAO {
             throw new NullPointerException();
         }
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -157,7 +157,7 @@ public class UserDAO {
      */
     protected int findCurrentStreak(String username) {
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -181,7 +181,7 @@ public class UserDAO {
      */
     protected void setCurrentStreak(String username, int newStreak) {
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -210,7 +210,7 @@ public class UserDAO {
      */
     protected String findLastLogin(String username) {
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -233,7 +233,7 @@ public class UserDAO {
      */
     protected void setLastLogin(String username, String newLastLogin) {
         try {
-            Scanner sc = new Scanner(new File("UserFile.tsv"));
+            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");

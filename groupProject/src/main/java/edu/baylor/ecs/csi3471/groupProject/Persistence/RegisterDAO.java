@@ -21,7 +21,7 @@ public class RegisterDAO {
     public void writeToFile(User newUser) {
         try {
             List<String[]> allData = new ArrayList<String[]>();
-            BufferedReader br = new BufferedReader(new FileReader("UserFile.tsv"));
+            BufferedReader br = new BufferedReader(new FileReader("src/resources/UserFile.tsv"));
             String data[];
             String line = "";
             while ((line = br.readLine()) != null) {
@@ -30,7 +30,7 @@ public class RegisterDAO {
             }
 
 
-            File tsvOut = new File("UserFile.tsv");
+            File tsvOut = new File("src/resources/UserFile.tsv");
             PrintWriter pw = new PrintWriter(tsvOut);
             for (String currLine[] : allData) {
                 pw.write(String.join("\t", currLine));

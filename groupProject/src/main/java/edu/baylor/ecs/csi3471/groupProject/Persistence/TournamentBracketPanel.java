@@ -118,7 +118,7 @@ public class TournamentBracketPanel {
      */
     public Character[] getBracketCharacters() {
         Runner.logger.info("returning tournament characters");
-        Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
+        Character[] myChars = initTournamentCharacters("src/resources/CharacterRounds.csv");
         return myChars;
     }
 
@@ -190,7 +190,7 @@ public class TournamentBracketPanel {
         Runner.logger.info("tournament bracket being generated");
         ImagePanel imgPanel = null;
         try {
-            Image img = ImageIO.read(new File("bracket_template.png"));
+            Image img = ImageIO.read(new File("src/resources/bracket_template.png"));
             imgPanel = new ImagePanel(img);
         } catch (Exception e) {
             Runner.logger.severe("Can't read from File");
@@ -198,7 +198,7 @@ public class TournamentBracketPanel {
             System.exit(1);
         }
 
-        Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
+        Character[] myChars = initTournamentCharacters("src/resources/CharacterRounds.csv");
 
         JLayeredPane myBigPane = new JLayeredPane();
         //imgPanel.setBounds(0, 0, 550, 550);
@@ -245,7 +245,7 @@ public class TournamentBracketPanel {
 //        //frame size
 //        frame.setLocationRelativeTo(null);
 
-        Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
+        Character[] myChars = initTournamentCharacters("src/resources/CharacterRounds.csv");
 
         Runner.logger.info("adding round two to the tournament bracket");
 
@@ -278,7 +278,7 @@ public class TournamentBracketPanel {
 //        //frame size
 //        frame.setLocationRelativeTo(null);
 
-        Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
+        Character[] myChars = initTournamentCharacters("src/resources/CharacterRounds.csv");
 
         Runner.logger.info("adding round three to the tournament bracket");
         try {
@@ -302,7 +302,7 @@ public class TournamentBracketPanel {
 //        //frame size
 //        frame.setLocationRelativeTo(null);
 
-        Character[] myChars = initTournamentCharacters("CharacterRounds.csv");
+        Character[] myChars = initTournamentCharacters("src/resources/CharacterRounds.csv");
 
         Runner.logger.info("adding winner to the tournament bracket");
 

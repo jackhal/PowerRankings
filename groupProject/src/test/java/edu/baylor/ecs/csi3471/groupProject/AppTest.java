@@ -144,7 +144,7 @@ public class AppTest {
     public void loadCharactersSuccess()
     {
         TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
+        Character[] c = p.initTournamentCharacters("src/resources/CharacterRoundsTest.csv");
 
         assertEquals(c.length, 15);
     }
@@ -441,7 +441,7 @@ public class AppTest {
     public void addImagesToBracketSuccess()
     {
         TournamentBracketPanel p = new TournamentBracketPanel();
-        Character[] c = p.initTournamentCharacters("CharacterRoundsTest.csv");
+        Character[] c = p.initTournamentCharacters("src/resources/CharacterRoundsTest.csv");
         JLayeredPane myPane = null;
         try
         {
