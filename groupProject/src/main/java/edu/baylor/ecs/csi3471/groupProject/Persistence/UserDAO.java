@@ -232,25 +232,20 @@ public class UserDAO {
      * @param newLastLogin new login date to set
      */
     protected void setLastLogin(String username, String newLastLogin) {
-        try {
-            Scanner sc = new Scanner(new File("src/resources/UserFile.tsv"));
-            String data[];
-            while (sc.hasNextLine()) {
-                data = sc.nextLine().split("\t");
-                if (data[0].equals(username)) {
-                    data[12] = newLastLogin;
-                    User newUser = new User(data);
-                    try {
-                        updateUser(newUser);
-                    } catch (IOException e) {
-                        Runner.logger.severe("Can't update User");
-                        e.printStackTrace();
-                    }
+    	Scanner sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("UserFile.tsv"));
+        String data[];
+        while (sc.hasNextLine()) {
+            data = sc.nextLine().split("\t");
+            if (data[0].equals(username)) {
+                data[12] = newLastLogin;
+                User newUser = new User(data);
+                try {
+                    updateUser(newUser);
+                } catch (IOException e) {
+                    Runner.logger.severe("Can't update User");
+                    e.printStackTrace();
                 }
             }
-        } catch (FileNotFoundException e) {
-            Runner.logger.severe("Can't open the User file");
-            e.printStackTrace();
         }
     }
 
