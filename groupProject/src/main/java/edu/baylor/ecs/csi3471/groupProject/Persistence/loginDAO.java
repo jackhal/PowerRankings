@@ -25,8 +25,9 @@ public class loginDAO {
         //Scan user file, seeing if a username and password match passed
         //parameters
         Scanner sc;
-        try {
-            sc = new Scanner(new File("src/resources/UserFile.tsv"));
+        
+            //sc = new Scanner(new File("src/resources/UserFile.tsv"));
+        	sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("UserFile.tsv"));
             String data[];
             while (sc.hasNextLine()) {
                 data = sc.nextLine().split("\t");
@@ -36,10 +37,6 @@ public class loginDAO {
                 }
             }
             return false;
-        } catch (FileNotFoundException e) {
-            Runner.logger.severe("Unable to find file");
-            e.printStackTrace();
-            return false;
-        }
+        
     }
 }
