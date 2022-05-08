@@ -1,11 +1,1 @@
-2022-05-07 19:19:29 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.UI.LoginPage$1 actionPerformed User clicked submit and is attempting to login.
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Business.Login beginLoginProcess jack signed in
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance starting rendering of balance
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO updateUser updating the user
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.UserDAO getUsers getting all the users from the file into list
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Business.DailyCheckIn showBalance balance rendered
-2022-05-07 19:19:34 SEVERE edu.baylor.ecs.csi3471.groupProject.Persistence.CharacterDAO getCharacterRoundsLines Unable to open CharacterRounds.csv
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel getBracket tournament bracket being generated
-2022-05-07 19:19:34 INFO edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters Initializing tournament characters
-2022-05-07 19:19:34 SEVERE edu.baylor.ecs.csi3471.groupProject.Persistence.TournamentBracketPanel initTournamentCharacters unable to read characters from src/resources/CharacterRounds.csv file
+2022-05-07 19:34:21 INFO edu.baylor.ecs.csi3471.groupProject.Business.Runner <clinit> starting the app

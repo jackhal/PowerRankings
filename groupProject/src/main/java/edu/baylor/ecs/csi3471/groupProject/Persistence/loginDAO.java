@@ -25,18 +25,15 @@ public class loginDAO {
         //Scan user file, seeing if a username and password match passed
         //parameters
         Scanner sc;
-        
-            //sc = new Scanner(new File("src/resources/UserFile.tsv"));
-        	sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("UserFile.tsv"));
-            String data[];
-            while (sc.hasNextLine()) {
-                data = sc.nextLine().split("\t");
-                if (username.equals(data[0]) && password.equals(data[1])) {
-                    userData = data;
-                    return true;
-                }
+    	sc = new Scanner(Runner.class.getClassLoader().getResourceAsStream("UserFile.tsv"));
+        String data[];
+        while (sc.hasNextLine()) {
+            data = sc.nextLine().split("\t");
+            if (username.equals(data[0]) && password.equals(data[1])) {
+                userData = data;
+                return true;
             }
-            return false;
-        
+        }
+        return false;
     }
 }
